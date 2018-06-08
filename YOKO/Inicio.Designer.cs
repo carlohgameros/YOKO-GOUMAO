@@ -1,6 +1,6 @@
 ﻿namespace YOKO
 {
-    partial class Form1
+    partial class Inicio
     {
         /// <summary>
         /// Required designer variable.

@@ -206,10 +206,10 @@
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuGradientPanel1.Controls.Add(this.bunifuImageButton2);
             this.bunifuGradientPanel1.Controls.Add(this.bunifuImageButton1);
-            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.Navy;
+            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.Navy;
+            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.Navy;
+            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.Navy;
             this.bunifuGradientPanel1.Location = new System.Drawing.Point(-1, 1);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
@@ -284,9 +284,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(582, 42);
+            this.pictureBox1.Location = new System.Drawing.Point(516, 42);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(258, 405);
+            this.pictureBox1.Size = new System.Drawing.Size(324, 508);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;

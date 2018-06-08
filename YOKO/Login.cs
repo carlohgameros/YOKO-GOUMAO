@@ -57,7 +57,7 @@ namespace YOKO
                     int a = int.Parse(s: command.ExecuteScalar().ToString());
                     if (a > 0)
                     {
-                        new Form1().Show();
+                        new Inicio().Show();
                         Hide();
                     }
                     else
@@ -76,6 +76,11 @@ namespace YOKO
         {
             new NuevoUsuario().Show();
             Hide();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
         }
     }
 }
