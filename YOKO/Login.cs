@@ -19,6 +19,7 @@ namespace YOKO
         public Login()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e) => Close();
@@ -49,26 +50,27 @@ namespace YOKO
             using (SqlConnection conn = new SqlConnection())
             {
                 conn.ConnectionString = "Data Source=DESKTOP-5ON2GLQ;Initial Catalog=GoumaoDB;Integrated Security=True";
-                conn.Open();
                 try
                 {
-
-                    SqlCommand command = new SqlCommand("select * from tblUsers where UsrName = '" + usuario.Text + "' and UsrPwd = '" + contra.Text + "'", conn);
-                    int a = int.Parse(s: command.ExecuteScalar().ToString());
-                    if (a > 0)
-                    {
-                        new Inicio().Show();
-                        Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Nombre o contraseña incorrectos.");
-                    }
+                    conn.Open();
                 }
-                catch (Exception ex)
+                catch (Exception ex)                {
+                    notifyIcon1.ShowBalloonTip(1000, "Error en la conexión", ex.Message, ToolTipIcon.Info);
+                }
+                if (conn.State == ConnectionState.Open)
                 {
-                    MessageBox.Show(ex.Message);
+                    try
+                    {
+                        SqlCommand command = new SqlCommand("select * from tblUsers where UsrName = '" + usuario.Text + "' and UsrPwd = '" + contra.Text + "'", conn);
+                        int a = int.Parse(s: command.ExecuteScalar().ToString());
+                        if (a > 0) { new Inicio().Show(); Hide(); }
+                    }
+                    catch (Exception ex)
+                    {
+                        notifyIcon1.ShowBalloonTip(1000, "Nombre o contraseña incorrectos", "Verifique sus datos", ToolTipIcon.Info);
+                    }
                 }
+                conn.Close();
             }
         }
 
@@ -80,7 +82,16 @@ namespace YOKO
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            new RecuperarContra().Show();
+            Hide();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            
 
         }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e) => Show();
     }
 }
