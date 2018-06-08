@@ -17,30 +17,32 @@ namespace YOKO
     public partial class NuevoUsuario : Form
     {
         Random a = new Random();
-        
+        int b;
         public NuevoUsuario()
         {
-            a.Next(100000, 999999);
+            b = a.Next(100000, 999999);
             InitializeComponent();
         }
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
+            notifyIcon1.ShowBalloonTip(1000, "Intento Correcto", "Datos actualizados a la base de datos", ToolTipIcon.Info);
+            /*
             using (SqlConnection conn = new SqlConnection())
             {
                 conn.ConnectionString = "Data Source=DESKTOP-5ON2GLQ;Initial Catalog=GoumaoDB;Integrated Security=True";
                 conn.Open();
                 try
-                {
-
-                    SqlCommand command = new SqlCommand("insert into tblUsers values('Joel', 123, 'Administrador', 1, GETDATE(), 'carlo.hernandez16@gmail.com', GETDATE())", conn);
+                { 
+                    SqlCommand command = new SqlCommand("insert into tblUsers values('"+nombre.Text+"', "+contra1.Text+", 'Trabajador', 1, GETDATE(), '"+correo.Text+"', GETDATE())", conn);
                     command.ExecuteNonQuery();
+                    
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }
+            }*/
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e) => Close();
@@ -60,9 +62,9 @@ namespace YOKO
             MailMessage mail = new MailMessage();
             SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
             mail.From = new MailAddress("carlo.hernandez16@tectijuana.edu.mx");
-            mail.To.Add("carlo-turbo@hotmail.com");
-            mail.Subject = "This is an email";
-            mail.Body = "this is the body content of the email. " + a + "";
+            mail.To.Add(correo.Text.Trim());
+            mail.Subject = "Código de verificación.";
+            mail.Body = nombre.Text + ", su código es: " + b;
 
             //System.Net.Mail.Attachment attachment;
             //attachment = new System.Net.Mail.Attachment(@"C:\Attachment.txt");
@@ -70,9 +72,36 @@ namespace YOKO
 
             SmtpServer.Port = 587;
             SmtpServer.UseDefaultCredentials = true;
-            SmtpServer.Credentials = new NetworkCredential("carlo.hernandez16@tectijuana.edu.mx", "realcj18");//no need to mention here?
+            SmtpServer.Credentials = new NetworkCredential("carlo.hernandez16@tectijuana.edu.mx", "realcj18");
             SmtpServer.EnableSsl = true;
-            SmtpServer.Send(mail);
+            try
+            {
+                SmtpServer.Send(mail);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+          
+        }
+
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            if (b.ToString() == codigo.Text)
+            {
+                MessageBox.Show("Correcto.");
+                ingresar.ButtonText = "Crear";
+            }
+            else
+            {
+                MessageBox.Show("Incorrecto");
+            }
+        }
+
+        private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
+        {
+            Hide();
+            new Login().Show();
         }
     }
 }
