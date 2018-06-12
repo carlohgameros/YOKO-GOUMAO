@@ -63,7 +63,7 @@ namespace YOKO
                     {
                         SqlCommand command = new SqlCommand("select * from tblUsers where UsrName = '" + usuario.Text + "' and UsrPwd = '" + contra.Text + "'", conn);
                         int a = int.Parse(s: command.ExecuteScalar().ToString());
-                        if (a > 0) { new Inicio().Show(); Hide(); }
+                        if (a > 0) { new Venta().Show(); Hide(); }
                     }
                     catch (Exception ex)
                     {
