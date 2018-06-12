@@ -65,7 +65,7 @@ namespace YOKO
                         int a = int.Parse(s: command.ExecuteScalar().ToString());
                         if (a > 0) { new Venta().Show(); Hide(); }
                     }
-                    catch (Exception ex)
+                    catch 
                     {
                         notifyIcon1.ShowBalloonTip(1000, "Nombre o contraseña incorrectos", "Verifique sus datos", ToolTipIcon.Info);
                     }
