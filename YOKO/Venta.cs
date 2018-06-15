@@ -89,9 +89,9 @@ namespace YOKO
             }
             catch
             {
-                metroButton1.Text = "";
+                //metroButton1.Text = "";
             }
-            metroButton1.Text = str;
+            //metroButton1.Text = str;
 
             MascotaCliente();
         }
@@ -145,9 +145,9 @@ namespace YOKO
             }
             catch
             {
-                metroButton1.Text = "";
+                //metroButton1.Text = "";
             }
-            metroButton1.Text = str;
+            //SmetroButton1.Text = str;
             MascotaCliente();
         }
     }
