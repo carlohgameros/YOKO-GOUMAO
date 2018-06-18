@@ -29,6 +29,8 @@ namespace YOKO
         public Venta()
         {
             InitializeComponent();
+            DateTimePicker metroDateTime1= new DateTimePicker();
+            metroDateTime1.Value = DateTime.Now;
             str = "0";
             conn.ConnectionString = "Data Source=DESKTOP-5ON2GLQ;Initial Catalog=GoumaoDB;Integrated Security=True";
             AutoCompleteStringCollection namesCollection = new AutoCompleteStringCollection();
@@ -51,8 +53,12 @@ namespace YOKO
 
         private void Venta_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'goumaoDBDataSet.tblClientes' table. You can move, or remove it, as needed.
-            this.tblClientesTableAdapter.Fill(this.goumaoDBDataSet.tblClientes);
+            textBox2.Enabled = false;
+            conn.Open();
+            SqlCommand command = new SqlCommand("SELECT top 1 Factura FROM tblFacturas order by Factura desc", conn);
+            textBox2.Text = (int.Parse(s: command.ExecuteScalar().ToString())+1).ToString();
+            conn.Close();
+            
         }
 
         

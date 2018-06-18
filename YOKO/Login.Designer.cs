@@ -217,11 +217,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(606, 332);
+            this.label1.Location = new System.Drawing.Point(603, 331);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 25);
+            this.label1.Size = new System.Drawing.Size(102, 25);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Olvide la ";
+            this.label1.Text = "¿Olvide la ";
             // 
             // linkLabel1
             // 

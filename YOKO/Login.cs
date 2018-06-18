@@ -86,12 +86,28 @@ namespace YOKO
             Hide();
         }
 
+        WebBrowser navegador = new WebBrowser();
+        string a;
         private void Login_Load(object sender, EventArgs e)
         {
-            
-
+            navegador.ScriptErrorsSuppressed = true;
+            navegador.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(this.cargar_datos);
+            navegador.Navigate("http://www.lacasadecambio.com/");
+        }
+        
+        public void cargar_datos(object sender, EventArgs e )
+        {
+            a = navegador.Document.GetElementById("tipocambio").InnerText;
+            a = a.Replace("PROMEDIO EN CASAS DE CAMBIO", "");
+            a = a.Replace("VENTA", System.Environment.NewLine  + "VENTA");
+            notifyIcon1.ShowBalloonTip(2000, "PROMEDIO EN CASAS DE CAMBIO", a, ToolTipIcon.Info);
         }
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e) => Show();
+
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
