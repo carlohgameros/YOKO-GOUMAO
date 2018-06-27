@@ -142,10 +142,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;bunifuCheckbox1.ZOrder" xml:space="preserve">
-    <value>42</value>
+    <value>44</value>
   </data>
   <data name="bunifuCheckbox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 121</value>
+    <value>15, 105</value>
   </data>
   <data name="bunifuCheckbox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
@@ -166,10 +166,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;bunifuCheckbox2.ZOrder" xml:space="preserve">
-    <value>41</value>
+    <value>43</value>
   </data>
   <data name="bunifuCheckbox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 171</value>
+    <value>15, 133</value>
   </data>
   <data name="bunifuCheckbox3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
@@ -190,7 +190,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;bunifuCheckbox3.ZOrder" xml:space="preserve">
-    <value>40</value>
+    <value>42</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -220,7 +220,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>39</value>
+    <value>41</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -229,7 +229,7 @@
     <value>Microsoft YaHei UI Light, 12pt</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 119</value>
+    <value>41, 103</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 21</value>
@@ -250,7 +250,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>38</value>
+    <value>40</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -259,7 +259,7 @@
     <value>Microsoft YaHei UI Light, 12pt</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 169</value>
+    <value>41, 131</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 21</value>
@@ -280,7 +280,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>37</value>
+    <value>39</value>
   </data>
   <metadata name="tblClientesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>173, 17</value>
@@ -292,13 +292,13 @@
     <value>361, 17</value>
   </metadata>
   <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 211</value>
+    <value>15, 192</value>
   </data>
   <data name="dataGridView1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
   <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>475, 136</value>
+    <value>475, 160</value>
   </data>
   <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -313,7 +313,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
-    <value>36</value>
+    <value>38</value>
   </data>
   <metadata name="goumaoDBDataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>543, 17</value>
@@ -349,7 +349,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;metroTextBox1.ZOrder" xml:space="preserve">
-    <value>35</value>
+    <value>37</value>
   </data>
   <data name="bunifuTextbox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -423,16 +423,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;bunifuTextbox1.ZOrder" xml:space="preserve">
-    <value>34</value>
+    <value>36</value>
   </data>
   <data name="dataGridView2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 355</value>
+    <value>15, 360</value>
   </data>
   <data name="dataGridView2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
   <data name="dataGridView2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>475, 94</value>
+    <value>475, 117</value>
   </data>
   <data name="dataGridView2.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -447,7 +447,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dataGridView2.ZOrder" xml:space="preserve">
-    <value>33</value>
+    <value>35</value>
   </data>
   <data name="AgregarUsuario.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -489,7 +489,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;AgregarUsuario.ZOrder" xml:space="preserve">
-    <value>32</value>
+    <value>34</value>
   </data>
   <data name="AgregarMascota.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -510,7 +510,7 @@
     <value>Century Gothic, 12pt</value>
   </data>
   <data name="AgregarMascota.Location" type="System.Drawing.Point, System.Drawing">
-    <value>311, 113</value>
+    <value>309, 105</value>
   </data>
   <data name="AgregarMascota.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
@@ -531,7 +531,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;AgregarMascota.ZOrder" xml:space="preserve">
-    <value>31</value>
+    <value>33</value>
   </data>
   <data name="AgregarProducto.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -552,7 +552,7 @@
     <value>Century Gothic, 12pt</value>
   </data>
   <data name="AgregarProducto.Location" type="System.Drawing.Point, System.Drawing">
-    <value>311, 162</value>
+    <value>309, 144</value>
   </data>
   <data name="AgregarProducto.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
@@ -573,7 +573,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;AgregarProducto.ZOrder" xml:space="preserve">
-    <value>30</value>
+    <value>32</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -606,7 +606,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>28</value>
+    <value>30</value>
   </data>
   <data name="bunifuCheckbox4.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 486</value>
@@ -630,7 +630,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;bunifuCheckbox4.ZOrder" xml:space="preserve">
-    <value>29</value>
+    <value>31</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -663,7 +663,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>29</value>
+  </data>
+  <data name="textBox1.AutoCompleteCustomSource" xml:space="preserve">
+    <value>PESOS</value>
+  </data>
+  <data name="textBox1.AutoCompleteCustomSource1" xml:space="preserve">
+    <value>DOLARES</value>
+  </data>
+  <data name="textBox1.AutoCompleteCustomSource2" xml:space="preserve">
+    <value>EUROS</value>
   </data>
   <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 542</value>
@@ -684,7 +693,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>28</value>
   </data>
   <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 514</value>
@@ -705,7 +714,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;textBox2.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>27</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -738,7 +747,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>26</value>
   </data>
   <data name="metroDateTime1.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 570</value>
@@ -762,7 +771,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;metroDateTime1.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>25</value>
   </data>
   <data name="bunifuDatepicker1.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 606</value>
@@ -786,28 +795,28 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;bunifuDatepicker1.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>24</value>
   </data>
-  <data name="textBox3.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="txtProductos.Location" type="System.Drawing.Point, System.Drawing">
     <value>586, 33</value>
   </data>
-  <data name="textBox3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txtProductos.Size" type="System.Drawing.Size, System.Drawing">
     <value>290, 22</value>
   </data>
-  <data name="textBox3.TabIndex" type="System.Int32, mscorlib">
+  <data name="txtProductos.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
   </data>
-  <data name="&gt;&gt;textBox3.Name" xml:space="preserve">
-    <value>textBox3</value>
+  <data name="&gt;&gt;txtProductos.Name" xml:space="preserve">
+    <value>txtProductos</value>
   </data>
-  <data name="&gt;&gt;textBox3.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtProductos.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtProductos.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;textBox3.ZOrder" xml:space="preserve">
-    <value>21</value>
+  <data name="&gt;&gt;txtProductos.ZOrder" xml:space="preserve">
+    <value>23</value>
   </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -840,28 +849,28 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>22</value>
   </data>
-  <data name="textBox4.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="txtCantidad.Location" type="System.Drawing.Point, System.Drawing">
     <value>882, 33</value>
   </data>
-  <data name="textBox4.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txtCantidad.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 22</value>
   </data>
-  <data name="textBox4.TabIndex" type="System.Int32, mscorlib">
+  <data name="txtCantidad.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
   </data>
-  <data name="&gt;&gt;textBox4.Name" xml:space="preserve">
-    <value>textBox4</value>
+  <data name="&gt;&gt;txtCantidad.Name" xml:space="preserve">
+    <value>txtCantidad</value>
   </data>
-  <data name="&gt;&gt;textBox4.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtCantidad.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox4.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtCantidad.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;textBox4.ZOrder" xml:space="preserve">
-    <value>19</value>
+  <data name="&gt;&gt;txtCantidad.ZOrder" xml:space="preserve">
+    <value>21</value>
   </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -894,28 +903,28 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>20</value>
   </data>
-  <data name="textBox5.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="txtUM.Location" type="System.Drawing.Point, System.Drawing">
     <value>951, 33</value>
   </data>
-  <data name="textBox5.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txtUM.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 22</value>
   </data>
-  <data name="textBox5.TabIndex" type="System.Int32, mscorlib">
+  <data name="txtUM.TabIndex" type="System.Int32, mscorlib">
     <value>40</value>
   </data>
-  <data name="&gt;&gt;textBox5.Name" xml:space="preserve">
-    <value>textBox5</value>
+  <data name="&gt;&gt;txtUM.Name" xml:space="preserve">
+    <value>txtUM</value>
   </data>
-  <data name="&gt;&gt;textBox5.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtUM.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox5.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtUM.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;textBox5.ZOrder" xml:space="preserve">
-    <value>17</value>
+  <data name="&gt;&gt;txtUM.ZOrder" xml:space="preserve">
+    <value>19</value>
   </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -948,28 +957,28 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>17</value>
   </data>
-  <data name="textBox6.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="txtPrecio.Location" type="System.Drawing.Point, System.Drawing">
     <value>995, 33</value>
   </data>
-  <data name="textBox6.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txtPrecio.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 22</value>
   </data>
-  <data name="textBox6.TabIndex" type="System.Int32, mscorlib">
+  <data name="txtPrecio.TabIndex" type="System.Int32, mscorlib">
     <value>41</value>
   </data>
-  <data name="&gt;&gt;textBox6.Name" xml:space="preserve">
-    <value>textBox6</value>
+  <data name="&gt;&gt;txtPrecio.Name" xml:space="preserve">
+    <value>txtPrecio</value>
   </data>
-  <data name="&gt;&gt;textBox6.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtPrecio.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox6.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtPrecio.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;textBox6.ZOrder" xml:space="preserve">
-    <value>16</value>
+  <data name="&gt;&gt;txtPrecio.ZOrder" xml:space="preserve">
+    <value>18</value>
   </data>
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1002,28 +1011,28 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>15</value>
   </data>
-  <data name="textBox7.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="txtDescuento.Location" type="System.Drawing.Point, System.Drawing">
     <value>1074, 33</value>
   </data>
-  <data name="textBox7.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txtDescuento.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 22</value>
   </data>
-  <data name="textBox7.TabIndex" type="System.Int32, mscorlib">
+  <data name="txtDescuento.TabIndex" type="System.Int32, mscorlib">
     <value>43</value>
   </data>
-  <data name="&gt;&gt;textBox7.Name" xml:space="preserve">
-    <value>textBox7</value>
+  <data name="&gt;&gt;txtDescuento.Name" xml:space="preserve">
+    <value>txtDescuento</value>
   </data>
-  <data name="&gt;&gt;textBox7.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtDescuento.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox7.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtDescuento.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;textBox7.ZOrder" xml:space="preserve">
-    <value>14</value>
+  <data name="&gt;&gt;txtDescuento.ZOrder" xml:space="preserve">
+    <value>16</value>
   </data>
   <data name="label12.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1056,30 +1065,30 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
-  <data name="textBox8.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="txtImporte.Location" type="System.Drawing.Point, System.Drawing">
     <value>1164, 33</value>
   </data>
-  <data name="textBox8.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txtImporte.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 22</value>
   </data>
-  <data name="textBox8.TabIndex" type="System.Int32, mscorlib">
+  <data name="txtImporte.TabIndex" type="System.Int32, mscorlib">
     <value>45</value>
   </data>
-  <data name="&gt;&gt;textBox8.Name" xml:space="preserve">
-    <value>textBox8</value>
+  <data name="&gt;&gt;txtImporte.Name" xml:space="preserve">
+    <value>txtImporte</value>
   </data>
-  <data name="&gt;&gt;textBox8.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtImporte.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox8.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtImporte.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;textBox8.ZOrder" xml:space="preserve">
-    <value>12</value>
+  <data name="&gt;&gt;txtImporte.ZOrder" xml:space="preserve">
+    <value>14</value>
   </data>
-  <data name="bunifuThinButton21.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAgregar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAApYAAAAnCAYAAAC1+wjzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKiSURBVHhe7d07S1xBGIDh/KJ0qexSpUslaay0CEIK02gT
@@ -1097,56 +1106,32 @@
         gg==
 </value>
   </data>
-  <data name="bunifuThinButton21.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnAgregar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 12pt</value>
   </data>
-  <data name="bunifuThinButton21.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="btnAgregar.Location" type="System.Drawing.Point, System.Drawing">
     <value>586, 55</value>
   </data>
-  <data name="bunifuThinButton21.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="btnAgregar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
   </data>
-  <data name="bunifuThinButton21.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnAgregar.Size" type="System.Drawing.Size, System.Drawing">
     <value>662, 39</value>
   </data>
-  <data name="bunifuThinButton21.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnAgregar.TabIndex" type="System.Int32, mscorlib">
     <value>47</value>
   </data>
-  <data name="&gt;&gt;bunifuThinButton21.Name" xml:space="preserve">
-    <value>bunifuThinButton21</value>
+  <data name="&gt;&gt;btnAgregar.Name" xml:space="preserve">
+    <value>btnAgregar</value>
   </data>
-  <data name="&gt;&gt;bunifuThinButton21.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnAgregar.Type" xml:space="preserve">
     <value>Bunifu.Framework.UI.BunifuThinButton2, Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;bunifuThinButton21.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnAgregar.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;bunifuThinButton21.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="dataGridView3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>586, 103</value>
-  </data>
-  <data name="dataGridView3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
-  </data>
-  <data name="dataGridView3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>662, 346</value>
-  </data>
-  <data name="dataGridView3.TabIndex" type="System.Int32, mscorlib">
-    <value>48</value>
-  </data>
-  <data name="&gt;&gt;dataGridView3.Name" xml:space="preserve">
-    <value>dataGridView3</value>
-  </data>
-  <data name="&gt;&gt;dataGridView3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridView3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dataGridView3.ZOrder" xml:space="preserve">
-    <value>9</value>
+  <data name="&gt;&gt;btnAgregar.ZOrder" xml:space="preserve">
+    <value>12</value>
   </data>
   <data name="label13.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1158,7 +1143,7 @@
     <value>NoControl</value>
   </data>
   <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>582, 460</value>
+    <value>582, 493</value>
   </data>
   <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 21</value>
@@ -1179,28 +1164,31 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
-  <data name="textBox9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>586, 484</value>
+  <data name="txtNota.Location" type="System.Drawing.Point, System.Drawing">
+    <value>586, 517</value>
   </data>
-  <data name="textBox9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>662, 22</value>
+  <data name="txtNota.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="textBox9.TabIndex" type="System.Int32, mscorlib">
+  <data name="txtNota.Size" type="System.Drawing.Size, System.Drawing">
+    <value>290, 22</value>
+  </data>
+  <data name="txtNota.TabIndex" type="System.Int32, mscorlib">
     <value>49</value>
   </data>
-  <data name="&gt;&gt;textBox9.Name" xml:space="preserve">
-    <value>textBox9</value>
+  <data name="&gt;&gt;txtNota.Name" xml:space="preserve">
+    <value>txtNota</value>
   </data>
-  <data name="&gt;&gt;textBox9.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtNota.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox9.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtNota.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;textBox9.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="&gt;&gt;txtNota.ZOrder" xml:space="preserve">
+    <value>10</value>
   </data>
   <data name="label14.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1212,7 +1200,7 @@
     <value>NoControl</value>
   </data>
   <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>582, 509</value>
+    <value>582, 542</value>
   </data>
   <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 21</value>
@@ -1233,82 +1221,28 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
-  <data name="textBox10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>586, 533</value>
+  <data name="txtFP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>586, 566</value>
   </data>
-  <data name="textBox10.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txtFP.Size" type="System.Drawing.Size, System.Drawing">
     <value>290, 22</value>
   </data>
-  <data name="textBox10.TabIndex" type="System.Int32, mscorlib">
+  <data name="txtFP.TabIndex" type="System.Int32, mscorlib">
     <value>51</value>
   </data>
-  <data name="&gt;&gt;textBox10.Name" xml:space="preserve">
-    <value>textBox10</value>
+  <data name="&gt;&gt;txtFP.Name" xml:space="preserve">
+    <value>txtFP</value>
   </data>
-  <data name="&gt;&gt;textBox10.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtFP.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox10.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtFP.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;textBox10.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI Light, 12pt</value>
-  </data>
-  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>582, 558</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 21</value>
-  </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>54</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Total</value>
-  </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="textBox11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>586, 582</value>
-  </data>
-  <data name="textBox11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>290, 22</value>
-  </data>
-  <data name="textBox11.TabIndex" type="System.Int32, mscorlib">
-    <value>53</value>
-  </data>
-  <data name="&gt;&gt;textBox11.Name" xml:space="preserve">
-    <value>textBox11</value>
-  </data>
-  <data name="&gt;&gt;textBox11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox11.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;textBox11.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;txtFP.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="label15.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1320,7 +1254,7 @@
     <value>NoControl</value>
   </data>
   <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>582, 607</value>
+    <value>582, 590</value>
   </data>
   <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
     <value>83, 21</value>
@@ -1341,33 +1275,33 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
-  <data name="textBox12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>586, 631</value>
+  <data name="txtVendedor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>586, 614</value>
   </data>
-  <data name="textBox12.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txtVendedor.Size" type="System.Drawing.Size, System.Drawing">
     <value>290, 22</value>
   </data>
-  <data name="textBox12.TabIndex" type="System.Int32, mscorlib">
+  <data name="txtVendedor.TabIndex" type="System.Int32, mscorlib">
     <value>56</value>
   </data>
-  <data name="&gt;&gt;textBox12.Name" xml:space="preserve">
-    <value>textBox12</value>
+  <data name="&gt;&gt;txtVendedor.Name" xml:space="preserve">
+    <value>txtVendedor</value>
   </data>
-  <data name="&gt;&gt;textBox12.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtVendedor.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox12.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtVendedor.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;textBox12.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;txtVendedor.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
-  <data name="bunifuFlatButton1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+  <data name="btnPagar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
-  <data name="bunifuFlatButton1.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnPagar.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTAw9HKhAAANJElEQVR4Xu3d
@@ -1430,32 +1364,32 @@
         Vu+NkQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="bunifuFlatButton1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>908, 558</value>
+  <data name="btnPagar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>882, 517</value>
   </data>
-  <data name="bunifuFlatButton1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="btnPagar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
-  <data name="bunifuFlatButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>322, 70</value>
+  <data name="btnPagar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>366, 119</value>
   </data>
-  <data name="bunifuFlatButton1.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnPagar.TabIndex" type="System.Int32, mscorlib">
     <value>58</value>
   </data>
-  <data name="bunifuFlatButton1.Text" xml:space="preserve">
-    <value>Total: $,1900.00</value>
+  <data name="btnPagar.Text" xml:space="preserve">
+    <value>Pagar</value>
   </data>
-  <data name="&gt;&gt;bunifuFlatButton1.Name" xml:space="preserve">
-    <value>bunifuFlatButton1</value>
+  <data name="&gt;&gt;btnPagar.Name" xml:space="preserve">
+    <value>btnPagar</value>
   </data>
-  <data name="&gt;&gt;bunifuFlatButton1.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnPagar.Type" xml:space="preserve">
     <value>Bunifu.Framework.UI.BunifuFlatButton, Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;bunifuFlatButton1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnPagar.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;bunifuFlatButton1.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;btnPagar.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <metadata name="notifyIcon1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>705, 17</value>
@@ -4242,6 +4176,201 @@
   <data name="notifyIcon1.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <metadata name="Productos.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Productos.HeaderText" xml:space="preserve">
+    <value>Productos</value>
+  </data>
+  <metadata name="Cantida.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Cantida.HeaderText" xml:space="preserve">
+    <value>Cantidad</value>
+  </data>
+  <data name="Cantida.Width" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <metadata name="Preci.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Preci.HeaderText" xml:space="preserve">
+    <value>Precio</value>
+  </data>
+  <data name="Preci.Width" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <metadata name="Descuent.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Descuent.HeaderText" xml:space="preserve">
+    <value>Descuento</value>
+  </data>
+  <data name="Descuent.Width" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <metadata name="Import.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Import.HeaderText" xml:space="preserve">
+    <value>Importe</value>
+  </data>
+  <data name="Import.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <metadata name="Eliminar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Eliminar.HeaderText" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="dataGridView3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>586, 103</value>
+  </data>
+  <data name="dataGridView3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="dataGridView3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>662, 386</value>
+  </data>
+  <data name="dataGridView3.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="&gt;&gt;dataGridView3.Name" xml:space="preserve">
+    <value>dataGridView3</value>
+  </data>
+  <data name="&gt;&gt;dataGridView3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridView3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dataGridView3.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI Light, 12pt</value>
+  </data>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>41, 162</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 21</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Mascota</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="bunifuCheckbox5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 163</value>
+  </data>
+  <data name="bunifuCheckbox5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 5, 3, 5</value>
+  </data>
+  <data name="bunifuCheckbox5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="bunifuCheckbox5.TabIndex" type="System.Int32, mscorlib">
+    <value>59</value>
+  </data>
+  <data name="&gt;&gt;bunifuCheckbox5.Name" xml:space="preserve">
+    <value>bunifuCheckbox5</value>
+  </data>
+  <data name="&gt;&gt;bunifuCheckbox5.Type" xml:space="preserve">
+    <value>Bunifu.Framework.UI.BunifuCheckbox, Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bunifuCheckbox5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;bunifuCheckbox5.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label16.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label16.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI Light, 12pt</value>
+  </data>
+  <data name="label16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>372, 538</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 21</value>
+  </data>
+  <data name="label16.TabIndex" type="System.Int32, mscorlib">
+    <value>62</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Compra</value>
+  </data>
+  <data name="&gt;&gt;label16.Name" xml:space="preserve">
+    <value>label16</value>
+  </data>
+  <data name="&gt;&gt;label16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtMoneda.AutoCompleteCustomSource" xml:space="preserve">
+    <value>PESOS</value>
+  </data>
+  <data name="txtMoneda.AutoCompleteCustomSource1" xml:space="preserve">
+    <value>DOLARES</value>
+  </data>
+  <data name="txtMoneda.AutoCompleteCustomSource2" xml:space="preserve">
+    <value>EUROS</value>
+  </data>
+  <data name="txtMoneda.Location" type="System.Drawing.Point, System.Drawing">
+    <value>266, 540</value>
+  </data>
+  <data name="txtMoneda.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 22</value>
+  </data>
+  <data name="txtMoneda.TabIndex" type="System.Int32, mscorlib">
+    <value>61</value>
+  </data>
+  <data name="txtMoneda.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;txtMoneda.Name" xml:space="preserve">
+    <value>txtMoneda</value>
+  </data>
+  <data name="&gt;&gt;txtMoneda.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtMoneda.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtMoneda.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -4252,7 +4381,7 @@
     <value>6, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1266, 667</value>
+    <value>1266, 652</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI Light, 8.25pt</value>
@@ -4292,6 +4421,42 @@
   </data>
   <data name="&gt;&gt;notifyIcon1.Type" xml:space="preserve">
     <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Productos.Name" xml:space="preserve">
+    <value>Productos</value>
+  </data>
+  <data name="&gt;&gt;Productos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Cantida.Name" xml:space="preserve">
+    <value>Cantida</value>
+  </data>
+  <data name="&gt;&gt;Cantida.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Preci.Name" xml:space="preserve">
+    <value>Preci</value>
+  </data>
+  <data name="&gt;&gt;Preci.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Descuent.Name" xml:space="preserve">
+    <value>Descuent</value>
+  </data>
+  <data name="&gt;&gt;Descuent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Import.Name" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="&gt;&gt;Import.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Eliminar.Name" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="&gt;&gt;Eliminar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Venta</value>
