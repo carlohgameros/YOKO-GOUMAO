@@ -117,11 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="bunifuGradientPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAAqSURBVChTjcixDQAACMOw/v90YUYeiOQl2frEKZzCKZzC
+        KZzCKZzCeaQDNL1jnUcuy0wAAAAASUVORK5CYII=
+</value>
   </data>
-  <data name="WhatsApp Image 2019-03-09 at 13.50.01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WhatsApp Image 2019-03-09 at 13.50.011.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bunifuThinButton22.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAUsAAAA2CAYAAABOfLs1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJRSURBVHhe7d3NSiNBFIDRef+nCBJCCIhI0KgrXagrJYjo
+        IpoY8yA13IZ0zFjj3O2kzuIg2NWd3Uf9NPSvzWZTAPiZWAIkiCVAglgCJIglQIJYAiSkYvnx8VFWq1X3
+        t3Yd4H+0bVuoXf/qx1jGg+bzeZnNZuX09LSMx+MyGAwADkI0Ldp2dnZWHh4eumiu1+tqD6uxjBuen5/L
+        aDSq/gDAIRoOh+Xx8bE60/wWy+VyWa6urqoPAmjBdDotb29ve23ci2XUVCgBBt3y/OsMcy+WsfSu3QTQ
+        ovv7+/5gu49l/MMeJcDO0dFRWSwW5fPzcxfLOAmqDQZo2fX19S6WsS6Po/PaQICWHR8fd43sYhlL8Mlk
+        Uh0I0LJYivczy3gJM94vqg0EaF10st+zrA0AQCwBUsQSIEEsARLEEiBBLAESxBIgQSwBEsQSIEEsARLE
+        EiBBLAESxBIgQSwBEsQSIEEsARLEEiBBLAESxBIgQSwBEsQSIKGPZXzmMT73WBsE0Lo+lvHd8PF4XB0E
+        0Lo+lqvVqkyn0+oggJZNJpNuQtnFcr1el7u7u+pAgJZdXl7uYhne39/tWwL84enpabcMD1HO29vb6mCA
+        Fl1cXHTblHuxDMvlspycnFRvAmjJaDTqQ/ktlvEK0WKx6DY0azcDtCBC+fr62rcx7MVyK2aYNzc31YcA
+        HLLz8/O9GeVWNZYhTshfXl66k6CobO2hAIdgOByW2WxW5vN5NZThr7HcioOfCGftGsAhiMZF62rXtv4Z
+        SwDEEiBFLAESxBIgQSwB/mlTfgOiEVM0efcwggAAAABJRU5ErkJggg==
+</value>
   </data>
 </root>

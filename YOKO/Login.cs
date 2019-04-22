@@ -49,7 +49,7 @@ namespace YOKO
         {
             using (SqlConnection conn = new SqlConnection())
             {
-                conn.ConnectionString = "Data Source=DESKTOP-5ON2GLQ;Initial Catalog=GoumaoDB;Integrated Security=True";
+                conn.ConnectionString = ConnectionString.connectionString;
                 try
                 {
                     conn.Open();
@@ -63,7 +63,7 @@ namespace YOKO
                     {
                         SqlCommand command = new SqlCommand("select * from tblUsers where UsrName = '" + usuario.Text + "' and UsrPwd = '" + contra.Text + "'", conn);
                         int a = int.Parse(s: command.ExecuteScalar().ToString());
-                        if (a > 0) { new Venta().Show(); Hide(); }
+                        if (a > 0) { new Venta(usuario.Text).Show(); Hide(); }
                     }
                     catch 
                     {

@@ -69,5 +69,15 @@ namespace YOKO.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2019_03_09_at_13_50_01 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2019-03-09 at 13.50.01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

@@ -33,12 +33,13 @@ namespace YOKO
         String Valor;
         Decimal Dolar;
         Decimal Euro;
-        
+        String vendedor_a;
 
-        public Venta()
+        public Venta(String vendedor)
         {
             InitializeComponent();
-            conn.ConnectionString = "Data Source=DESKTOP-5ON2GLQ;Initial Catalog=GoumaoDB;Integrated Security=True";
+            vendedor_a = vendedor;
+            conn.ConnectionString = ConnectionString.connectionString;
             DateTimePicker metroDateTime1 = new DateTimePicker();
             metroDateTime1.Value = DateTime.Now;
             str = "0";
@@ -63,7 +64,7 @@ namespace YOKO
 
         private void Venta_Load(object sender, EventArgs e)
         {
-            conn.ConnectionString = "Data Source=DESKTOP-5ON2GLQ;Initial Catalog=GoumaoDB;Integrated Security=True";
+            conn.ConnectionString = ConnectionString.connectionString;
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -105,7 +106,6 @@ namespace YOKO
 
         private void bunifuTextbox1_OnTextChange(object sender, EventArgs e)
         {
-            
             conn.Open();
             string sql = "SELECT * FROM tblClientes where NombreComercial like '%" + bunifuTextbox1.text + "%'";
             sCommand = new SqlCommand(sql, conn);
@@ -151,13 +151,15 @@ namespace YOKO
 
         public void cargar_datos(object sender, EventArgs e)
         {
+            
             a = navegador.Document.GetElementById("tipocambio").InnerText;
             a = a.Replace("PROMEDIO EN CASAS DE CAMBIO", "");
             a = a.Replace("VENTA", System.Environment.NewLine + "VENTA");
             notifyIcon1.ShowBalloonTip(1000, "PROMEDIO EN CASAS DE CAMBIO", a, ToolTipIcon.Info);
             //a = a.Replace("COMPRA", "");
             String valorDolar = a.Substring(0, 3);
-            MessageBox.Show(valorDolar);
+            //MessageBox.Show(valorDolar);
+            
         }
 
         public void cargar_datos2(object sender, EventArgs e)
@@ -184,6 +186,8 @@ namespace YOKO
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            if (txtDescuento.Text == "") { txtDescuento.Text = 0.ToString(); }
+            if (txtCantidad.Text == "") { txtCantidad.Text = 1.ToString(); }
             int n = dataGridView3.Rows.Add();
             dataGridView3.Rows[n].Cells[0].Value = txtProductos.Text;
             dataGridView3.Rows[n].Cells[1].Value = txtCantidad.Text + " " + txtUM.Text;
@@ -259,45 +263,123 @@ namespace YOKO
             }
         }
 
-        private void txtProductos_KeyDown_1(object sender, KeyEventArgs e)
+        private void AgregarUsuario_Click(object sender, EventArgs e)
         {
+            //vendedor_a
+            AltasSecundarias altasSecundarias = new AltasSecundarias();
+            altasSecundarias.Show();
+        }
+
+        private void txtProductos_TextChanged_1(object sender, EventArgs e)
+        {
+            // Aquí
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView3_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int columna = int.Parse(e.RowIndex.ToString());
+                dataGridView3.Rows.RemoveAt(columna);
+                suma = 0;
+                Valor = "";
+                foreach (DataGridViewRow row in dataGridView3.Rows)
+                {
+                    Valor = row.Cells[4].Value.ToString();
+                    Valor = Valor.Replace("$", " ");
+                    suma += decimal.Parse(Valor.ToString());
+                }
+                btnPagar.Text = "$" + suma.ToString();
+            }
+            catch { }
+        }
+
+        private void txtProductos_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtProductos_KeyDown(object sender, KeyEventArgs e)
+        {
+            conn.Open();
             if (e.KeyCode == Keys.Enter)
             {
-                using (conn)
+                SqlCommand command = new SqlCommand("select * from tblProductos where Producto = '" + txtProductos.Text + "'", conn);
+
+                SqlDataReader read = command.ExecuteReader();
+                while (read.Read())
                 {
-                    SqlCommand command = new SqlCommand("select * from tblProductos where Producto = '" + txtProductos.Text + "'", conn);
-                    conn.Open();
-                    SqlDataReader read = command.ExecuteReader();
-                    while (read.Read())
+                    txtPrecio.Text = Math.Round(decimal.Parse((read["Precio"].ToString())), 2).ToString();
+                    int a = int.Parse(read["UM"].ToString());
+                    switch (a)
                     {
-                        txtPrecio.Text = Math.Round(decimal.Parse((read["Precio"].ToString())), 2).ToString();
-                        int a = int.Parse(read["UM"].ToString());
-                        switch (a)
-                        {
-                            case 1:
-                                txtUM.Text = "Pieza";
-                                UMe = "Pieza";
-                                break;
-                            case 2:
-                                txtUM.Text = "Caja";
-                                UMe = "Caja";
-                                break;
-                            case 3:
-                                txtUM.Text = "Servicio";
-                                UMe = "Servicio";
-                                break;
-                            default:
-                                txtUM.Text = "";
-                                UMe = "";
-                                break;
-                        }
-                        txtCantidad.Text = 1.ToString();
-                        txtDescuento.Text = 0.ToString();
-                        txtImporte.Text = "$" + int.Parse(txtCantidad.Text) * Math.Round((1 - (decimal.Parse(txtDescuento.Text) / 100)) * decimal.Parse(txtPrecio.Text), 2);
+                        case 1:
+                            txtUM.Text = "Pieza";
+                            UMe = "Pieza";
+                            break;
+                        case 2:
+                            txtUM.Text = "Caja";
+                            UMe = "Caja";
+                            break;
+                        case 3:
+                            txtUM.Text = "Servicio";
+                            UMe = "Servicio";
+                            break;
+                        default:
+                            txtUM.Text = "";
+                            UMe = "";
+                            break;
                     }
-                    read.Close();
+                    txtCantidad.Text = 1.ToString();
+                    txtDescuento.Text = 0.ToString();
+                    txtImporte.Text = "$" + int.Parse(txtCantidad.Text) * Math.Round((1 - (decimal.Parse(txtDescuento.Text) / 100)) * decimal.Parse(txtPrecio.Text), 2);
                 }
+                //read.Close();           
             }
+            conn.Close();
+        }
+
+        private void btnAgregar_Click_1(object sender, EventArgs e)
+        {
+            if (txtDescuento.Text == "") { txtDescuento.Text = 0.ToString(); }
+            if (txtCantidad.Text == "") { txtCantidad.Text = 1.ToString(); }
+            int n = dataGridView3.Rows.Add();
+            dataGridView3.Rows[n].Cells[0].Value = txtProductos.Text;
+            dataGridView3.Rows[n].Cells[1].Value = txtCantidad.Text + " " + txtUM.Text;
+            dataGridView3.Rows[n].Cells[2].Value = "$" + Math.Round(decimal.Parse(txtPrecio.Text), 2);
+            dataGridView3.Rows[n].Cells[3].Value = txtDescuento.Text + "%";
+            dataGridView3.Rows[n].Cells[4].Value = "$" + int.Parse(txtCantidad.Text) * Math.Round((1 - (decimal.Parse(txtDescuento.Text) / 100)) * decimal.Parse(txtPrecio.Text), 2);
+            suma = 0;
+            Valor = "";
+            foreach (DataGridViewRow row in dataGridView3.Rows)
+            {
+                Valor = row.Cells[4].Value.ToString();
+                Valor = Valor.Replace("$", " ");
+                suma += decimal.Parse(Valor.ToString());
+            }
+            btnPagar.Text = "$" + suma.ToString();
+        }
+
+        private void btnPagar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtProductos_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            //conn.Open();
+            MessageBox.Show("");
+            
         }
     }
 }

@@ -34,7 +34,7 @@ namespace YOKO
             {
                 using (SqlConnection conn = new SqlConnection())
                 {
-                    conn.ConnectionString = "Data Source=DESKTOP-5ON2GLQ;Initial Catalog=GoumaoDB;Integrated Security=True";
+                    conn.ConnectionString = ConnectionString.connectionString;
                     conn.Open();
                     try
                     {
