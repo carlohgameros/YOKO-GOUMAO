@@ -55,13 +55,15 @@
             // panel1
             // 
             this.panel1.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.panel1.AutoSize = true;
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.bunifuImageButton2);
             this.panel1.Controls.Add(this.bunifuImageButton1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(633, 62);
+            this.panel1.Size = new System.Drawing.Size(710, 70);
             this.panel1.TabIndex = 0;
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
@@ -70,10 +72,10 @@
             this.bunifuImageButton2.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
             this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(531, 13);
-            this.bunifuImageButton2.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuImageButton2.Location = new System.Drawing.Point(597, 16);
+            this.bunifuImageButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bunifuImageButton2.Name = "bunifuImageButton2";
-            this.bunifuImageButton2.Size = new System.Drawing.Size(45, 39);
+            this.bunifuImageButton2.Size = new System.Drawing.Size(51, 49);
             this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton2.TabIndex = 1;
             this.bunifuImageButton2.TabStop = false;
@@ -85,10 +87,10 @@
             this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
             this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(585, 13);
-            this.bunifuImageButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuImageButton1.Location = new System.Drawing.Point(658, 16);
+            this.bunifuImageButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(43, 39);
+            this.bunifuImageButton1.Size = new System.Drawing.Size(48, 49);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton1.TabIndex = 0;
             this.bunifuImageButton1.TabStop = false;
@@ -107,10 +109,10 @@
             this.contra.LineIdleColor = System.Drawing.Color.DarkGray;
             this.contra.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.contra.LineThickness = 3;
-            this.contra.Location = new System.Drawing.Point(68, 442);
-            this.contra.Margin = new System.Windows.Forms.Padding(12);
+            this.contra.Location = new System.Drawing.Point(76, 552);
+            this.contra.Margin = new System.Windows.Forms.Padding(14, 15, 14, 15);
             this.contra.Name = "contra";
-            this.contra.Size = new System.Drawing.Size(505, 60);
+            this.contra.Size = new System.Drawing.Size(568, 75);
             this.contra.TabIndex = 6;
             this.contra.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -126,10 +128,10 @@
             this.usuario.LineIdleColor = System.Drawing.Color.DarkGray;
             this.usuario.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.usuario.LineThickness = 3;
-            this.usuario.Location = new System.Drawing.Point(71, 357);
-            this.usuario.Margin = new System.Windows.Forms.Padding(12);
+            this.usuario.Location = new System.Drawing.Point(80, 446);
+            this.usuario.Margin = new System.Windows.Forms.Padding(14, 15, 14, 15);
             this.usuario.Name = "usuario";
-            this.usuario.Size = new System.Drawing.Size(505, 60);
+            this.usuario.Size = new System.Drawing.Size(568, 75);
             this.usuario.TabIndex = 8;
             this.usuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -137,10 +139,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(200, 632);
+            this.label1.Location = new System.Drawing.Point(225, 790);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 31);
+            this.label1.Size = new System.Drawing.Size(153, 38);
             this.label1.TabIndex = 11;
             this.label1.Text = "¿Olvide la ";
             // 
@@ -148,10 +150,10 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(320, 634);
+            this.linkLabel1.Location = new System.Drawing.Point(360, 792);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(145, 30);
+            this.linkLabel1.Size = new System.Drawing.Size(174, 37);
             this.linkLabel1.TabIndex = 12;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "contraseña?";
@@ -173,10 +175,10 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(517, 442);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Location = new System.Drawing.Point(582, 552);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(56, 54);
+            this.pictureBox3.Size = new System.Drawing.Size(63, 68);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 10;
             this.pictureBox3.TabStop = false;
@@ -184,10 +186,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(517, 357);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(582, 446);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(56, 54);
+            this.pictureBox2.Size = new System.Drawing.Size(63, 68);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
@@ -210,10 +212,10 @@
             this.Nuevo.IdleFillColor = System.Drawing.Color.White;
             this.Nuevo.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.Nuevo.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.Nuevo.Location = new System.Drawing.Point(409, 520);
-            this.Nuevo.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.Nuevo.Location = new System.Drawing.Point(460, 650);
+            this.Nuevo.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.Nuevo.Name = "Nuevo";
-            this.Nuevo.Size = new System.Drawing.Size(164, 47);
+            this.Nuevo.Size = new System.Drawing.Size(184, 59);
             this.Nuevo.TabIndex = 7;
             this.Nuevo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Nuevo.Click += new System.EventHandler(this.Nuevo_Click);
@@ -236,10 +238,10 @@
             this.ingresar.IdleFillColor = System.Drawing.Color.White;
             this.ingresar.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.ingresar.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ingresar.Location = new System.Drawing.Point(71, 520);
-            this.ingresar.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.ingresar.Location = new System.Drawing.Point(80, 650);
+            this.ingresar.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.ingresar.Name = "ingresar";
-            this.ingresar.Size = new System.Drawing.Size(164, 47);
+            this.ingresar.Size = new System.Drawing.Size(184, 59);
             this.ingresar.TabIndex = 4;
             this.ingresar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.ingresar.Click += new System.EventHandler(this.ingresar_Click);
@@ -247,20 +249,20 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::YOKO.Properties.Resources.WhatsApp_Image_2019_03_09_at_13_50_01;
-            this.pictureBox1.Location = new System.Drawing.Point(1, 60);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(1, 70);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(631, 281);
+            this.pictureBox1.Size = new System.Drawing.Size(710, 351);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(641, 683);
+            this.ClientSize = new System.Drawing.Size(721, 854);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox3);
@@ -272,7 +274,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Login";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);

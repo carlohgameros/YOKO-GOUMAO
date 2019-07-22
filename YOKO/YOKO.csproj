@@ -94,12 +94,15 @@
     <Compile Include="DatosFiscales.Designer.cs">
       <DependentUpon>DatosFiscales.cs</DependentUpon>
     </Compile>
+    <Compile Include="enums\PetStatusEnum.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="GoumaoDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GoumaoDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\AutoCompleter.cs" />
+    <Compile Include="Helpers\BaseTableDesiner.cs" />
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>

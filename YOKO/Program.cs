@@ -17,7 +17,7 @@ namespace YOKO
         { 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Configuraciones());
+            Application.Run(new Inicio());
         }
     }
 }

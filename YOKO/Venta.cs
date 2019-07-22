@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using YOKO.enums;
+using YOKO.Helpers;
 
 namespace YOKO
 {
@@ -27,13 +24,19 @@ namespace YOKO
         WebBrowser navegador = new WebBrowser();
         WebBrowser navegador2 = new WebBrowser();
         String a, b;
-        String str;
+        String clienteID;
         String UMe;
         Decimal suma;
         String Valor;
         Decimal Dolar;
         Decimal Euro;
         String vendedor_a;
+        Object usuarioSelecto;
+        Object mascotaSelecta;
+        string mascotaSelectaId;
+        int posY = 0;
+        int posX = 0;
+        int petStatus;
 
         public Venta(String vendedor)
         {
@@ -42,63 +45,29 @@ namespace YOKO
             conn.ConnectionString = ConnectionString.connectionString;
             DateTimePicker metroDateTime1 = new DateTimePicker();
             metroDateTime1.Value = DateTime.Now;
-            str = "0";
-            AutoCompleteStringCollection namesCollection = new AutoCompleteStringCollection();
-            AutoCompleteStringCollection namesCollection2 = new AutoCompleteStringCollection();
-            using (conn)
-            {
-                conn.Open();
-                String query2 = "SELECT * FROM tblProductos";
-                SqlCommand cmd2 = new SqlCommand(query2, conn);
-                SqlDataReader rr2 = cmd2.ExecuteReader();
-                rr2.Read();
-                while (rr2.Read())
-                    namesCollection2.Add(rr2["Producto"].ToString());
-                rr2.Close();
-                txtProductos.AutoCompleteMode = AutoCompleteMode.Suggest;
-                txtProductos.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                txtProductos.AutoCompleteCustomSource = namesCollection2;
-                conn.Close();
-            }
+            clienteID = "0";
+            AutoCompleter.SetTextboxAutoComplete(txtProductos, "SELECT * FROM tblProductos", "Producto");
+            petStatus = 0;
         }
 
         private void Venta_Load(object sender, EventArgs e)
         {
+            statusLabel.Text = "NO ESTATUS";
+            CenterStatusLabel();
             conn.ConnectionString = ConnectionString.connectionString;
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
-            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.WhiteSmoke;
-            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.Black;
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
-            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dataGridView2.BorderStyle = BorderStyle.None;
-            dataGridView2.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
-            dataGridView2.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridView2.DefaultCellStyle.SelectionBackColor = Color.WhiteSmoke;
-            dataGridView2.DefaultCellStyle.SelectionForeColor = Color.Black;
-            dataGridView2.EnableHeadersVisualStyles = false;
-            dataGridView2.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridView2.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
-            dataGridView2.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dataGridView3.BorderStyle = BorderStyle.None;
-            dataGridView3.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
-            dataGridView3.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridView3.DefaultCellStyle.SelectionBackColor = Color.WhiteSmoke;
-            dataGridView3.DefaultCellStyle.SelectionForeColor = Color.Black;
-            dataGridView3.EnableHeadersVisualStyles = false;
-            dataGridView3.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridView3.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
-            dataGridView3.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            BaseTableDesiner.SetDefaultStyle(clientes);
+            BaseTableDesiner.SetDefaultStyle(mascotas);
+            BaseTableDesiner.SetDefaultStyle(lista);
+            BaseTableDesiner.SetDefaultStyle(registro);
             txtCantidad.Text = "1";
             txtDescuento.Text = "0";
             textBox2.Enabled = false;
+
             conn.Open();
             SqlCommand command = new SqlCommand("SELECT top 1 Factura FROM tblFacturas order by Factura desc", conn);
             textBox2.Text = (int.Parse(s: command.ExecuteScalar().ToString()) + 1).ToString();
             conn.Close();
+
             navegador.ScriptErrorsSuppressed = true;
             navegador.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(this.cargar_datos);
             navegador.Navigate("http://www.lacasadecambio.com/");
@@ -114,30 +83,31 @@ namespace YOKO
             sDs = new DataSet();
             sAdapter.Fill(sDs, "NombreComercial");
             sTable = sDs.Tables["NombreComercial"];
-            dataGridView1.DataSource = sDs.Tables["NombreComercial"];
-            dataGridView1.ReadOnly = true;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            clientes.DataSource = sDs.Tables["NombreComercial"];
+            clientes.ReadOnly = true;
+            clientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             conn.Close();
             try
             {
-                str = dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells["ClienteID"].Value.ToString();
-            } catch {} MascotaCliente();
-            dataGridView1.Columns[0].Visible = false;
+                clienteID = clientes.Rows[clientes.SelectedRows[0].Index].Cells["ClienteID"].Value.ToString();
+            } catch {}
+            MascotaCliente();
+            clientes.Columns[0].Visible = false;
         }
 
         private void MascotaCliente()
         {
             conn.Open();
-            string sql = "select * from tblClientePets where ClienteID = " + str;
+            string sql = "select * from tblClientePets where ClienteID = " + clienteID;
             sCommand2 = new SqlCommand(sql, conn);
             sAdapter2 = new SqlDataAdapter(sCommand2);
             sBuilder2 = new SqlCommandBuilder(sAdapter2);
             sDs2 = new DataSet();
             sAdapter2.Fill(sDs2, "ClienteID");
             sTable2 = sDs2.Tables["ClieteID"];
-            dataGridView2.DataSource = sDs2.Tables["ClienteID"];
-            dataGridView2.ReadOnly = true;
-            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            mascotas.DataSource = sDs2.Tables["ClienteID"];
+            mascotas.ReadOnly = true;
+            mascotas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             conn.Close();
         }
 
@@ -145,13 +115,24 @@ namespace YOKO
         {
             try
             {
-                str = dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells["ClienteID"].Value.ToString();
-            } catch {} MascotaCliente();
+                clienteID = clientes.Rows[clientes.SelectedRows[0].Index].Cells["ClienteID"].Value.ToString();
+            } catch {}
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                mascotaSelectaId = mascotas.Rows[mascotas.SelectedRows[0].Index].Cells["MascotaID"].Value.ToString();
+                handlePetRegister();
+            } catch(Exception ex) {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         public void cargar_datos(object sender, EventArgs e)
         {
-            
+            /*
             a = navegador.Document.GetElementById("tipocambio").InnerText;
             a = a.Replace("PROMEDIO EN CASAS DE CAMBIO", "");
             a = a.Replace("VENTA", System.Environment.NewLine + "VENTA");
@@ -159,7 +140,7 @@ namespace YOKO
             //a = a.Replace("COMPRA", "");
             String valorDolar = a.Substring(0, 3);
             //MessageBox.Show(valorDolar);
-            
+            */
         }
 
         public void cargar_datos2(object sender, EventArgs e)
@@ -188,15 +169,15 @@ namespace YOKO
         {
             if (txtDescuento.Text == "") { txtDescuento.Text = 0.ToString(); }
             if (txtCantidad.Text == "") { txtCantidad.Text = 1.ToString(); }
-            int n = dataGridView3.Rows.Add();
-            dataGridView3.Rows[n].Cells[0].Value = txtProductos.Text;
-            dataGridView3.Rows[n].Cells[1].Value = txtCantidad.Text + " " + txtUM.Text;
-            dataGridView3.Rows[n].Cells[2].Value = "$" + Math.Round(decimal.Parse(txtPrecio.Text), 2);
-            dataGridView3.Rows[n].Cells[3].Value = txtDescuento.Text + "%";
-            dataGridView3.Rows[n].Cells[4].Value = "$" + int.Parse(txtCantidad.Text) * Math.Round((1 - (decimal.Parse(txtDescuento.Text) / 100)) * decimal.Parse(txtPrecio.Text), 2);
+            int n = lista.Rows.Add();
+            lista.Rows[n].Cells[0].Value = txtProductos.Text;
+            lista.Rows[n].Cells[1].Value = txtCantidad.Text + " " + txtUM.Text;
+            lista.Rows[n].Cells[2].Value = "$" + Math.Round(decimal.Parse(txtPrecio.Text), 2);
+            lista.Rows[n].Cells[3].Value = txtDescuento.Text + "%";
+            lista.Rows[n].Cells[4].Value = "$" + int.Parse(txtCantidad.Text) * Math.Round((1 - (decimal.Parse(txtDescuento.Text) / 100)) * decimal.Parse(txtPrecio.Text), 2);
             suma = 0;
             Valor = "";
-            foreach (DataGridViewRow row in dataGridView3.Rows)
+            foreach (DataGridViewRow row in lista.Rows)
             {
                 Valor = row.Cells[4].Value.ToString();
                 Valor= Valor.Replace("$", " ");
@@ -210,10 +191,10 @@ namespace YOKO
             try
             {
                 int columna = int.Parse(e.RowIndex.ToString());
-                dataGridView3.Rows.RemoveAt(columna);
+                lista.Rows.RemoveAt(columna);
                 suma = 0;
                 Valor = "";
-                foreach (DataGridViewRow row in dataGridView3.Rows)
+                foreach (DataGridViewRow row in lista.Rows)
                 {
                     Valor = row.Cells[4].Value.ToString();
                     Valor = Valor.Replace("$", " ");
@@ -253,7 +234,7 @@ namespace YOKO
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.Text == "DOLARES" || textBox1.Text == "dOLARES" || textBox1.Text == "doLARES" || textBox1.Text == "dolares")
+            if (textBox1.Text.Trim().ToUpper() == "DOLARES")
             {
                 txtMoneda.Visible = true;
             }
@@ -275,20 +256,15 @@ namespace YOKO
             // Aquí
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void dataGridView3_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 int columna = int.Parse(e.RowIndex.ToString());
-                dataGridView3.Rows.RemoveAt(columna);
+                lista.Rows.RemoveAt(columna);
                 suma = 0;
                 Valor = "";
-                foreach (DataGridViewRow row in dataGridView3.Rows)
+                foreach (DataGridViewRow row in lista.Rows)
                 {
                     Valor = row.Cells[4].Value.ToString();
                     Valor = Valor.Replace("$", " ");
@@ -297,11 +273,6 @@ namespace YOKO
                 btnPagar.Text = "$" + suma.ToString();
             }
             catch { }
-        }
-
-        private void txtProductos_Enter(object sender, EventArgs e)
-        {
-            
         }
 
         private void txtProductos_KeyDown(object sender, KeyEventArgs e)
@@ -348,15 +319,15 @@ namespace YOKO
         {
             if (txtDescuento.Text == "") { txtDescuento.Text = 0.ToString(); }
             if (txtCantidad.Text == "") { txtCantidad.Text = 1.ToString(); }
-            int n = dataGridView3.Rows.Add();
-            dataGridView3.Rows[n].Cells[0].Value = txtProductos.Text;
-            dataGridView3.Rows[n].Cells[1].Value = txtCantidad.Text + " " + txtUM.Text;
-            dataGridView3.Rows[n].Cells[2].Value = "$" + Math.Round(decimal.Parse(txtPrecio.Text), 2);
-            dataGridView3.Rows[n].Cells[3].Value = txtDescuento.Text + "%";
-            dataGridView3.Rows[n].Cells[4].Value = "$" + int.Parse(txtCantidad.Text) * Math.Round((1 - (decimal.Parse(txtDescuento.Text) / 100)) * decimal.Parse(txtPrecio.Text), 2);
+            int n = lista.Rows.Add();
+            lista.Rows[n].Cells[0].Value = txtProductos.Text;
+            lista.Rows[n].Cells[1].Value = txtCantidad.Text + " " + txtUM.Text;
+            lista.Rows[n].Cells[2].Value = "$" + Math.Round(decimal.Parse(txtPrecio.Text), 2);
+            lista.Rows[n].Cells[3].Value = txtDescuento.Text + "%";
+            lista.Rows[n].Cells[4].Value = "$" + int.Parse(txtCantidad.Text) * Math.Round((1 - (decimal.Parse(txtDescuento.Text) / 100)) * decimal.Parse(txtPrecio.Text), 2);
             suma = 0;
             Valor = "";
-            foreach (DataGridViewRow row in dataGridView3.Rows)
+            foreach (DataGridViewRow row in lista.Rows)
             {
                 Valor = row.Cells[4].Value.ToString();
                 Valor = Valor.Replace("$", " ");
@@ -365,21 +336,197 @@ namespace YOKO
             btnPagar.Text = "$" + suma.ToString();
         }
 
-        private void btnPagar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void txtProductos_KeyDown_1(object sender, KeyEventArgs e)
         {
             //conn.Open();
             MessageBox.Show("");
             
         }
+
+        private void GetUser(object user)
+        {
+            this.usuarioSelecto = user;
+        }
+
+        private void bunifuThinButton22_Click(object sender, EventArgs e)
+        {
+            //string note = PetAddNote.Text;
+            // add note to Server
+        }
+
+        private void getPet(object pet)
+        {
+            this.mascotaSelecta = pet;
+        }
+
+        private void handlePetRegister()
+        {
+            object sResult;
+            using (SqlConnection conn1 = new SqlConnection())
+            {
+                conn1.ConnectionString = ConnectionString.connectionString;
+                conn1.Open();
+                sCommand = new SqlCommand("select * from tblPetsRegistro where petId = '" + mascotaSelectaId + "'", conn1);
+                sResult = sCommand.ExecuteScalar();
+                conn1.Close();
+            }
+
+            
+            if (sResult != null)
+            {
+                conn.ConnectionString = ConnectionString.connectionString;
+                conn.Open();
+                sCommand = new SqlCommand("select * from tblPetsRegistro where petId = '" + mascotaSelectaId + "'", conn);
+                int result = int.Parse(sCommand.ExecuteScalar().ToString());
+                conn.Close();
+                if (result > 0)
+                {
+                    getPetsWithRegister(sCommand);
+                }
+                else
+                {
+                    handlePetsWithNoRegister();
+                    petStatus = (int)PetStatusEnum.SinRegistro;
+                }
+            }
+            else
+            {
+                handlePetsWithNoRegister();
+                petStatus = (int)PetStatusEnum.SinRegistro;
+            }
+        }
+
+        private void getPetsWithRegister(SqlCommand sqlCommand)
+        {
+            conn.ConnectionString = ConnectionString.connectionString;
+            conn.Open();
+            string sql = "select petId, label, color from tblPetsRegistro where petId = '" + mascotaSelectaId + "'";
+            sCommand2 = new SqlCommand(sql, conn);
+            sAdapter2 = new SqlDataAdapter(sCommand2);
+            sBuilder2 = new SqlCommandBuilder(sAdapter2);
+            sDs2 = new DataSet();
+            sAdapter2.Fill(sDs2, "petId");
+            sTable2 = sDs2.Tables["petId"];
+            registro.DataSource = sDs2.Tables["petId"];
+            registro.ReadOnly = true;
+            registro.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            conn.Close();
+        }
+
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        {
+            if (mascotaSelectaId != "" )
+            {
+                using (SqlConnection conn = new SqlConnection())
+                {
+                    statusLabel.Text = "GUARDANDO";
+                    CenterStatusLabel();
+                    conn.ConnectionString = ConnectionString.connectionString;
+                    conn.Open();
+                    try
+                    {
+                        SqlCommand command = new SqlCommand("insert into tblPetsRegistro values('" + mascotaSelectaId + "', 'Registro realizado desde YOKO.', '" + PetNote.Text.ToString() + ".', 0, '" + setColorForNewRegiter() + "', GETDATE(), GETDATE(), '" + clienteID + "')", conn);
+
+                        this.statusLabel.Text = "Registro comenzado";
+                        command.ExecuteNonQuery();
+                        notifyIcon1.ShowBalloonTip(1000, "Primer registro creado", "Esta mascota ya empezó a generar historial.", ToolTipIcon.Info);
+                        statusLabel.Text = "REGISTRO COMPLETADO";
+                        CenterStatusLabel();
+                        string sql = "select * from tblPetsRegistro where petId = '" + mascotaSelectaId + "'";
+                        sCommand2 = new SqlCommand(sql, conn);
+                        getPetsWithRegister(sCommand2);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        this.statusLabel.Text = "Error en el Registro";
+                        statusLabel.Text = "ERROR";
+                        CenterStatusLabel();
+                    }
+                }
+            }
+        }
+
+        private void panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                posX = e.X;
+                posY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - posX);
+                Top = Top + (e.Y - posY);
+            }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void handlePetsWithNoRegister()
+        {
+            using (SqlConnection conn = new SqlConnection())
+            {
+                conn.ConnectionString = ConnectionString.connectionString;
+                conn.Open();
+                try
+                {
+                    SqlCommand command = new SqlCommand("insert into tblPetsRegistro values('" + mascotaSelectaId + "', 'Primer registro creado', 'Esta mascota ya empezó a generar historial.', 0, 'blanco', GETDATE(), GETDATE(), '" + clienteID + "')", conn);
+                    
+                    this.statusLabel.Text = "Registro comenzado";
+                    CenterStatusLabel();
+                    command.ExecuteNonQuery();
+                    notifyIcon1.ShowBalloonTip(1000, "Primer registro creado", "Esta mascota ya empezó a generar historial.", ToolTipIcon.Info);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    this.statusLabel.Text = "Error en el Registro";
+                    CenterStatusLabel();
+                }
+            }
+        }
+        private void clientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                clienteID = clientes.Rows[clientes.SelectedRows[0].Index].Cells["ClienteID"].Value.ToString();
+                MascotaCliente();
+            }
+            catch { }
+        }
+
+        private void HandlePetStatus()
+        {
+            switch (petStatus)
+            {
+                case (int) PetStatusEnum.ErrorDeRegistro:
+                    statusLabel.Text = "ERROR";
+                    break;
+                case (int) PetStatusEnum.PocosRegistrosNegativos:
+                    statusLabel.Text = "PELIGROSO";
+                    break;
+                case (int)PetStatusEnum.RegistrosNegativos:
+                    statusLabel.Text = "PELIGROSO";
+                    break;
+                case (int)PetStatusEnum.SinRegistro:
+                    statusLabel.Text = "SIN REGISTRO";
+                    break;
+                case (int)PetStatusEnum.SinRegistrosNegativos:
+                    statusLabel.Text = "ACEPTABLE";
+                    break;
+            }
+        }
+
+        private void bunifuImageButton4_Click(object sender, EventArgs e) => Close();
+
+        private void bunifuImageButton3_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
+
+        private String setColorForNewRegiter() => DangerPetIndicator.Checked == true ? "Rojo" : "Blanco";
+
+        private void CenterStatusLabel() => statusLabel.Left = (statusPanel.Width / 2) - (statusLabel.Width / 2);
     }
 }

@@ -63,7 +63,11 @@ namespace YOKO
                     {
                         SqlCommand command = new SqlCommand("select * from tblUsers where UsrName = '" + usuario.Text + "' and UsrPwd = '" + contra.Text + "'", conn);
                         int a = int.Parse(s: command.ExecuteScalar().ToString());
-                        if (a > 0) { new Venta(usuario.Text).Show(); Hide(); }
+                        if (a > 0) {
+                            Form inicio = new Inicio();
+                            inicio.Show();
+                            Hide();
+                        }
                     }
                     catch 
                     {
@@ -97,10 +101,12 @@ namespace YOKO
         
         public void cargar_datos(object sender, EventArgs e )
         {
+            /*
             a = navegador.Document.GetElementById("tipocambio").InnerText;
             a = a.Replace("PROMEDIO EN CASAS DE CAMBIO", "");
             a = a.Replace("VENTA", System.Environment.NewLine  + "VENTA");
             notifyIcon1.ShowBalloonTip(2000, "PROMEDIO EN CASAS DE CAMBIO", a, ToolTipIcon.Info);
+            */
         }
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e) => Show();
