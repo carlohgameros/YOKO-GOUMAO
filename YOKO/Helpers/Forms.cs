@@ -1,29 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using YOKO.Helpers;
 
 namespace YOKO.Helpers
 {
     public class Forms
     {
-        public static Form form = new Form();
+        public static Form actualForm = new Form();
+        public static Form previousForm = new Form();
 
         public static void GoToNextForm(Form actualForm, Form nextForm)
         {
-            form = nextForm;
-            form.Show();
-            actualForm.Close();
+            ChangeForms();
+            actualForm = nextForm;
+            actualForm.Show();
+            previousForm.Hide();
         }
 
-       public static void GoToPreciousForm(Form actualForm)
+       public static void GoToPreviousForm(Form parentForm)
         {
-            form.Show();
-            var temporaryForm = actualForm;
-            actualForm.Close();
-            form = temporaryForm;
+            previousForm.Show();
+            actualForm = parentForm;
+            actualForm.Hide();
+            ChangeForms();
         }
+
+        public static void CloseProgram(Form actualForm) => actualForm.Close();
+
+        public static void HideProgram(Form actualForm) => actualForm.Hide();
+
+        public static void ChangeForms() => previousForm = actualForm;
     }
 }

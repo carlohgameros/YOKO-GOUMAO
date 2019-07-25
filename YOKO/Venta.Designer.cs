@@ -36,7 +36,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.tblClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientes = new System.Windows.Forms.DataGridView();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.mascotas = new System.Windows.Forms.DataGridView();
@@ -80,30 +79,26 @@
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtProductos = new System.Windows.Forms.TextBox();
+            this.DangerPetIndicator = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.petAddRegister = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.statusPanel = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.statusLabel = new System.Windows.Forms.Label();
+            this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.btnPagar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuTextbox1 = new Bunifu.Framework.UI.BunifuTextbox();
             this.AgregarUsuario = new Bunifu.Framework.UI.BunifuThinButton2();
             this.AgregarMascota = new Bunifu.Framework.UI.BunifuThinButton2();
             this.AgregarProducto = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnAgregar = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.statusPanel = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.statusLabel = new System.Windows.Forms.Label();
-            this.petAddRegister = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton4 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.DangerPetIndicator = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.label18 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.tblClientesBindingSource)).BeginInit();
+            this.tblClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.navigationBar1 = new YOKO.NavigationBar.NavigationBar();
             ((System.ComponentModel.ISupportInitialize)(this.clientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mascotas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.registro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lista)).BeginInit();
             this.statusPanel.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblClientesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuCheckbox1
@@ -118,7 +113,7 @@
             // 
             // bunifuCheckbox2
             // 
-            this.bunifuCheckbox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.bunifuCheckbox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.bunifuCheckbox2.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.bunifuCheckbox2.Checked = false;
             this.bunifuCheckbox2.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
@@ -128,7 +123,7 @@
             // 
             // bunifuCheckbox3
             // 
-            this.bunifuCheckbox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.bunifuCheckbox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.bunifuCheckbox3.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.bunifuCheckbox3.Checked = false;
             this.bunifuCheckbox3.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
@@ -152,10 +147,6 @@
             resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
             // 
-            // tblClientesBindingSource
-            // 
-            this.tblClientesBindingSource.DataMember = "tblClientes";
-            // 
             // clientes
             // 
             this.clientes.BackgroundColor = System.Drawing.Color.GhostWhite;
@@ -175,6 +166,7 @@
             this.metroTextBox1.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.metroTextBox1.CustomButton.ImeMode = ((System.Windows.Forms.ImeMode)(resources.GetObject("resource.ImeMode")));
             this.metroTextBox1.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location")));
+            this.metroTextBox1.CustomButton.Margin = ((System.Windows.Forms.Padding)(resources.GetObject("resource.Margin")));
             this.metroTextBox1.CustomButton.Name = "";
             this.metroTextBox1.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size")));
             this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -279,7 +271,7 @@
             // 
             // bunifuCheckbox5
             // 
-            this.bunifuCheckbox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.bunifuCheckbox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.bunifuCheckbox5.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.bunifuCheckbox5.Checked = false;
             this.bunifuCheckbox5.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
@@ -462,6 +454,71 @@
             this.txtProductos.Name = "txtProductos";
             this.txtProductos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProductos_KeyDown);
             // 
+            // DangerPetIndicator
+            // 
+            this.DangerPetIndicator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.DangerPetIndicator.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.DangerPetIndicator.Checked = false;
+            this.DangerPetIndicator.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.DangerPetIndicator.ForeColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.DangerPetIndicator, "DangerPetIndicator");
+            this.DangerPetIndicator.Name = "DangerPetIndicator";
+            this.DangerPetIndicator.Tag = "v";
+            // 
+            // label18
+            // 
+            resources.ApplyResources(this.label18, "label18");
+            this.label18.Name = "label18";
+            // 
+            // petAddRegister
+            // 
+            this.petAddRegister.ActiveBorderThickness = 1;
+            this.petAddRegister.ActiveCornerRadius = 20;
+            this.petAddRegister.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.petAddRegister.ActiveForecolor = System.Drawing.Color.White;
+            this.petAddRegister.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.petAddRegister.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.petAddRegister, "petAddRegister");
+            this.petAddRegister.ButtonText = "Agregar Registro";
+            this.petAddRegister.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.petAddRegister.ForeColor = System.Drawing.Color.SeaGreen;
+            this.petAddRegister.IdleBorderThickness = 1;
+            this.petAddRegister.IdleCornerRadius = 20;
+            this.petAddRegister.IdleFillColor = System.Drawing.Color.White;
+            this.petAddRegister.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.petAddRegister.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.petAddRegister.Name = "petAddRegister";
+            this.petAddRegister.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.petAddRegister.Click += new System.EventHandler(this.bunifuThinButton21_Click);
+            // 
+            // statusPanel
+            // 
+            resources.ApplyResources(this.statusPanel, "statusPanel");
+            this.statusPanel.Controls.Add(this.statusLabel);
+            this.statusPanel.GradientBottomLeft = System.Drawing.Color.White;
+            this.statusPanel.GradientBottomRight = System.Drawing.Color.White;
+            this.statusPanel.GradientTopLeft = System.Drawing.Color.White;
+            this.statusPanel.GradientTopRight = System.Drawing.Color.White;
+            this.statusPanel.Name = "statusPanel";
+            this.statusPanel.Quality = 10;
+            // 
+            // statusLabel
+            // 
+            resources.ApplyResources(this.statusLabel, "statusLabel");
+            this.statusLabel.BackColor = System.Drawing.Color.Transparent;
+            this.statusLabel.ForeColor = System.Drawing.Color.Green;
+            this.statusLabel.Name = "statusLabel";
+            // 
+            // bunifuGradientPanel1
+            // 
+            resources.ApplyResources(this.bunifuGradientPanel1, "bunifuGradientPanel1");
+            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.SeaGreen;
+            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.SeaGreen;
+            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.SeaGreen;
+            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.SeaGreen;
+            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
+            this.bunifuGradientPanel1.Quality = 10;
+            // 
             // btnPagar
             // 
             this.btnPagar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
@@ -584,110 +641,23 @@
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
             // 
-            // bunifuGradientPanel1
+            // tblClientesBindingSource
             // 
-            resources.ApplyResources(this.bunifuGradientPanel1, "bunifuGradientPanel1");
-            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.SeaGreen;
-            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.SeaGreen;
-            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.SeaGreen;
-            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.SeaGreen;
-            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
-            this.bunifuGradientPanel1.Quality = 10;
+            this.tblClientesBindingSource.DataMember = "tblClientes";
             // 
-            // statusPanel
+            // navigationBar1
             // 
-            resources.ApplyResources(this.statusPanel, "statusPanel");
-            this.statusPanel.Controls.Add(this.statusLabel);
-            this.statusPanel.GradientBottomLeft = System.Drawing.Color.White;
-            this.statusPanel.GradientBottomRight = System.Drawing.Color.White;
-            this.statusPanel.GradientTopLeft = System.Drawing.Color.White;
-            this.statusPanel.GradientTopRight = System.Drawing.Color.White;
-            this.statusPanel.Name = "statusPanel";
-            this.statusPanel.Quality = 10;
-            // 
-            // statusLabel
-            // 
-            resources.ApplyResources(this.statusLabel, "statusLabel");
-            this.statusLabel.BackColor = System.Drawing.Color.Transparent;
-            this.statusLabel.ForeColor = System.Drawing.Color.Green;
-            this.statusLabel.Name = "statusLabel";
-            // 
-            // petAddRegister
-            // 
-            this.petAddRegister.ActiveBorderThickness = 1;
-            this.petAddRegister.ActiveCornerRadius = 20;
-            this.petAddRegister.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.petAddRegister.ActiveForecolor = System.Drawing.Color.White;
-            this.petAddRegister.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.petAddRegister.BackColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.petAddRegister, "petAddRegister");
-            this.petAddRegister.ButtonText = "Agregar Registro";
-            this.petAddRegister.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.petAddRegister.ForeColor = System.Drawing.Color.SeaGreen;
-            this.petAddRegister.IdleBorderThickness = 1;
-            this.petAddRegister.IdleCornerRadius = 20;
-            this.petAddRegister.IdleFillColor = System.Drawing.Color.White;
-            this.petAddRegister.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.petAddRegister.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.petAddRegister.Name = "petAddRegister";
-            this.petAddRegister.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.petAddRegister.Click += new System.EventHandler(this.bunifuThinButton21_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.bunifuImageButton3);
-            this.panel2.Controls.Add(this.bunifuImageButton4);
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Name = "panel2";
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
-            // 
-            // bunifuImageButton3
-            // 
-            this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.bunifuImageButton3, "bunifuImageButton3");
-            this.bunifuImageButton3.ImageActive = null;
-            this.bunifuImageButton3.Name = "bunifuImageButton3";
-            this.bunifuImageButton3.TabStop = false;
-            this.bunifuImageButton3.Zoom = 10;
-            this.bunifuImageButton3.Click += new System.EventHandler(this.bunifuImageButton3_Click);
-            // 
-            // bunifuImageButton4
-            // 
-            this.bunifuImageButton4.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.bunifuImageButton4, "bunifuImageButton4");
-            this.bunifuImageButton4.ImageActive = null;
-            this.bunifuImageButton4.Name = "bunifuImageButton4";
-            this.bunifuImageButton4.TabStop = false;
-            this.bunifuImageButton4.Zoom = 10;
-            this.bunifuImageButton4.Click += new System.EventHandler(this.bunifuImageButton4_Click);
-            // 
-            // DangerPetIndicator
-            // 
-            this.DangerPetIndicator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.DangerPetIndicator.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.DangerPetIndicator.Checked = false;
-            this.DangerPetIndicator.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.DangerPetIndicator.ForeColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.DangerPetIndicator, "DangerPetIndicator");
-            this.DangerPetIndicator.Name = "DangerPetIndicator";
-            this.DangerPetIndicator.Tag = "v";
-            // 
-            // label18
-            // 
-            resources.ApplyResources(this.label18, "label18");
-            this.label18.Name = "label18";
+            resources.ApplyResources(this.navigationBar1, "navigationBar1");
+            this.navigationBar1.Name = "navigationBar1";
             // 
             // Venta
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.navigationBar1);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.DangerPetIndicator);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.petAddRegister);
             this.Controls.Add(this.statusPanel);
             this.Controls.Add(this.bunifuGradientPanel1);
@@ -743,16 +713,13 @@
             this.Name = "Venta";
             this.TransparencyKey = System.Drawing.Color.Red;
             this.Load += new System.EventHandler(this.Venta_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tblClientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mascotas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.registro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lista)).EndInit();
             this.statusPanel.ResumeLayout(false);
             this.statusPanel.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblClientesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -819,10 +786,8 @@
         private Bunifu.Framework.UI.BunifuGradientPanel statusPanel;
         private System.Windows.Forms.Label statusLabel;
         private Bunifu.Framework.UI.BunifuThinButton2 petAddRegister;
-        private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton4;
         private Bunifu.Framework.UI.BunifuCheckbox DangerPetIndicator;
         private System.Windows.Forms.Label label18;
+        private NavigationBar.NavigationBar navigationBar1;
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bunifu.Framework;
 using System.Data.SqlClient;
+using YOKO.Helpers;
 
 namespace YOKO
 {
@@ -64,6 +65,7 @@ namespace YOKO
                         SqlCommand command = new SqlCommand("select * from tblUsers where UsrName = '" + usuario.Text + "' and UsrPwd = '" + contra.Text + "'", conn);
                         int a = int.Parse(s: command.ExecuteScalar().ToString());
                         if (a > 0) {
+                            BasicData.UpdateSellerName(usuario.Text);
                             Form inicio = new Inicio();
                             inicio.Show();
                             Hide();
@@ -114,6 +116,12 @@ namespace YOKO
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void navigationBar1_Load(object sender, EventArgs e)
+        {
+            navigationBar1.HideBackButton();
+            navigationBar1.HideTitle();
         }
     }
 }

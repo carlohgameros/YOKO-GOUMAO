@@ -9,12 +9,10 @@ namespace YOKO.Helpers
 {
     public class BasicData
     {
-        public String selller { get; set; }
-        public int sellOfTheDay { get; set; }
+        public static String selller;
+        
+        public static void UpdateSellerName(String Name) => selller = Name;
 
-        public BasicData(string sellerm, int sellOfTheDay)
-        {
-            this.selller = selller;
-            this.sellOfTheDay = sellOfTheDay;
-        }
-    } }
+        public static String GetSellerName() => selller;
+    }
+}
