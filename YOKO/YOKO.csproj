@@ -103,6 +103,7 @@
     </Compile>
     <Compile Include="Helpers\AutoCompleter.cs" />
     <Compile Include="Helpers\BaseTableDesiner.cs" />
+    <Compile Include="Helpers\BasicData.cs" />
     <Compile Include="Helpers\Forms.cs" />
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
