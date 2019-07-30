@@ -12,11 +12,13 @@ namespace YOKO
 {
     public partial class splash : Form
     {
+
         Timer t1 = new Timer();
 
         public splash()
         {
             InitializeComponent();
+            Notifications.NotificationsCenter notificationsCenter = new Notifications.NotificationsCenter(YOKKO);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -74,7 +76,7 @@ namespace YOKO
 
         private void splash_FormClosed(object sender, FormClosedEventArgs e)
         {
-            MessageBox.Show("trew");
+            
         }
 
         private void ClosingProcess()

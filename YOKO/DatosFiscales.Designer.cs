@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatosFiscales));
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.bunifuMetroTextbox1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.tblimpresora = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -80,8 +79,8 @@
             this.LabelFecha = new System.Windows.Forms.Label();
             this.btnAgregar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.txtLeyenda6 = new System.Windows.Forms.TextBox();
+            this.navigationBar1 = new YOKO.NavigationBar.NavigationBar();
             this.bunifuGradientPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,29 +92,21 @@
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.DarkRed;
             this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.DarkRed;
             this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.DarkRed;
-            this.bunifuGradientPanel1.Location = new System.Drawing.Point(-7, 807);
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(-10, 1242);
+            this.bunifuGradientPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(1333, 10);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(2000, 15);
             this.bunifuGradientPanel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei Light", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(214, 41);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Datos Fiscales";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 84);
+            this.label2.Location = new System.Drawing.Point(18, 129);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 24);
+            this.label2.Size = new System.Drawing.Size(68, 37);
             this.label2.TabIndex = 4;
             this.label2.Text = "RFC";
             // 
@@ -129,10 +120,10 @@
             this.bunifuMetroTextbox1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.bunifuMetroTextbox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.bunifuMetroTextbox1.isPassword = false;
-            this.bunifuMetroTextbox1.Location = new System.Drawing.Point(-347, -250);
-            this.bunifuMetroTextbox1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuMetroTextbox1.Location = new System.Drawing.Point(-520, -385);
+            this.bunifuMetroTextbox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.bunifuMetroTextbox1.Name = "bunifuMetroTextbox1";
-            this.bunifuMetroTextbox1.Size = new System.Drawing.Size(370, 44);
+            this.bunifuMetroTextbox1.Size = new System.Drawing.Size(555, 68);
             this.bunifuMetroTextbox1.TabIndex = 8;
             this.bunifuMetroTextbox1.Text = "bunifuMetroTextbox1";
             this.bunifuMetroTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -147,10 +138,10 @@
             this.tblimpresora.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tblimpresora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tblimpresora.isPassword = false;
-            this.tblimpresora.Location = new System.Drawing.Point(148, 751);
-            this.tblimpresora.Margin = new System.Windows.Forms.Padding(4);
+            this.tblimpresora.Location = new System.Drawing.Point(222, 1155);
+            this.tblimpresora.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tblimpresora.Name = "tblimpresora";
-            this.tblimpresora.Size = new System.Drawing.Size(370, 44);
+            this.tblimpresora.Size = new System.Drawing.Size(555, 68);
             this.tblimpresora.TabIndex = 12;
             this.tblimpresora.Text = "Impresora";
             this.tblimpresora.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -159,9 +150,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 760);
+            this.label4.Location = new System.Drawing.Point(18, 1169);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 24);
+            this.label4.Size = new System.Drawing.Size(149, 37);
             this.label4.TabIndex = 11;
             this.label4.Text = "Impresora";
             // 
@@ -175,10 +167,10 @@
             this.tbldolar.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tbldolar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbldolar.isPassword = false;
-            this.tbldolar.Location = new System.Drawing.Point(148, 699);
-            this.tbldolar.Margin = new System.Windows.Forms.Padding(4);
+            this.tbldolar.Location = new System.Drawing.Point(222, 1075);
+            this.tbldolar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbldolar.Name = "tbldolar";
-            this.tbldolar.Size = new System.Drawing.Size(370, 44);
+            this.tbldolar.Size = new System.Drawing.Size(555, 68);
             this.tbldolar.TabIndex = 14;
             this.tbldolar.Text = "Dolar";
             this.tbldolar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -187,9 +179,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 708);
+            this.label5.Location = new System.Drawing.Point(18, 1089);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 24);
+            this.label5.Size = new System.Drawing.Size(87, 37);
             this.label5.TabIndex = 13;
             this.label5.Text = "Dolar";
             // 
@@ -203,10 +196,10 @@
             this.tbliva.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tbliva.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbliva.isPassword = false;
-            this.tbliva.Location = new System.Drawing.Point(148, 647);
-            this.tbliva.Margin = new System.Windows.Forms.Padding(4);
+            this.tbliva.Location = new System.Drawing.Point(222, 995);
+            this.tbliva.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbliva.Name = "tbliva";
-            this.tbliva.Size = new System.Drawing.Size(370, 44);
+            this.tbliva.Size = new System.Drawing.Size(555, 68);
             this.tbliva.TabIndex = 16;
             this.tbliva.Text = "I.V.A.";
             this.tbliva.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -215,9 +208,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 656);
+            this.label6.Location = new System.Drawing.Point(18, 1009);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 24);
+            this.label6.Size = new System.Drawing.Size(81, 37);
             this.label6.TabIndex = 15;
             this.label6.Text = "I.V.A.";
             // 
@@ -231,10 +225,10 @@
             this.tblweb.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tblweb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tblweb.isPassword = false;
-            this.tblweb.Location = new System.Drawing.Point(148, 595);
-            this.tblweb.Margin = new System.Windows.Forms.Padding(4);
+            this.tblweb.Location = new System.Drawing.Point(222, 915);
+            this.tblweb.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tblweb.Name = "tblweb";
-            this.tblweb.Size = new System.Drawing.Size(370, 44);
+            this.tblweb.Size = new System.Drawing.Size(555, 68);
             this.tblweb.TabIndex = 18;
             this.tblweb.Text = "Sitio Web";
             this.tblweb.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -243,9 +237,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 604);
+            this.label7.Location = new System.Drawing.Point(18, 929);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 24);
+            this.label7.Size = new System.Drawing.Size(142, 37);
             this.label7.TabIndex = 17;
             this.label7.Text = "Sitio Web";
             // 
@@ -259,10 +254,10 @@
             this.tblemail.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tblemail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tblemail.isPassword = false;
-            this.tblemail.Location = new System.Drawing.Point(148, 543);
-            this.tblemail.Margin = new System.Windows.Forms.Padding(4);
+            this.tblemail.Location = new System.Drawing.Point(222, 835);
+            this.tblemail.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tblemail.Name = "tblemail";
-            this.tblemail.Size = new System.Drawing.Size(370, 44);
+            this.tblemail.Size = new System.Drawing.Size(555, 68);
             this.tblemail.TabIndex = 20;
             this.tblemail.Text = "Email";
             this.tblemail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -271,9 +266,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(12, 552);
+            this.label8.Location = new System.Drawing.Point(18, 849);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 24);
+            this.label8.Size = new System.Drawing.Size(86, 37);
             this.label8.TabIndex = 19;
             this.label8.Text = "Email";
             // 
@@ -287,10 +283,10 @@
             this.tbltel.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tbltel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbltel.isPassword = false;
-            this.tbltel.Location = new System.Drawing.Point(148, 491);
-            this.tbltel.Margin = new System.Windows.Forms.Padding(4);
+            this.tbltel.Location = new System.Drawing.Point(222, 755);
+            this.tbltel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbltel.Name = "tbltel";
-            this.tbltel.Size = new System.Drawing.Size(370, 44);
+            this.tbltel.Size = new System.Drawing.Size(555, 68);
             this.tbltel.TabIndex = 22;
             this.tbltel.Text = "Teléfono";
             this.tbltel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -299,9 +295,10 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(12, 500);
+            this.label9.Location = new System.Drawing.Point(18, 769);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(84, 24);
+            this.label9.Size = new System.Drawing.Size(130, 37);
             this.label9.TabIndex = 21;
             this.label9.Text = "Teléfono";
             // 
@@ -315,10 +312,10 @@
             this.tblcp.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tblcp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tblcp.isPassword = false;
-            this.tblcp.Location = new System.Drawing.Point(148, 439);
-            this.tblcp.Margin = new System.Windows.Forms.Padding(4);
+            this.tblcp.Location = new System.Drawing.Point(222, 675);
+            this.tblcp.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tblcp.Name = "tblcp";
-            this.tblcp.Size = new System.Drawing.Size(370, 44);
+            this.tblcp.Size = new System.Drawing.Size(555, 68);
             this.tblcp.TabIndex = 24;
             this.tblcp.Text = "Código Postal";
             this.tblcp.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -327,9 +324,10 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(12, 448);
+            this.label10.Location = new System.Drawing.Point(18, 689);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(131, 24);
+            this.label10.Size = new System.Drawing.Size(199, 37);
             this.label10.TabIndex = 23;
             this.label10.Text = "Código Postal";
             // 
@@ -343,10 +341,10 @@
             this.tblestado.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tblestado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tblestado.isPassword = false;
-            this.tblestado.Location = new System.Drawing.Point(148, 387);
-            this.tblestado.Margin = new System.Windows.Forms.Padding(4);
+            this.tblestado.Location = new System.Drawing.Point(222, 595);
+            this.tblestado.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tblestado.Name = "tblestado";
-            this.tblestado.Size = new System.Drawing.Size(370, 44);
+            this.tblestado.Size = new System.Drawing.Size(555, 68);
             this.tblestado.TabIndex = 26;
             this.tblestado.Text = "Estado";
             this.tblestado.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -356,9 +354,10 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(12, 396);
+            this.label11.Location = new System.Drawing.Point(18, 609);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(68, 24);
+            this.label11.Size = new System.Drawing.Size(105, 37);
             this.label11.TabIndex = 25;
             this.label11.Text = "Estado";
             this.label11.Click += new System.EventHandler(this.label11_Click);
@@ -373,10 +372,10 @@
             this.tblmunicipio.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tblmunicipio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tblmunicipio.isPassword = false;
-            this.tblmunicipio.Location = new System.Drawing.Point(148, 335);
-            this.tblmunicipio.Margin = new System.Windows.Forms.Padding(4);
+            this.tblmunicipio.Location = new System.Drawing.Point(222, 515);
+            this.tblmunicipio.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tblmunicipio.Name = "tblmunicipio";
-            this.tblmunicipio.Size = new System.Drawing.Size(370, 44);
+            this.tblmunicipio.Size = new System.Drawing.Size(555, 68);
             this.tblmunicipio.TabIndex = 28;
             this.tblmunicipio.Text = "Municipio";
             this.tblmunicipio.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -385,9 +384,10 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(12, 344);
+            this.label12.Location = new System.Drawing.Point(18, 529);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(94, 24);
+            this.label12.Size = new System.Drawing.Size(145, 37);
             this.label12.TabIndex = 27;
             this.label12.Text = "Municipio";
             // 
@@ -401,10 +401,10 @@
             this.tblcolonia.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tblcolonia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tblcolonia.isPassword = false;
-            this.tblcolonia.Location = new System.Drawing.Point(148, 283);
-            this.tblcolonia.Margin = new System.Windows.Forms.Padding(4);
+            this.tblcolonia.Location = new System.Drawing.Point(222, 435);
+            this.tblcolonia.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tblcolonia.Name = "tblcolonia";
-            this.tblcolonia.Size = new System.Drawing.Size(370, 44);
+            this.tblcolonia.Size = new System.Drawing.Size(555, 68);
             this.tblcolonia.TabIndex = 30;
             this.tblcolonia.Text = "Colonia";
             this.tblcolonia.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -414,9 +414,10 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(12, 292);
+            this.label13.Location = new System.Drawing.Point(18, 449);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(76, 24);
+            this.label13.Size = new System.Drawing.Size(116, 37);
             this.label13.TabIndex = 29;
             this.label13.Text = "Colonia";
             this.label13.Click += new System.EventHandler(this.label13_Click);
@@ -431,10 +432,10 @@
             this.tblcalle.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tblcalle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tblcalle.isPassword = false;
-            this.tblcalle.Location = new System.Drawing.Point(148, 231);
-            this.tblcalle.Margin = new System.Windows.Forms.Padding(4);
+            this.tblcalle.Location = new System.Drawing.Point(222, 355);
+            this.tblcalle.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tblcalle.Name = "tblcalle";
-            this.tblcalle.Size = new System.Drawing.Size(370, 44);
+            this.tblcalle.Size = new System.Drawing.Size(555, 68);
             this.tblcalle.TabIndex = 32;
             this.tblcalle.Text = "Calle";
             this.tblcalle.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -443,9 +444,10 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(12, 240);
+            this.label14.Location = new System.Drawing.Point(18, 369);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(51, 24);
+            this.label14.Size = new System.Drawing.Size(79, 37);
             this.label14.TabIndex = 31;
             this.label14.Text = "Calle";
             // 
@@ -459,10 +461,10 @@
             this.tblrazon.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tblrazon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tblrazon.isPassword = false;
-            this.tblrazon.Location = new System.Drawing.Point(148, 179);
-            this.tblrazon.Margin = new System.Windows.Forms.Padding(4);
+            this.tblrazon.Location = new System.Drawing.Point(222, 275);
+            this.tblrazon.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tblrazon.Name = "tblrazon";
-            this.tblrazon.Size = new System.Drawing.Size(370, 44);
+            this.tblrazon.Size = new System.Drawing.Size(555, 68);
             this.tblrazon.TabIndex = 34;
             this.tblrazon.Text = "Razon Social";
             this.tblrazon.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -471,9 +473,10 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(12, 188);
+            this.label15.Location = new System.Drawing.Point(18, 289);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(119, 24);
+            this.label15.Size = new System.Drawing.Size(183, 37);
             this.label15.TabIndex = 33;
             this.label15.Text = "Razon Social";
             // 
@@ -487,10 +490,10 @@
             this.tblnombre.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tblnombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tblnombre.isPassword = false;
-            this.tblnombre.Location = new System.Drawing.Point(148, 127);
-            this.tblnombre.Margin = new System.Windows.Forms.Padding(4);
+            this.tblnombre.Location = new System.Drawing.Point(222, 195);
+            this.tblnombre.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tblnombre.Name = "tblnombre";
-            this.tblnombre.Size = new System.Drawing.Size(370, 44);
+            this.tblnombre.Size = new System.Drawing.Size(555, 68);
             this.tblnombre.TabIndex = 36;
             this.tblnombre.Text = "Nombre";
             this.tblnombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -499,9 +502,10 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(12, 136);
+            this.label16.Location = new System.Drawing.Point(18, 209);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(83, 24);
+            this.label16.Size = new System.Drawing.Size(127, 37);
             this.label16.TabIndex = 35;
             this.label16.Text = "Nombre";
             // 
@@ -515,16 +519,17 @@
             this.tblrfc.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tblrfc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tblrfc.isPassword = false;
-            this.tblrfc.Location = new System.Drawing.Point(148, 75);
-            this.tblrfc.Margin = new System.Windows.Forms.Padding(4);
+            this.tblrfc.Location = new System.Drawing.Point(222, 115);
+            this.tblrfc.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tblrfc.Name = "tblrfc";
-            this.tblrfc.Size = new System.Drawing.Size(370, 44);
+            this.tblrfc.Size = new System.Drawing.Size(555, 68);
             this.tblrfc.TabIndex = 37;
             this.tblrfc.Text = "RFC";
             this.tblrfc.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
@@ -538,10 +543,10 @@
             this.tbll1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tbll1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbll1.isPassword = false;
-            this.tbll1.Location = new System.Drawing.Point(646, 75);
-            this.tbll1.Margin = new System.Windows.Forms.Padding(4);
+            this.tbll1.Location = new System.Drawing.Point(969, 115);
+            this.tbll1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbll1.Name = "tbll1";
-            this.tbll1.Size = new System.Drawing.Size(664, 44);
+            this.tbll1.Size = new System.Drawing.Size(996, 68);
             this.tbll1.TabIndex = 47;
             this.tbll1.Text = "Leyenda 1";
             this.tbll1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -550,9 +555,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(535, 84);
+            this.label3.Location = new System.Drawing.Point(802, 129);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 24);
+            this.label3.Size = new System.Drawing.Size(147, 37);
             this.label3.TabIndex = 46;
             this.label3.Text = "Leyenda 1";
             // 
@@ -566,10 +572,10 @@
             this.tbll2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tbll2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbll2.isPassword = false;
-            this.tbll2.Location = new System.Drawing.Point(646, 127);
-            this.tbll2.Margin = new System.Windows.Forms.Padding(4);
+            this.tbll2.Location = new System.Drawing.Point(969, 195);
+            this.tbll2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbll2.Name = "tbll2";
-            this.tbll2.Size = new System.Drawing.Size(664, 44);
+            this.tbll2.Size = new System.Drawing.Size(996, 68);
             this.tbll2.TabIndex = 49;
             this.tbll2.Text = "Leyenda 2";
             this.tbll2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -578,9 +584,10 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(535, 136);
+            this.label17.Location = new System.Drawing.Point(802, 209);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(98, 24);
+            this.label17.Size = new System.Drawing.Size(152, 37);
             this.label17.TabIndex = 48;
             this.label17.Text = "Leyenda 2";
             // 
@@ -594,10 +601,10 @@
             this.tbll3.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tbll3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbll3.isPassword = false;
-            this.tbll3.Location = new System.Drawing.Point(646, 179);
-            this.tbll3.Margin = new System.Windows.Forms.Padding(4);
+            this.tbll3.Location = new System.Drawing.Point(969, 275);
+            this.tbll3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbll3.Name = "tbll3";
-            this.tbll3.Size = new System.Drawing.Size(664, 44);
+            this.tbll3.Size = new System.Drawing.Size(996, 68);
             this.tbll3.TabIndex = 51;
             this.tbll3.Text = "Leyenda 3";
             this.tbll3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -606,9 +613,10 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(535, 188);
+            this.label18.Location = new System.Drawing.Point(802, 289);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(98, 24);
+            this.label18.Size = new System.Drawing.Size(152, 37);
             this.label18.TabIndex = 50;
             this.label18.Text = "Leyenda 3";
             // 
@@ -616,9 +624,10 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(535, 396);
+            this.label19.Location = new System.Drawing.Point(802, 609);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(98, 24);
+            this.label19.Size = new System.Drawing.Size(152, 37);
             this.label19.TabIndex = 56;
             this.label19.Text = "Leyenda 6";
             // 
@@ -632,10 +641,10 @@
             this.tbll5.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tbll5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbll5.isPassword = false;
-            this.tbll5.Location = new System.Drawing.Point(646, 283);
-            this.tbll5.Margin = new System.Windows.Forms.Padding(4);
+            this.tbll5.Location = new System.Drawing.Point(969, 435);
+            this.tbll5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbll5.Name = "tbll5";
-            this.tbll5.Size = new System.Drawing.Size(664, 44);
+            this.tbll5.Size = new System.Drawing.Size(996, 68);
             this.tbll5.TabIndex = 55;
             this.tbll5.Text = "Leyenda 5";
             this.tbll5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -644,9 +653,10 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(535, 292);
+            this.label20.Location = new System.Drawing.Point(802, 449);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(98, 24);
+            this.label20.Size = new System.Drawing.Size(152, 37);
             this.label20.TabIndex = 54;
             this.label20.Text = "Leyenda 5";
             // 
@@ -660,10 +670,10 @@
             this.tbll4.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tbll4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbll4.isPassword = false;
-            this.tbll4.Location = new System.Drawing.Point(646, 231);
-            this.tbll4.Margin = new System.Windows.Forms.Padding(4);
+            this.tbll4.Location = new System.Drawing.Point(969, 355);
+            this.tbll4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbll4.Name = "tbll4";
-            this.tbll4.Size = new System.Drawing.Size(664, 44);
+            this.tbll4.Size = new System.Drawing.Size(996, 68);
             this.tbll4.TabIndex = 53;
             this.tbll4.Text = "Leyenda 5";
             this.tbll4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -672,9 +682,10 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(535, 240);
+            this.label21.Location = new System.Drawing.Point(802, 369);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(98, 24);
+            this.label21.Size = new System.Drawing.Size(153, 37);
             this.label21.TabIndex = 52;
             this.label21.Text = "Leyenda 4";
             // 
@@ -688,10 +699,10 @@
             this.tblregimen.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tblregimen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tblregimen.isPassword = false;
-            this.tblregimen.Location = new System.Drawing.Point(646, 491);
-            this.tblregimen.Margin = new System.Windows.Forms.Padding(4);
+            this.tblregimen.Location = new System.Drawing.Point(969, 755);
+            this.tblregimen.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tblregimen.Name = "tblregimen";
-            this.tblregimen.Size = new System.Drawing.Size(664, 44);
+            this.tblregimen.Size = new System.Drawing.Size(996, 68);
             this.tblregimen.TabIndex = 59;
             this.tblregimen.Text = "Regimen";
             this.tblregimen.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -700,9 +711,10 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(545, 500);
+            this.label22.Location = new System.Drawing.Point(818, 769);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(84, 24);
+            this.label22.Size = new System.Drawing.Size(132, 37);
             this.label22.TabIndex = 58;
             this.label22.Text = "Regimen";
             // 
@@ -718,10 +730,11 @@
             this.bunifuGradientPanel2.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.bunifuGradientPanel2.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.bunifuGradientPanel2.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.bunifuGradientPanel2.Location = new System.Drawing.Point(539, 552);
+            this.bunifuGradientPanel2.Location = new System.Drawing.Point(808, 849);
+            this.bunifuGradientPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bunifuGradientPanel2.Name = "bunifuGradientPanel2";
             this.bunifuGradientPanel2.Quality = 10;
-            this.bunifuGradientPanel2.Size = new System.Drawing.Size(771, 243);
+            this.bunifuGradientPanel2.Size = new System.Drawing.Size(1156, 374);
             this.bunifuGradientPanel2.TabIndex = 60;
             this.bunifuGradientPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuGradientPanel2_Paint);
             // 
@@ -747,14 +760,14 @@
             this.bunifuFlatButton2.IconVisible = true;
             this.bunifuFlatButton2.IconZoom = 90D;
             this.bunifuFlatButton2.IsTab = false;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(511, 104);
-            this.bunifuFlatButton2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bunifuFlatButton2.Location = new System.Drawing.Point(766, 160);
+            this.bunifuFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.bunifuFlatButton2.Name = "bunifuFlatButton2";
             this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton2.selected = false;
-            this.bunifuFlatButton2.Size = new System.Drawing.Size(231, 56);
+            this.bunifuFlatButton2.Size = new System.Drawing.Size(346, 85);
             this.bunifuFlatButton2.TabIndex = 63;
             this.bunifuFlatButton2.Text = "Regresar";
             this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -766,9 +779,10 @@
             // 
             this.LabelFecha.BackColor = System.Drawing.Color.Transparent;
             this.LabelFecha.Font = new System.Drawing.Font("Microsoft YaHei Light", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelFecha.Location = new System.Drawing.Point(0, 11);
+            this.LabelFecha.Location = new System.Drawing.Point(0, 17);
+            this.LabelFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelFecha.Name = "LabelFecha";
-            this.LabelFecha.Size = new System.Drawing.Size(768, 41);
+            this.LabelFecha.Size = new System.Drawing.Size(1152, 63);
             this.LabelFecha.TabIndex = 62;
             this.LabelFecha.Text = "Datos Fiscales";
             this.LabelFecha.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -795,14 +809,14 @@
             this.btnAgregar.IconVisible = true;
             this.btnAgregar.IconZoom = 90D;
             this.btnAgregar.IsTab = false;
-            this.btnAgregar.Location = new System.Drawing.Point(35, 104);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAgregar.Location = new System.Drawing.Point(52, 160);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btnAgregar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnAgregar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnAgregar.selected = false;
-            this.btnAgregar.Size = new System.Drawing.Size(230, 55);
+            this.btnAgregar.Size = new System.Drawing.Size(343, 82);
             this.btnAgregar.TabIndex = 3;
             this.btnAgregar.Text = "Salvar";
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -831,14 +845,14 @@
             this.bunifuFlatButton1.IconVisible = true;
             this.bunifuFlatButton1.IconZoom = 90D;
             this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(273, 104);
-            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(410, 160);
+            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(231, 57);
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(346, 88);
             this.bunifuFlatButton1.TabIndex = 2;
             this.bunifuFlatButton1.Text = "Descartar";
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -846,26 +860,30 @@
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft JhengHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
             // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Error;
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
             // txtLeyenda6
             // 
-            this.txtLeyenda6.Location = new System.Drawing.Point(646, 335);
+            this.txtLeyenda6.Location = new System.Drawing.Point(969, 515);
+            this.txtLeyenda6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtLeyenda6.Multiline = true;
             this.txtLeyenda6.Name = "txtLeyenda6";
-            this.txtLeyenda6.Size = new System.Drawing.Size(665, 148);
+            this.txtLeyenda6.Size = new System.Drawing.Size(996, 226);
             this.txtLeyenda6.TabIndex = 61;
+            // 
+            // navigationBar1
+            // 
+            this.navigationBar1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.navigationBar1.Location = new System.Drawing.Point(0, 0);
+            this.navigationBar1.Name = "navigationBar1";
+            this.navigationBar1.Size = new System.Drawing.Size(1984, 60);
+            this.navigationBar1.TabIndex = 62;
             // 
             // DatosFiscales
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1323, 816);
+            this.ClientSize = new System.Drawing.Size(1984, 1255);
+            this.Controls.Add(this.navigationBar1);
             this.Controls.Add(this.txtLeyenda6);
             this.Controls.Add(this.bunifuGradientPanel2);
             this.Controls.Add(this.tblregimen);
@@ -910,9 +928,9 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.bunifuMetroTextbox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "DatosFiscales";
             this.Text = " ";
             this.Load += new System.EventHandler(this.DatosFiscales_Load);
@@ -925,7 +943,6 @@
         #endregion
 
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox1;
         private Bunifu.Framework.UI.BunifuMetroTextbox tblimpresora;
@@ -972,9 +989,9 @@
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel2;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private Bunifu.Framework.UI.BunifuFlatButton btnAgregar;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.TextBox txtLeyenda6;
         private System.Windows.Forms.Label LabelFecha;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
+        private NavigationBar.NavigationBar navigationBar1;
     }
 }

@@ -127,7 +127,7 @@ namespace YOKO
             conn.ConnectionString = ConnectionString.connectionString;
             if (btn1Nombre.Text == "")
             {
-                notifyIcon1.ShowBalloonTip(1000, "Error en el formulario", "Se necesita al menos el nombre", ToolTipIcon.Info);
+                //notifyIcon1.ShowBalloonTip(1000, "Error en el formulario", "Se necesita al menos el nombre", ToolTipIcon.Info);
             }
             else
             {
@@ -156,7 +156,7 @@ namespace YOKO
                     GetClienteID();
                     conn.Close();
                     Limpiar();
-                    notifyIcon1.ShowBalloonTip(1000, "¡Usuario " + btn1Nombre.Text + " Agregado!", "¡Bienvenido, " + btn1Nombre.Text + " a Goummao!", ToolTipIcon.Info);
+                    //notifyIcon1.ShowBalloonTip(1000, "¡Usuario " + btn1Nombre.Text + " Agregado!", "¡Bienvenido, " + btn1Nombre.Text + " a Goummao!", ToolTipIcon.Info);
                 }
                 
             }
@@ -239,7 +239,7 @@ namespace YOKO
 
             if (txtAsignar.Text == "" || txtClienteID.Text == "" || txt1MascotaNombre.Text == "" || txt2MascotaRaza.Text == "" || txt3MascotaSexo.Text == "" || txt4MascotaAños.Text == "" || txt5MascotaMes.Text == "")
             {
-                notifyIcon1.ShowBalloonTip(1000, "Error en el formulario", "Falta llenar al menos un campo", ToolTipIcon.Info);
+                //notifyIcon1.ShowBalloonTip(1000, "Error en el formulario", "Falta llenar al menos un campo", ToolTipIcon.Info);
             } else {
                 conn.Open();
                 string sql = "insert into tblClientePets values ('" + txtClienteID.Text + "','" + txt1MascotaNombre.Text.ToUpper() + "', " + txt2MascotaRaza.Text + ", " + txt3MascotaSexo.Text + ", " + txt4MascotaAños.Text + ", '" + txt5MascotaMes.Text + "', 0 )";
@@ -247,7 +247,7 @@ namespace YOKO
                 try
                 {
                     sCommand.ExecuteNonQuery();
-                    notifyIcon1.ShowBalloonTip(1000, "¡Mascota " + txt1MascotaNombre.Text + " Agregada!", "Asigando a " + txtAsignar.Text + " con éxito.", ToolTipIcon.Info);
+                    //notifyIcon1.ShowBalloonTip(1000, "¡Mascota " + txt1MascotaNombre.Text + " Agregada!", "Asigando a " + txtAsignar.Text + " con éxito.", ToolTipIcon.Info);
                 }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
                 conn.Close();

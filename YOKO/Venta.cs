@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using YOKO.enums;
 using YOKO.Helpers;
+using YOKO.Notifications;
 
 namespace YOKO
 {
@@ -68,9 +69,8 @@ namespace YOKO
             textBox2.Text = (int.Parse(s: command.ExecuteScalar().ToString()) + 1).ToString();
             conn.Close();
 
-            navegador.ScriptErrorsSuppressed = true;
-            navegador.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(this.cargar_datos);
-            navegador.Navigate("http://www.lacasadecambio.com/");
+            NotificationsCenter.notifyIcon.ShowBalloonTip(1000, "1", "2", ToolTipIcon.Info);
+            
         }
 
         private void bunifuTextbox1_OnTextChange(object sender, EventArgs e)
@@ -130,27 +130,6 @@ namespace YOKO
             }
         }
 
-        public void cargar_datos(object sender, EventArgs e)
-        {
-            /*
-            a = navegador.Document.GetElementById("tipocambio").InnerText;
-            a = a.Replace("PROMEDIO EN CASAS DE CAMBIO", "");
-            a = a.Replace("VENTA", System.Environment.NewLine + "VENTA");
-            notifyIcon1.ShowBalloonTip(1000, "PROMEDIO EN CASAS DE CAMBIO", a, ToolTipIcon.Info);
-            //a = a.Replace("COMPRA", "");
-            String valorDolar = a.Substring(0, 3);
-            //MessageBox.Show(valorDolar);
-            */
-        }
-
-        public void cargar_datos2(object sender, EventArgs e)
-        {
-            b = navegador2.Document.GetElementById("exchange-main-description").InnerText;
-            notifyIcon1.ShowBalloonTip(1000, "PROMEDIO EN CASAS DE CAMBIO", b, ToolTipIcon.Info);
-        }
-
-        private void notifyIcon1_Click(object sender, EventArgs e) => System.Diagnostics.Process.Start("http://www.lacasadecambio.com/");
-        private void notifyIcon1_BalloonTipClicked(object sender, EventArgs e) => System.Diagnostics.Process.Start("http://www.lacasadecambio.com/");
         private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e) => e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e) => e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         private void txtDescuento_KeyPress(object sender, KeyPressEventArgs e) => e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
@@ -429,7 +408,7 @@ namespace YOKO
 
                         this.statusLabel.Text = "Registro comenzado";
                         command.ExecuteNonQuery();
-                        notifyIcon1.ShowBalloonTip(1000, "Primer registro creado", "Esta mascota ya empezó a generar historial.", ToolTipIcon.Info);
+                        //notificationsCenter.CreateDesktopNotification(title: "Primer registro creado", message: "Esta mascota ya empezó a generar historial.");
                         statusLabel.Text = "REGISTRO COMPLETADO";
                         CenterStatusLabel();
                         string sql = "select * from tblPetsRegistro where petId = '" + mascotaSelectaId + "'";
@@ -479,7 +458,7 @@ namespace YOKO
                     this.statusLabel.Text = "Registro comenzado";
                     CenterStatusLabel();
                     command.ExecuteNonQuery();
-                    notifyIcon1.ShowBalloonTip(1000, "Primer registro creado", "Esta mascota ya empezó a generar historial.", ToolTipIcon.Info);
+                    //notificationsCenter.CreateDesktopNotification(title: "Primer registro creado", message: "Esta mascota ya empezó a generar historial.");
                 }
                 catch (Exception ex)
                 {

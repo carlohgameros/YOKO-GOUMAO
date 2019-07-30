@@ -34,7 +34,7 @@ namespace YOKO.Helpers
 
         public static void CloseProgram(Form actualForm) => actualForm.Close();
 
-        public static void HideProgram(Form actualForm) => actualForm.Hide();
+        public static void HideProgram(Form actualForm) => actualForm.WindowState = FormWindowState.Minimized;
 
         public static void ChangeForms() => previousForm = actualForm;
     }

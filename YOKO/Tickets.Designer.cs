@@ -42,7 +42,6 @@
             this.tblFacturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buscarButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.nombreCheckbox = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.label1 = new System.Windows.Forms.Label();
             this.contadorLabel = new System.Windows.Forms.Label();
             this.tblFacturasTableAdapter = new YOKO.GoumaoDBDataSetTableAdapters.tblFacturasTableAdapter();
             this.nombreField = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -61,6 +60,7 @@
             this.fechafinalField = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.vendedorAlert = new System.Windows.Forms.Label();
             this.clienteAlert = new System.Windows.Forms.Label();
+            this.navigationBar1 = new YOKO.NavigationBar.NavigationBar();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblFacturasBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goumaoDBDataSet)).BeginInit();
@@ -83,11 +83,11 @@
             this.fURegDataGridViewTextBoxColumn,
             this.fEstatusDataGridViewTextBoxColumn});
             this.ticketsDataGrid.DataSource = this.tblFacturasBindingSource1;
-            this.ticketsDataGrid.Location = new System.Drawing.Point(593, 14);
-            this.ticketsDataGrid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ticketsDataGrid.Location = new System.Drawing.Point(667, 84);
+            this.ticketsDataGrid.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ticketsDataGrid.Name = "ticketsDataGrid";
             this.ticketsDataGrid.RowHeadersVisible = false;
-            this.ticketsDataGrid.Size = new System.Drawing.Size(605, 686);
+            this.ticketsDataGrid.Size = new System.Drawing.Size(681, 792);
             this.ticketsDataGrid.TabIndex = 64;
             this.ticketsDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             // 
@@ -159,10 +159,10 @@
             this.buscarButton.IdleFillColor = System.Drawing.Color.White;
             this.buscarButton.IdleForecolor = System.Drawing.Color.Gray;
             this.buscarButton.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.buscarButton.Location = new System.Drawing.Point(45, 621);
-            this.buscarButton.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.buscarButton.Location = new System.Drawing.Point(51, 776);
+            this.buscarButton.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.buscarButton.Name = "buscarButton";
-            this.buscarButton.Size = new System.Drawing.Size(493, 69);
+            this.buscarButton.Size = new System.Drawing.Size(555, 86);
             this.buscarButton.TabIndex = 80;
             this.buscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buscarButton.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -174,25 +174,13 @@
             this.nombreCheckbox.Checked = false;
             this.nombreCheckbox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.nombreCheckbox.ForeColor = System.Drawing.Color.White;
-            this.nombreCheckbox.Location = new System.Drawing.Point(16, 184);
-            this.nombreCheckbox.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.nombreCheckbox.Location = new System.Drawing.Point(18, 230);
+            this.nombreCheckbox.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.nombreCheckbox.Name = "nombreCheckbox";
             this.nombreCheckbox.Size = new System.Drawing.Size(20, 20);
             this.nombreCheckbox.TabIndex = 81;
             this.nombreCheckbox.Tag = "v";
             this.nombreCheckbox.OnChange += new System.EventHandler(this.nombreCheckbox_OnChange);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei Light", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 14);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 52);
-            this.label1.TabIndex = 82;
-            this.label1.Text = "Tickets";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // contadorLabel
             // 
@@ -200,10 +188,10 @@
             this.contadorLabel.BackColor = System.Drawing.Color.Silver;
             this.contadorLabel.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contadorLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.contadorLabel.Location = new System.Drawing.Point(891, 630);
+            this.contadorLabel.Location = new System.Drawing.Point(1002, 788);
             this.contadorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.contadorLabel.Name = "contadorLabel";
-            this.contadorLabel.Size = new System.Drawing.Size(133, 38);
+            this.contadorLabel.Size = new System.Drawing.Size(160, 46);
             this.contadorLabel.TabIndex = 83;
             this.contadorLabel.Text = "cantidad";
             // 
@@ -221,10 +209,10 @@
             this.nombreField.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.nombreField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.nombreField.isPassword = false;
-            this.nombreField.Location = new System.Drawing.Point(45, 170);
-            this.nombreField.Margin = new System.Windows.Forms.Padding(5);
+            this.nombreField.Location = new System.Drawing.Point(51, 212);
+            this.nombreField.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.nombreField.Name = "nombreField";
-            this.nombreField.Size = new System.Drawing.Size(493, 54);
+            this.nombreField.Size = new System.Drawing.Size(555, 68);
             this.nombreField.TabIndex = 84;
             this.nombreField.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.nombreField.OnValueChanged += new System.EventHandler(this.nombreField_OnValueChanged);
@@ -240,10 +228,10 @@
             this.fechaField.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.fechaField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.fechaField.isPassword = false;
-            this.fechaField.Location = new System.Drawing.Point(45, 368);
-            this.fechaField.Margin = new System.Windows.Forms.Padding(5);
+            this.fechaField.Location = new System.Drawing.Point(51, 460);
+            this.fechaField.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.fechaField.Name = "fechaField";
-            this.fechaField.Size = new System.Drawing.Size(242, 54);
+            this.fechaField.Size = new System.Drawing.Size(272, 68);
             this.fechaField.TabIndex = 86;
             this.fechaField.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.fechaField.OnValueChanged += new System.EventHandler(this.fechaField_OnValueChanged);
@@ -255,8 +243,8 @@
             this.fechaCheckbox.Checked = false;
             this.fechaCheckbox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.fechaCheckbox.ForeColor = System.Drawing.Color.White;
-            this.fechaCheckbox.Location = new System.Drawing.Point(16, 382);
-            this.fechaCheckbox.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.fechaCheckbox.Location = new System.Drawing.Point(18, 478);
+            this.fechaCheckbox.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.fechaCheckbox.Name = "fechaCheckbox";
             this.fechaCheckbox.Size = new System.Drawing.Size(20, 20);
             this.fechaCheckbox.TabIndex = 85;
@@ -272,10 +260,10 @@
             this.vendedorField.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.vendedorField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.vendedorField.isPassword = false;
-            this.vendedorField.Location = new System.Drawing.Point(45, 457);
-            this.vendedorField.Margin = new System.Windows.Forms.Padding(5);
+            this.vendedorField.Location = new System.Drawing.Point(51, 571);
+            this.vendedorField.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.vendedorField.Name = "vendedorField";
-            this.vendedorField.Size = new System.Drawing.Size(493, 54);
+            this.vendedorField.Size = new System.Drawing.Size(555, 68);
             this.vendedorField.TabIndex = 88;
             this.vendedorField.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.vendedorField.OnValueChanged += new System.EventHandler(this.vendedorField_OnValueChanged);
@@ -287,8 +275,8 @@
             this.vendedorCheckbox.Checked = false;
             this.vendedorCheckbox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.vendedorCheckbox.ForeColor = System.Drawing.Color.White;
-            this.vendedorCheckbox.Location = new System.Drawing.Point(16, 471);
-            this.vendedorCheckbox.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.vendedorCheckbox.Location = new System.Drawing.Point(18, 589);
+            this.vendedorCheckbox.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.vendedorCheckbox.Name = "vendedorCheckbox";
             this.vendedorCheckbox.Size = new System.Drawing.Size(20, 20);
             this.vendedorCheckbox.TabIndex = 87;
@@ -299,11 +287,11 @@
             this.clientesResultadosDataGrid.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.clientesResultadosDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.clientesResultadosDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.clientesResultadosDataGrid.Location = new System.Drawing.Point(45, 234);
-            this.clientesResultadosDataGrid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.clientesResultadosDataGrid.Location = new System.Drawing.Point(51, 292);
+            this.clientesResultadosDataGrid.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.clientesResultadosDataGrid.Name = "clientesResultadosDataGrid";
             this.clientesResultadosDataGrid.RowHeadersVisible = false;
-            this.clientesResultadosDataGrid.Size = new System.Drawing.Size(493, 99);
+            this.clientesResultadosDataGrid.Size = new System.Drawing.Size(555, 124);
             this.clientesResultadosDataGrid.TabIndex = 91;
             // 
             // bunifuGradientPanel1
@@ -314,21 +302,21 @@
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 735);
-            this.bunifuGradientPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 919);
+            this.bunifuGradientPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(1871, 10);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(2105, 12);
             this.bunifuGradientPanel1.TabIndex = 92;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(40, 140);
+            this.label2.Location = new System.Drawing.Point(45, 175);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 25);
+            this.label2.Size = new System.Drawing.Size(87, 30);
             this.label2.TabIndex = 93;
             this.label2.Text = "Cliente";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -337,10 +325,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(40, 338);
+            this.label3.Location = new System.Drawing.Point(45, 422);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 25);
+            this.label3.Size = new System.Drawing.Size(77, 30);
             this.label3.TabIndex = 94;
             this.label3.Text = "Fecha";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -349,10 +337,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(40, 427);
+            this.label4.Location = new System.Drawing.Point(45, 534);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 25);
+            this.label4.Size = new System.Drawing.Size(121, 30);
             this.label4.TabIndex = 95;
             this.label4.Text = "Vendedor";
             // 
@@ -360,9 +348,10 @@
             // 
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft YaHei Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Font = new System.Drawing.Font("Algerian", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(256, 376);
+            this.dateTimePicker1.Location = new System.Drawing.Point(288, 470);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(23, 38);
+            this.dateTimePicker1.Size = new System.Drawing.Size(25, 44);
             this.dateTimePicker1.TabIndex = 97;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             this.dateTimePicker1.MouseHover += new System.EventHandler(this.dateTimePicker1_MouseHover);
@@ -372,20 +361,21 @@
             this.vendedoresDataGrid.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.vendedoresDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.vendedoresDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.vendedoresDataGrid.Location = new System.Drawing.Point(45, 521);
-            this.vendedoresDataGrid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.vendedoresDataGrid.Location = new System.Drawing.Point(51, 651);
+            this.vendedoresDataGrid.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.vendedoresDataGrid.Name = "vendedoresDataGrid";
             this.vendedoresDataGrid.RowHeadersVisible = false;
-            this.vendedoresDataGrid.Size = new System.Drawing.Size(493, 89);
+            this.vendedoresDataGrid.Size = new System.Drawing.Size(555, 111);
             this.vendedoresDataGrid.TabIndex = 98;
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.CalendarFont = new System.Drawing.Font("Microsoft YaHei Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Font = new System.Drawing.Font("Algerian", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(507, 376);
+            this.dateTimePicker2.Location = new System.Drawing.Point(570, 470);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(23, 38);
+            this.dateTimePicker2.Size = new System.Drawing.Size(25, 44);
             this.dateTimePicker2.TabIndex = 100;
             this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
@@ -400,10 +390,10 @@
             this.fechafinalField.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.fechafinalField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.fechafinalField.isPassword = false;
-            this.fechafinalField.Location = new System.Drawing.Point(296, 368);
-            this.fechafinalField.Margin = new System.Windows.Forms.Padding(5);
+            this.fechafinalField.Location = new System.Drawing.Point(333, 460);
+            this.fechafinalField.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.fechafinalField.Name = "fechafinalField";
-            this.fechafinalField.Size = new System.Drawing.Size(242, 54);
+            this.fechafinalField.Size = new System.Drawing.Size(272, 68);
             this.fechafinalField.TabIndex = 99;
             this.fechafinalField.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.fechafinalField.OnValueChanged += new System.EventHandler(this.fechafinalField_OnValueChanged);
@@ -414,10 +404,10 @@
             this.vendedorAlert.BackColor = System.Drawing.Color.Silver;
             this.vendedorAlert.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vendedorAlert.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.vendedorAlert.Location = new System.Drawing.Point(188, 544);
+            this.vendedorAlert.Location = new System.Drawing.Point(212, 680);
             this.vendedorAlert.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.vendedorAlert.Name = "vendedorAlert";
-            this.vendedorAlert.Size = new System.Drawing.Size(205, 38);
+            this.vendedorAlert.Size = new System.Drawing.Size(245, 46);
             this.vendedorAlert.TabIndex = 101;
             this.vendedorAlert.Text = "Sin resultados";
             this.vendedorAlert.Visible = false;
@@ -428,20 +418,29 @@
             this.clienteAlert.BackColor = System.Drawing.Color.Silver;
             this.clienteAlert.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clienteAlert.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.clienteAlert.Location = new System.Drawing.Point(188, 262);
+            this.clienteAlert.Location = new System.Drawing.Point(212, 328);
             this.clienteAlert.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.clienteAlert.Name = "clienteAlert";
-            this.clienteAlert.Size = new System.Drawing.Size(205, 38);
+            this.clienteAlert.Size = new System.Drawing.Size(245, 46);
             this.clienteAlert.TabIndex = 102;
             this.clienteAlert.Text = "Sin resultados";
             this.clienteAlert.Visible = false;
             // 
+            // navigationBar1
+            // 
+            this.navigationBar1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.navigationBar1.Location = new System.Drawing.Point(0, 0);
+            this.navigationBar1.Name = "navigationBar1";
+            this.navigationBar1.Size = new System.Drawing.Size(1379, 60);
+            this.navigationBar1.TabIndex = 103;
+            // 
             // Tickets
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1868, 745);
+            this.ClientSize = new System.Drawing.Size(1379, 931);
+            this.Controls.Add(this.navigationBar1);
             this.Controls.Add(this.clienteAlert);
             this.Controls.Add(this.vendedorAlert);
             this.Controls.Add(this.dateTimePicker2);
@@ -459,11 +458,11 @@
             this.Controls.Add(this.fechaCheckbox);
             this.Controls.Add(this.nombreField);
             this.Controls.Add(this.contadorLabel);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.nombreCheckbox);
             this.Controls.Add(this.buscarButton);
             this.Controls.Add(this.ticketsDataGrid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Tickets";
             this.Text = "Tickets";
             this.Load += new System.EventHandler(this.Tickets_Load);
@@ -490,7 +489,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fTotalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fIPagadoDataGridViewTextBoxColumn;
         private Bunifu.Framework.UI.BunifuCheckbox nombreCheckbox;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label contadorLabel;
         private GoumaoDBDataSet goumaoDBDataSet;
         private System.Windows.Forms.BindingSource tblFacturasBindingSource1;
@@ -517,5 +515,6 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox fechafinalField;
         private System.Windows.Forms.Label vendedorAlert;
         private System.Windows.Forms.Label clienteAlert;
+        private NavigationBar.NavigationBar navigationBar1;
     }
 }

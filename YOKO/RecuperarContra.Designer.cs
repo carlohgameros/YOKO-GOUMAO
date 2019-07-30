@@ -38,7 +38,6 @@
             this.contra1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.contra2 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -235,14 +234,6 @@
             this.bunifuFlatButton3.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton3.Click += new System.EventHandler(this.bunifuFlatButton3_Click);
             // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.BalloonTipText = "Datos actualizados";
-            this.notifyIcon1.BalloonTipTitle = "Se estableció la nueva contraseña.";
-            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -319,7 +310,6 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox contra1;
         private Bunifu.Framework.UI.BunifuMetroTextbox contra2;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

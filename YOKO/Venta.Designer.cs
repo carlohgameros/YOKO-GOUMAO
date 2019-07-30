@@ -47,7 +47,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
             this.bunifuDatepicker1 = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this.bunifuCheckbox5 = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label16 = new System.Windows.Forms.Label();
@@ -92,6 +91,7 @@
             this.AgregarProducto = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnAgregar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.tblClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.navigationBar1 = new YOKO.NavigationBar.NavigationBar();
             ((System.ComponentModel.ISupportInitialize)(this.clientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mascotas)).BeginInit();
@@ -99,6 +99,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lista)).BeginInit();
             this.statusPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblClientesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuCheckbox1
@@ -256,13 +257,6 @@
             resources.ApplyResources(this.bunifuDatepicker1, "bunifuDatepicker1");
             this.bunifuDatepicker1.Name = "bunifuDatepicker1";
             this.bunifuDatepicker1.Value = new System.DateTime(2018, 6, 14, 18, 56, 28, 303);
-            // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            resources.ApplyResources(this.notifyIcon1, "notifyIcon1");
-            this.notifyIcon1.BalloonTipClicked += new System.EventHandler(this.notifyIcon1_BalloonTipClicked);
-            this.notifyIcon1.Click += new System.EventHandler(this.notifyIcon1_Click);
             // 
             // label7
             // 
@@ -645,6 +639,12 @@
             // 
             this.tblClientesBindingSource.DataMember = "tblClientes";
             // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
             // navigationBar1
             // 
             resources.ApplyResources(this.navigationBar1, "navigationBar1");
@@ -655,6 +655,7 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.navigationBar1);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.DangerPetIndicator);
@@ -720,6 +721,7 @@
             this.statusPanel.ResumeLayout(false);
             this.statusPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblClientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -748,7 +750,6 @@
         private System.Windows.Forms.Label label6;
         private MetroFramework.Controls.MetroDateTime metroDateTime1;
         private Bunifu.Framework.UI.BunifuDatepicker bunifuDatepicker1;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Label label7;
         private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox5;
         private System.Windows.Forms.Label label16;
@@ -789,5 +790,6 @@
         private Bunifu.Framework.UI.BunifuCheckbox DangerPetIndicator;
         private System.Windows.Forms.Label label18;
         private NavigationBar.NavigationBar navigationBar1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

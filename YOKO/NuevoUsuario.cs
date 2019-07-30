@@ -20,7 +20,7 @@ namespace YOKO
         {
             if (contra1.Text != contra2.Text)
             {
-                notifyIcon1.ShowBalloonTip(1000, "Error en la contraseña", "Verifique que sean iguales", ToolTipIcon.Info);
+                //notifyIcon1.ShowBalloonTip(1000, "Error en la contraseña", "Verifique que sean iguales", ToolTipIcon.Info);
             }
             else
             {
@@ -32,7 +32,7 @@ namespace YOKO
                     {
                         SqlCommand command = new SqlCommand("insert into tblUsers values('" + nombre.Text + "', " + contra1.Text + ", 'Trabajador', 1, GETDATE(), '" + correo.Text + "', GETDATE())", conn);
                         command.ExecuteNonQuery();
-                        notifyIcon1.ShowBalloonTip(1000, "Intento Correcto", "Datos actualizados a la base de datos", ToolTipIcon.Info);
+                        //notifyIcon1.ShowBalloonTip(1000, "Intento Correcto", "Datos actualizados a la base de datos", ToolTipIcon.Info);
                     }
                     catch (Exception ex)
                     {
@@ -95,17 +95,6 @@ namespace YOKO
             {
                 MessageBox.Show("Incorrecto");
             }
-        }
-
-        private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
-        {
-            new Login().Show();
-            Hide();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void label3_Click(object sender, EventArgs e)

@@ -45,7 +45,7 @@
             this.navigationPanel.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
             this.navigationPanel.AutoSize = true;
             this.navigationPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.navigationPanel.BackColor = System.Drawing.Color.White;
+            this.navigationPanel.BackColor = System.Drawing.Color.Transparent;
             this.navigationPanel.Controls.Add(this.navigationTitle);
             this.navigationPanel.Controls.Add(this.backButton);
             this.navigationPanel.Controls.Add(this.hiddeButton);
@@ -106,7 +106,7 @@
             // 
             // closeButton
             // 
-            this.closeButton.BackColor = System.Drawing.Color.White;
+            this.closeButton.BackColor = System.Drawing.Color.Transparent;
             this.closeButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
             this.closeButton.ImageActive = null;
@@ -128,6 +128,7 @@
             this.Controls.Add(this.navigationPanel);
             this.Name = "NavigationBar";
             this.Size = new System.Drawing.Size(1371, 60);
+            this.Load += new System.EventHandler(this.NavigationBar_Load);
             this.navigationPanel.ResumeLayout(false);
             this.navigationPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.backButton)).EndInit();
@@ -141,9 +142,9 @@
         #endregion
 
         private System.Windows.Forms.Panel navigationPanel;
+        private System.Windows.Forms.Label navigationTitle;
         private Bunifu.Framework.UI.BunifuImageButton backButton;
         private Bunifu.Framework.UI.BunifuImageButton hiddeButton;
         private Bunifu.Framework.UI.BunifuImageButton closeButton;
-        private System.Windows.Forms.Label navigationTitle;
     }
 }

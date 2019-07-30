@@ -32,6 +32,7 @@
             this.greenPanel = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.bluePanel = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.navigationBar1 = new YOKO.NavigationBar.NavigationBar();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -40,6 +41,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.greenPanel.SuspendLayout();
             this.bluePanel.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +78,7 @@
             // 
             this.bluePanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bluePanel.BackgroundImage")));
             this.bluePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bluePanel.Controls.Add(this.navigationBar1);
             this.bluePanel.Controls.Add(this.label2);
             this.bluePanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.bluePanel.GradientBottomLeft = System.Drawing.Color.Navy;
@@ -88,6 +91,15 @@
             this.bluePanel.Quality = 10;
             this.bluePanel.Size = new System.Drawing.Size(645, 865);
             this.bluePanel.TabIndex = 33;
+            // 
+            // navigationBar1
+            // 
+            this.navigationBar1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.navigationBar1.Location = new System.Drawing.Point(0, 0);
+            this.navigationBar1.Name = "navigationBar1";
+            this.navigationBar1.Size = new System.Drawing.Size(645, 60);
+            this.navigationBar1.TabIndex = 63;
+            this.navigationBar1.Load += new System.EventHandler(this.navigationBar1_Load);
             // 
             // label2
             // 
@@ -107,7 +119,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft JhengHei Light", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(50, 148);
+            this.label3.Location = new System.Drawing.Point(100, 108);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(174, 71);
             this.label3.TabIndex = 18;
@@ -120,7 +132,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft JhengHei Light", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(50, 442);
+            this.label5.Location = new System.Drawing.Point(100, 402);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(445, 71);
             this.label5.TabIndex = 36;
@@ -133,7 +145,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft JhengHei Light", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(50, 343);
+            this.label6.Location = new System.Drawing.Point(100, 303);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(225, 71);
             this.label6.TabIndex = 35;
@@ -146,7 +158,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft JhengHei Light", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(50, 735);
+            this.label7.Location = new System.Drawing.Point(100, 695);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(386, 71);
             this.label7.TabIndex = 38;
@@ -159,7 +171,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft JhengHei Light", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(50, 538);
+            this.label8.Location = new System.Drawing.Point(100, 498);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(153, 71);
             this.label8.TabIndex = 37;
@@ -172,7 +184,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft JhengHei Light", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(50, 245);
+            this.label4.Location = new System.Drawing.Point(100, 205);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(281, 71);
             this.label4.TabIndex = 39;
@@ -185,12 +197,28 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft JhengHei Light", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(50, 637);
+            this.label9.Location = new System.Drawing.Point(100, 597);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(384, 71);
             this.label9.TabIndex = 40;
             this.label9.Text = "Datos Fiscales";
             this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // bunifuGradientPanel1
+            // 
+            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
+            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.Silver;
+            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.Silver;
+            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.Silver;
+            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.Silver;
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.bunifuGradientPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
+            this.bunifuGradientPanel1.Quality = 10;
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(91, 865);
+            this.bunifuGradientPanel1.TabIndex = 41;
             // 
             // Inicio
             // 
@@ -198,6 +226,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1582, 865);
+            this.Controls.Add(this.bunifuGradientPanel1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label7);
@@ -234,6 +263,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label9;
+        private NavigationBar.NavigationBar navigationBar1;
+        private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
     }
 }
 

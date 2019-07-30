@@ -54,7 +54,7 @@ namespace YOKO
         {
             if (contra1.Text != contra2.Text)
             {
-                notifyIcon1.ShowBalloonTip(1000, "Error en la contraseña", "Verifique que sean iguales", ToolTipIcon.Info);
+                //notifyIcon1.ShowBalloonTip(1000, "Error en la contraseña", "Verifique que sean iguales", ToolTipIcon.Info);
             }
             else
             {
@@ -66,7 +66,7 @@ namespace YOKO
                     {
                         SqlCommand command = new SqlCommand("update tblUsers set LastChange = GETDATE(), UsrPwd = "+contra1.Text+"  where Email = '"+correo.Text+"'", conn);
                         command.ExecuteNonQuery();
-                        notifyIcon1.ShowBalloonTip(1000, "Actualización correcta", "Datos actualizados a la base de datos", ToolTipIcon.Info);
+                        //notifyIcon1.ShowBalloonTip(1000, "Actualización correcta", "Datos actualizados a la base de datos", ToolTipIcon.Info);
                     }
                     catch (Exception ex)
                     {
@@ -85,7 +85,7 @@ namespace YOKO
             bool v = codigo.Text == b.ToString();
             if (v)
             {
-                notifyIcon1.ShowBalloonTip(1000, "Códigos correctos", "Eliga nueva contraseña", ToolTipIcon.Info);
+                //notifyIcon1.ShowBalloonTip(1000, "Códigos correctos", "Eliga nueva contraseña", ToolTipIcon.Info);
                 contra1.Enabled = true;
                 contra2.Enabled = true;
             }

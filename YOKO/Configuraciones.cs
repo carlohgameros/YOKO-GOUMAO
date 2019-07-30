@@ -68,5 +68,10 @@ namespace YOKO
                 dolarField.ForeColor = Color.FromArgb(109, 109, 109);
             }
         }
+
+        private void navigationBar1_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
