@@ -113,10 +113,10 @@
             // 
             // 
             this.ivaField.CustomButton.Image = null;
-            this.ivaField.CustomButton.Location = new System.Drawing.Point(186, 1);
+            this.ivaField.CustomButton.Location = new System.Drawing.Point(165, 1);
             this.ivaField.CustomButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ivaField.CustomButton.Name = "";
-            this.ivaField.CustomButton.Size = new System.Drawing.Size(48, 54);
+            this.ivaField.CustomButton.Size = new System.Drawing.Size(43, 43);
             this.ivaField.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.ivaField.CustomButton.TabIndex = 1;
             this.ivaField.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -188,10 +188,10 @@
             // 
             // 
             this.dolarField.CustomButton.Image = null;
-            this.dolarField.CustomButton.Location = new System.Drawing.Point(186, 1);
+            this.dolarField.CustomButton.Location = new System.Drawing.Point(165, 1);
             this.dolarField.CustomButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dolarField.CustomButton.Name = "";
-            this.dolarField.CustomButton.Size = new System.Drawing.Size(48, 54);
+            this.dolarField.CustomButton.Size = new System.Drawing.Size(43, 43);
             this.dolarField.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.dolarField.CustomButton.TabIndex = 1;
             this.dolarField.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -286,7 +286,7 @@
             this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.White;
             this.bunifuThinButton22.IdleLineColor = System.Drawing.SystemColors.ControlLight;
             this.bunifuThinButton22.Location = new System.Drawing.Point(208, 527);
-            this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(8);
             this.bunifuThinButton22.Name = "bunifuThinButton22";
             this.bunifuThinButton22.Size = new System.Drawing.Size(372, 68);
             this.bunifuThinButton22.TabIndex = 90;
@@ -344,9 +344,10 @@
             // 
             // navigationBar1
             // 
-            this.navigationBar1.Location = new System.Drawing.Point(1, 2);
+            this.navigationBar1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.navigationBar1.Location = new System.Drawing.Point(0, 0);
             this.navigationBar1.Name = "navigationBar1";
-            this.navigationBar1.Size = new System.Drawing.Size(844, 60);
+            this.navigationBar1.Size = new System.Drawing.Size(839, 60);
             this.navigationBar1.TabIndex = 95;
             this.navigationBar1.Load += new System.EventHandler(this.navigationBar1_Load);
             // 

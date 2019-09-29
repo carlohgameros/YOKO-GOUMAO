@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace YOKO.Helpers
 {
@@ -8,8 +9,8 @@ namespace YOKO.Helpers
     {
         public static void SetTextboxAutoComplete(TextBox textBox, String SQlQuery, String reference)
         {
-            AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
-            SqlConnection sqlConnection = CreateSQLConnection();
+            var autoComplete = new AutoCompleteStringCollection();
+            var sqlConnection = new SqlConnection(ConnectionString.connectionString);
             
             sqlConnection.Open();
             SqlCommand sqlCommand = new SqlCommand(SQlQuery, sqlConnection);
@@ -24,11 +25,27 @@ namespace YOKO.Helpers
             sqlConnection.Close();
         }
 
-        public static SqlConnection CreateSQLConnection()
+        public static void FillDataGrid(DataGridView dataGrid, string query, string table)
         {
-            SqlConnection sqlConnection = new SqlConnection();
-            sqlConnection.ConnectionString = ConnectionString.connectionString;
-            return sqlConnection;
+            dataGrid.DataSource = null;
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString.connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    var dataSet = new DataSet();
+                    var adapter = new SqlDataAdapter(command);
+                    var builder = new SqlCommandBuilder(adapter);
+
+                    adapter.Fill(dataSet, table);
+                    var dataTable = dataSet.Tables[table];
+
+                    dataGrid.DataSource = dataSet.Tables[table];
+                    dataGrid.ReadOnly = true;
+                    dataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                }
+            }
         }
     }
 }

@@ -23,6 +23,12 @@ namespace YOKO.Helpers
             dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            dataGridView.AllowUserToOrderColumns = true;
+            dataGridView.AllowUserToResizeColumns = true;
+            dataGridView.Cursor = Cursors.Hand;
+            dataGridView.MultiSelect = false;
+            dataGridView.RowHeadersVisible = false;
         }
     }
 }

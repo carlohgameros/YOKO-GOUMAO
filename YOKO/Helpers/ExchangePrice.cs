@@ -21,6 +21,7 @@ namespace YOKO.Helpers
 
         public string GetDolarPrice()
         {
+            if (!new BasicData().CheckInternetConnection()) { return "Sin acceso a internet."; }
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.AutomaticDecompression = DecompressionMethods.GZip;

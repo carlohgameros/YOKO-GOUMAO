@@ -83,11 +83,12 @@
             this.fURegDataGridViewTextBoxColumn,
             this.fEstatusDataGridViewTextBoxColumn});
             this.ticketsDataGrid.DataSource = this.tblFacturasBindingSource1;
-            this.ticketsDataGrid.Location = new System.Drawing.Point(667, 84);
+            this.ticketsDataGrid.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ticketsDataGrid.Location = new System.Drawing.Point(698, 0);
             this.ticketsDataGrid.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ticketsDataGrid.Name = "ticketsDataGrid";
             this.ticketsDataGrid.RowHeadersVisible = false;
-            this.ticketsDataGrid.Size = new System.Drawing.Size(681, 792);
+            this.ticketsDataGrid.Size = new System.Drawing.Size(681, 931);
             this.ticketsDataGrid.TabIndex = 64;
             this.ticketsDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             // 
@@ -148,7 +149,7 @@
             this.buscarButton.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.buscarButton.ActiveForecolor = System.Drawing.Color.Black;
             this.buscarButton.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.buscarButton.BackColor = System.Drawing.Color.White;
+            this.buscarButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.buscarButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buscarButton.BackgroundImage")));
             this.buscarButton.ButtonText = "Buscar";
             this.buscarButton.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -156,13 +157,13 @@
             this.buscarButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buscarButton.IdleBorderThickness = 5;
             this.buscarButton.IdleCornerRadius = 10;
-            this.buscarButton.IdleFillColor = System.Drawing.Color.White;
+            this.buscarButton.IdleFillColor = System.Drawing.SystemColors.ControlLight;
             this.buscarButton.IdleForecolor = System.Drawing.Color.Gray;
             this.buscarButton.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buscarButton.Location = new System.Drawing.Point(51, 776);
-            this.buscarButton.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.buscarButton.Margin = new System.Windows.Forms.Padding(8);
             this.buscarButton.Name = "buscarButton";
-            this.buscarButton.Size = new System.Drawing.Size(555, 86);
+            this.buscarButton.Size = new System.Drawing.Size(555, 100);
             this.buscarButton.TabIndex = 80;
             this.buscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buscarButton.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -188,7 +189,7 @@
             this.contadorLabel.BackColor = System.Drawing.Color.Silver;
             this.contadorLabel.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contadorLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.contadorLabel.Location = new System.Drawing.Point(1002, 788);
+            this.contadorLabel.Location = new System.Drawing.Point(971, 470);
             this.contadorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.contadorLabel.Name = "contadorLabel";
             this.contadorLabel.Size = new System.Drawing.Size(160, 46);
@@ -210,7 +211,7 @@
             this.nombreField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.nombreField.isPassword = false;
             this.nombreField.Location = new System.Drawing.Point(51, 212);
-            this.nombreField.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.nombreField.Margin = new System.Windows.Forms.Padding(6);
             this.nombreField.Name = "nombreField";
             this.nombreField.Size = new System.Drawing.Size(555, 68);
             this.nombreField.TabIndex = 84;
@@ -229,7 +230,7 @@
             this.fechaField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.fechaField.isPassword = false;
             this.fechaField.Location = new System.Drawing.Point(51, 460);
-            this.fechaField.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.fechaField.Margin = new System.Windows.Forms.Padding(6);
             this.fechaField.Name = "fechaField";
             this.fechaField.Size = new System.Drawing.Size(272, 68);
             this.fechaField.TabIndex = 86;
@@ -261,7 +262,7 @@
             this.vendedorField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.vendedorField.isPassword = false;
             this.vendedorField.Location = new System.Drawing.Point(51, 571);
-            this.vendedorField.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.vendedorField.Margin = new System.Windows.Forms.Padding(6);
             this.vendedorField.Name = "vendedorField";
             this.vendedorField.Size = new System.Drawing.Size(555, 68);
             this.vendedorField.TabIndex = 88;
@@ -298,6 +299,7 @@
             // 
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -306,7 +308,7 @@
             this.bunifuGradientPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(2105, 12);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(698, 12);
             this.bunifuGradientPanel1.TabIndex = 92;
             // 
             // label2
@@ -391,7 +393,7 @@
             this.fechafinalField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.fechafinalField.isPassword = false;
             this.fechafinalField.Location = new System.Drawing.Point(333, 460);
-            this.fechafinalField.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.fechafinalField.Margin = new System.Windows.Forms.Padding(6);
             this.fechafinalField.Name = "fechafinalField";
             this.fechafinalField.Size = new System.Drawing.Size(272, 68);
             this.fechafinalField.TabIndex = 99;
@@ -431,14 +433,14 @@
             this.navigationBar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.navigationBar1.Location = new System.Drawing.Point(0, 0);
             this.navigationBar1.Name = "navigationBar1";
-            this.navigationBar1.Size = new System.Drawing.Size(1379, 60);
+            this.navigationBar1.Size = new System.Drawing.Size(698, 60);
             this.navigationBar1.TabIndex = 103;
             // 
             // Tickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1379, 931);
             this.Controls.Add(this.navigationBar1);
             this.Controls.Add(this.clienteAlert);

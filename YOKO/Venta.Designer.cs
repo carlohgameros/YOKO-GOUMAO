@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Venta));
-            this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuCheckbox2 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuCheckbox3 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.clienteCB = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.telefonoCB = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.celularCB = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,10 +45,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
             this.bunifuDatepicker1 = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.bunifuCheckbox5 = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtMoneda = new System.Windows.Forms.TextBox();
             this.registro = new System.Windows.Forms.DataGridView();
@@ -61,6 +58,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtNota = new System.Windows.Forms.TextBox();
             this.lista = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Productos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Preci = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,15 +82,18 @@
             this.statusPanel = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.statusLabel = new System.Windows.Forms.Label();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.btnPagar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuTextbox1 = new Bunifu.Framework.UI.BunifuTextbox();
             this.AgregarUsuario = new Bunifu.Framework.UI.BunifuThinButton2();
             this.AgregarMascota = new Bunifu.Framework.UI.BunifuThinButton2();
             this.AgregarProducto = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnAgregar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.tblClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pagar = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.navigationBar1 = new YOKO.NavigationBar.NavigationBar();
+            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             ((System.ComponentModel.ISupportInitialize)(this.clientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mascotas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.registro)).BeginInit();
@@ -102,36 +103,39 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // bunifuCheckbox1
+            // clienteCB
             // 
-            this.bunifuCheckbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox1.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox1.Checked = true;
-            this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.bunifuCheckbox1, "bunifuCheckbox1");
-            this.bunifuCheckbox1.Name = "bunifuCheckbox1";
+            resources.ApplyResources(this.clienteCB, "clienteCB");
+            this.clienteCB.BackColor = System.Drawing.Color.SeaGreen;
+            this.clienteCB.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.clienteCB.Checked = true;
+            this.clienteCB.CheckedOnColor = System.Drawing.Color.SeaGreen;
+            this.clienteCB.ForeColor = System.Drawing.Color.White;
+            this.clienteCB.Name = "clienteCB";
+            this.clienteCB.OnChange += new System.EventHandler(this.clienteCB_OnChange);
             // 
-            // bunifuCheckbox2
+            // telefonoCB
             // 
-            this.bunifuCheckbox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox2.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox2.Checked = false;
-            this.bunifuCheckbox2.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox2.ForeColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.bunifuCheckbox2, "bunifuCheckbox2");
-            this.bunifuCheckbox2.Name = "bunifuCheckbox2";
+            this.telefonoCB.BackColor = System.Drawing.Color.SeaGreen;
+            this.telefonoCB.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.telefonoCB.Checked = false;
+            this.telefonoCB.CheckedOnColor = System.Drawing.Color.SeaGreen;
+            this.telefonoCB.ForeColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.telefonoCB, "telefonoCB");
+            this.telefonoCB.Name = "telefonoCB";
+            this.telefonoCB.OnChange += new System.EventHandler(this.telefonoCB_OnChange);
             // 
-            // bunifuCheckbox3
+            // celularCB
             // 
-            this.bunifuCheckbox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox3.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox3.Checked = false;
-            this.bunifuCheckbox3.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox3.ForeColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.bunifuCheckbox3, "bunifuCheckbox3");
-            this.bunifuCheckbox3.Name = "bunifuCheckbox3";
-            this.bunifuCheckbox3.Tag = "v";
+            this.celularCB.BackColor = System.Drawing.Color.SeaGreen;
+            this.celularCB.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.celularCB.Checked = false;
+            this.celularCB.CheckedOnColor = System.Drawing.Color.SeaGreen;
+            this.celularCB.ForeColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.celularCB, "celularCB");
+            this.celularCB.Name = "celularCB";
+            this.celularCB.Tag = "v";
+            this.celularCB.OnChange += new System.EventHandler(this.celularCB_OnChange);
             // 
             // label1
             // 
@@ -242,11 +246,6 @@
             resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
             // 
-            // metroDateTime1
-            // 
-            resources.ApplyResources(this.metroDateTime1, "metroDateTime1");
-            this.metroDateTime1.Name = "metroDateTime1";
-            // 
             // bunifuDatepicker1
             // 
             this.bunifuDatepicker1.BackColor = System.Drawing.Color.SeaGreen;
@@ -257,22 +256,6 @@
             resources.ApplyResources(this.bunifuDatepicker1, "bunifuDatepicker1");
             this.bunifuDatepicker1.Name = "bunifuDatepicker1";
             this.bunifuDatepicker1.Value = new System.DateTime(2018, 6, 14, 18, 56, 28, 303);
-            // 
-            // label7
-            // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.Name = "label7";
-            // 
-            // bunifuCheckbox5
-            // 
-            this.bunifuCheckbox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox5.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox5.Checked = false;
-            this.bunifuCheckbox5.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox5.ForeColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.bunifuCheckbox5, "bunifuCheckbox5");
-            this.bunifuCheckbox5.Name = "bunifuCheckbox5";
-            this.bunifuCheckbox5.Tag = "v";
             // 
             // label16
             // 
@@ -347,6 +330,7 @@
             this.lista.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.lista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
             this.Productos,
             this.Cantida,
             this.Preci,
@@ -357,6 +341,12 @@
             this.lista.Name = "lista";
             this.lista.RowHeadersVisible = false;
             this.lista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick_1);
+            this.lista.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.lista_CellValueChanged);
+            // 
+            // ID
+            // 
+            resources.ApplyResources(this.ID, "ID");
+            this.ID.Name = "ID";
             // 
             // Productos
             // 
@@ -446,6 +436,7 @@
             // 
             resources.ApplyResources(this.txtProductos, "txtProductos");
             this.txtProductos.Name = "txtProductos";
+            this.txtProductos.TextChanged += new System.EventHandler(this.txtProductos_TextChanged_2);
             this.txtProductos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProductos_KeyDown);
             // 
             // DangerPetIndicator
@@ -454,8 +445,8 @@
             this.DangerPetIndicator.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.DangerPetIndicator.Checked = false;
             this.DangerPetIndicator.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.DangerPetIndicator.ForeColor = System.Drawing.Color.White;
             resources.ApplyResources(this.DangerPetIndicator, "DangerPetIndicator");
+            this.DangerPetIndicator.ForeColor = System.Drawing.Color.White;
             this.DangerPetIndicator.Name = "DangerPetIndicator";
             this.DangerPetIndicator.Tag = "v";
             // 
@@ -468,9 +459,9 @@
             // 
             this.petAddRegister.ActiveBorderThickness = 1;
             this.petAddRegister.ActiveCornerRadius = 20;
-            this.petAddRegister.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.petAddRegister.ActiveForecolor = System.Drawing.Color.White;
-            this.petAddRegister.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.petAddRegister.ActiveFillColor = System.Drawing.Color.White;
+            this.petAddRegister.ActiveForecolor = System.Drawing.Color.SeaGreen;
+            this.petAddRegister.ActiveLineColor = System.Drawing.Color.DarkGreen;
             this.petAddRegister.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.petAddRegister, "petAddRegister");
             this.petAddRegister.ButtonText = "Agregar Registro";
@@ -479,7 +470,7 @@
             this.petAddRegister.IdleBorderThickness = 1;
             this.petAddRegister.IdleCornerRadius = 20;
             this.petAddRegister.IdleFillColor = System.Drawing.Color.White;
-            this.petAddRegister.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.petAddRegister.IdleForecolor = System.Drawing.Color.Gray;
             this.petAddRegister.IdleLineColor = System.Drawing.Color.SeaGreen;
             this.petAddRegister.Name = "petAddRegister";
             this.petAddRegister.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -513,36 +504,6 @@
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
             // 
-            // btnPagar
-            // 
-            this.btnPagar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnPagar.BackColor = System.Drawing.Color.SeaGreen;
-            resources.ApplyResources(this.btnPagar, "btnPagar");
-            this.btnPagar.BorderRadius = 0;
-            this.btnPagar.ButtonText = "Pagar";
-            this.btnPagar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPagar.DisabledColor = System.Drawing.Color.Gray;
-            this.btnPagar.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnPagar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnPagar.Iconimage")));
-            this.btnPagar.Iconimage_right = null;
-            this.btnPagar.Iconimage_right_Selected = null;
-            this.btnPagar.Iconimage_Selected = null;
-            this.btnPagar.IconMarginLeft = 0;
-            this.btnPagar.IconMarginRight = 0;
-            this.btnPagar.IconRightVisible = true;
-            this.btnPagar.IconRightZoom = 0D;
-            this.btnPagar.IconVisible = true;
-            this.btnPagar.IconZoom = 90D;
-            this.btnPagar.IsTab = false;
-            this.btnPagar.Name = "btnPagar";
-            this.btnPagar.Normalcolor = System.Drawing.Color.SeaGreen;
-            this.btnPagar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(129)))), ((int)(((byte)(100)))));
-            this.btnPagar.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnPagar.selected = false;
-            this.btnPagar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPagar.Textcolor = System.Drawing.Color.White;
-            this.btnPagar.TextFont = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
             // bunifuTextbox1
             // 
             this.bunifuTextbox1.BackColor = System.Drawing.Color.White;
@@ -557,9 +518,9 @@
             // 
             this.AgregarUsuario.ActiveBorderThickness = 1;
             this.AgregarUsuario.ActiveCornerRadius = 20;
-            this.AgregarUsuario.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.AgregarUsuario.ActiveForecolor = System.Drawing.Color.White;
-            this.AgregarUsuario.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.AgregarUsuario.ActiveFillColor = System.Drawing.Color.White;
+            this.AgregarUsuario.ActiveForecolor = System.Drawing.Color.SeaGreen;
+            this.AgregarUsuario.ActiveLineColor = System.Drawing.Color.DarkGreen;
             this.AgregarUsuario.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.AgregarUsuario, "AgregarUsuario");
             this.AgregarUsuario.ButtonText = "Agregar Cliente";
@@ -568,7 +529,7 @@
             this.AgregarUsuario.IdleBorderThickness = 1;
             this.AgregarUsuario.IdleCornerRadius = 20;
             this.AgregarUsuario.IdleFillColor = System.Drawing.Color.White;
-            this.AgregarUsuario.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.AgregarUsuario.IdleForecolor = System.Drawing.Color.Gray;
             this.AgregarUsuario.IdleLineColor = System.Drawing.Color.SeaGreen;
             this.AgregarUsuario.Name = "AgregarUsuario";
             this.AgregarUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -578,9 +539,9 @@
             // 
             this.AgregarMascota.ActiveBorderThickness = 1;
             this.AgregarMascota.ActiveCornerRadius = 20;
-            this.AgregarMascota.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.AgregarMascota.ActiveForecolor = System.Drawing.Color.White;
-            this.AgregarMascota.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.AgregarMascota.ActiveFillColor = System.Drawing.Color.White;
+            this.AgregarMascota.ActiveForecolor = System.Drawing.Color.SeaGreen;
+            this.AgregarMascota.ActiveLineColor = System.Drawing.Color.DarkGreen;
             this.AgregarMascota.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.AgregarMascota, "AgregarMascota");
             this.AgregarMascota.ButtonText = "Agregar Mascota";
@@ -589,18 +550,19 @@
             this.AgregarMascota.IdleBorderThickness = 1;
             this.AgregarMascota.IdleCornerRadius = 20;
             this.AgregarMascota.IdleFillColor = System.Drawing.Color.White;
-            this.AgregarMascota.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.AgregarMascota.IdleForecolor = System.Drawing.Color.Gray;
             this.AgregarMascota.IdleLineColor = System.Drawing.Color.SeaGreen;
             this.AgregarMascota.Name = "AgregarMascota";
             this.AgregarMascota.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.AgregarMascota.Click += new System.EventHandler(this.AgregarMascota_Click);
             // 
             // AgregarProducto
             // 
             this.AgregarProducto.ActiveBorderThickness = 1;
             this.AgregarProducto.ActiveCornerRadius = 20;
-            this.AgregarProducto.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.AgregarProducto.ActiveForecolor = System.Drawing.Color.White;
-            this.AgregarProducto.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.AgregarProducto.ActiveFillColor = System.Drawing.Color.White;
+            this.AgregarProducto.ActiveForecolor = System.Drawing.Color.SeaGreen;
+            this.AgregarProducto.ActiveLineColor = System.Drawing.Color.DarkGreen;
             this.AgregarProducto.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.AgregarProducto, "AgregarProducto");
             this.AgregarProducto.ButtonText = "Agregar Producto";
@@ -609,18 +571,19 @@
             this.AgregarProducto.IdleBorderThickness = 1;
             this.AgregarProducto.IdleCornerRadius = 20;
             this.AgregarProducto.IdleFillColor = System.Drawing.Color.White;
-            this.AgregarProducto.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.AgregarProducto.IdleForecolor = System.Drawing.Color.Gray;
             this.AgregarProducto.IdleLineColor = System.Drawing.Color.SeaGreen;
             this.AgregarProducto.Name = "AgregarProducto";
             this.AgregarProducto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.AgregarProducto.Click += new System.EventHandler(this.AgregarProducto_Click);
             // 
             // btnAgregar
             // 
             this.btnAgregar.ActiveBorderThickness = 1;
             this.btnAgregar.ActiveCornerRadius = 20;
-            this.btnAgregar.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.btnAgregar.ActiveForecolor = System.Drawing.Color.White;
-            this.btnAgregar.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnAgregar.ActiveFillColor = System.Drawing.Color.White;
+            this.btnAgregar.ActiveForecolor = System.Drawing.Color.SeaGreen;
+            this.btnAgregar.ActiveLineColor = System.Drawing.Color.DarkGreen;
             this.btnAgregar.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.btnAgregar, "btnAgregar");
             this.btnAgregar.ButtonText = "Agregar al Carrito";
@@ -629,7 +592,7 @@
             this.btnAgregar.IdleBorderThickness = 1;
             this.btnAgregar.IdleCornerRadius = 20;
             this.btnAgregar.IdleFillColor = System.Drawing.Color.White;
-            this.btnAgregar.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.btnAgregar.IdleForecolor = System.Drawing.Color.Gray;
             this.btnAgregar.IdleLineColor = System.Drawing.Color.SeaGreen;
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -638,6 +601,37 @@
             // tblClientesBindingSource
             // 
             this.tblClientesBindingSource.DataMember = "tblClientes";
+            // 
+            // pagar
+            // 
+            this.pagar.ActiveBorderThickness = 1;
+            this.pagar.ActiveCornerRadius = 20;
+            this.pagar.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.pagar.ActiveForecolor = System.Drawing.Color.White;
+            this.pagar.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.pagar.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.pagar, "pagar");
+            this.pagar.ButtonText = "PAGAR";
+            this.pagar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pagar.ForeColor = System.Drawing.Color.SeaGreen;
+            this.pagar.IdleBorderThickness = 1;
+            this.pagar.IdleCornerRadius = 20;
+            this.pagar.IdleFillColor = System.Drawing.Color.White;
+            this.pagar.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.pagar.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.pagar.Name = "pagar";
+            this.pagar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pagar.Click += new System.EventHandler(this.pagar_Click);
+            // 
+            // textBox3
+            // 
+            resources.ApplyResources(this.textBox3, "textBox3");
+            this.textBox3.Name = "textBox3";
+            // 
+            // label19
+            // 
+            resources.ApplyResources(this.label19, "label19");
+            this.label19.Name = "label19";
             // 
             // pictureBox1
             // 
@@ -649,12 +643,37 @@
             // 
             resources.ApplyResources(this.navigationBar1, "navigationBar1");
             this.navigationBar1.Name = "navigationBar1";
+            this.navigationBar1.Load += new System.EventHandler(this.navigationBar1_Load);
+            // 
+            // bunifuThinButton21
+            // 
+            this.bunifuThinButton21.ActiveBorderThickness = 1;
+            this.bunifuThinButton21.ActiveCornerRadius = 20;
+            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.White;
+            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.DarkGreen;
+            this.bunifuThinButton21.BackColor = System.Drawing.Color.GhostWhite;
+            resources.ApplyResources(this.bunifuThinButton21, "bunifuThinButton21");
+            this.bunifuThinButton21.ButtonText = "Verificar";
+            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuThinButton21.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.IdleBorderThickness = 1;
+            this.bunifuThinButton21.IdleCornerRadius = 1;
+            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.GhostWhite;
+            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.Gray;
+            this.bunifuThinButton21.IdleLineColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.bunifuThinButton21.Name = "bunifuThinButton21";
+            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Venta
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.bunifuThinButton21);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.pagar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.navigationBar1);
             this.Controls.Add(this.label18);
@@ -662,7 +681,6 @@
             this.Controls.Add(this.petAddRegister);
             this.Controls.Add(this.statusPanel);
             this.Controls.Add(this.bunifuGradientPanel1);
-            this.Controls.Add(this.btnPagar);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.txtVendedor);
             this.Controls.Add(this.label14);
@@ -687,10 +705,7 @@
             this.Controls.Add(this.registro);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.txtMoneda);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.bunifuCheckbox5);
             this.Controls.Add(this.bunifuDatepicker1);
-            this.Controls.Add(this.metroDateTime1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -707,9 +722,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.bunifuCheckbox3);
-            this.Controls.Add(this.bunifuCheckbox2);
-            this.Controls.Add(this.bunifuCheckbox1);
+            this.Controls.Add(this.celularCB);
+            this.Controls.Add(this.telefonoCB);
+            this.Controls.Add(this.clienteCB);
+            this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Venta";
             this.TransparencyKey = System.Drawing.Color.Red;
@@ -728,9 +744,9 @@
         }
 
         #endregion
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox2;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox3;
+        private Bunifu.Framework.UI.BunifuCheckbox clienteCB;
+        private Bunifu.Framework.UI.BunifuCheckbox telefonoCB;
+        private Bunifu.Framework.UI.BunifuCheckbox celularCB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -748,16 +764,12 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label6;
-        private MetroFramework.Controls.MetroDateTime metroDateTime1;
         private Bunifu.Framework.UI.BunifuDatepicker bunifuDatepicker1;
-        private System.Windows.Forms.Label label7;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox5;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtMoneda;
         private System.Windows.Forms.DataGridView registro;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox PetNote;
-        private Bunifu.Framework.UI.BunifuFlatButton btnPagar;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtVendedor;
         private System.Windows.Forms.Label label14;
@@ -765,12 +777,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtNota;
         private System.Windows.Forms.DataGridView lista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Productos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Preci;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descuent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Import;
-        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
         private Bunifu.Framework.UI.BunifuThinButton2 btnAgregar;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtImporte;
@@ -790,6 +796,17 @@
         private Bunifu.Framework.UI.BunifuCheckbox DangerPetIndicator;
         private System.Windows.Forms.Label label18;
         private NavigationBar.NavigationBar navigationBar1;
+        private Bunifu.Framework.UI.BunifuThinButton2 pagar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Productos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Preci;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descuent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Import;
+        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
     }
 }

@@ -90,5 +90,10 @@ namespace YOKO
                 contra2.Enabled = true;
             }
         }
+
+        private void RecuperarContra_Load(object sender, EventArgs e)
+        {
+               
+        }
     }
 }

@@ -37,15 +37,16 @@
             // 
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.Yellow;
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.Yellow;
             this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.Yellow;
             this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.Yellow;
-            this.bunifuGradientPanel1.Location = new System.Drawing.Point(2, 797);
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 800);
             this.bunifuGradientPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(1905, 15);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(1900, 15);
             this.bunifuGradientPanel1.TabIndex = 0;
             // 
             // label1

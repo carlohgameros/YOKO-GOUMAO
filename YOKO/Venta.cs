@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using YOKO.enums;
 using YOKO.Helpers;
 using YOKO.Notifications;
+using System.Linq;
 
 namespace YOKO
 {
@@ -24,16 +25,18 @@ namespace YOKO
         SqlConnection conn = new SqlConnection();
         WebBrowser navegador = new WebBrowser();
         WebBrowser navegador2 = new WebBrowser();
-        String a, b;
-        String clienteID;
-        String UMe;
-        Decimal suma;
-        String Valor;
-        Decimal Dolar;
-        Decimal Euro;
-        String vendedor_a;
         Object usuarioSelecto;
         Object mascotaSelecta;
+
+        string campo = "NombreComercial";
+        string a, b;
+        string clienteID;
+        string UMe;
+        decimal suma;
+        string Valor;
+        decimal Dolar;
+        decimal Euro;
+        string vendedor_a;
         string mascotaSelectaId;
         int posY = 0;
         int posX = 0;
@@ -69,14 +72,13 @@ namespace YOKO
             textBox2.Text = (int.Parse(s: command.ExecuteScalar().ToString()) + 1).ToString();
             conn.Close();
 
-            NotificationsCenter.notifyIcon.ShowBalloonTip(1000, "1", "2", ToolTipIcon.Info);
-            
+            //NotificationsCenter.notifyIcon.ShowBalloonTip(1000, "1", "2", ToolTipIcon.Info);
         }
 
         private void bunifuTextbox1_OnTextChange(object sender, EventArgs e)
         {
             conn.Open();
-            string sql = "SELECT * FROM tblClientes where NombreComercial like '%" + bunifuTextbox1.text + "%'";
+            string sql = "SELECT * FROM tblClientes where " + campo + " like '%" + bunifuTextbox1.text + "%'";
             sCommand = new SqlCommand(sql, conn);
             sAdapter = new SqlDataAdapter(sCommand);
             sBuilder = new SqlCommandBuilder(sAdapter);
@@ -149,20 +151,20 @@ namespace YOKO
             if (txtDescuento.Text == "") { txtDescuento.Text = 0.ToString(); }
             if (txtCantidad.Text == "") { txtCantidad.Text = 1.ToString(); }
             int n = lista.Rows.Add();
-            lista.Rows[n].Cells[0].Value = txtProductos.Text;
-            lista.Rows[n].Cells[1].Value = txtCantidad.Text + " " + txtUM.Text;
-            lista.Rows[n].Cells[2].Value = "$" + Math.Round(decimal.Parse(txtPrecio.Text), 2);
-            lista.Rows[n].Cells[3].Value = txtDescuento.Text + "%";
-            lista.Rows[n].Cells[4].Value = "$" + int.Parse(txtCantidad.Text) * Math.Round((1 - (decimal.Parse(txtDescuento.Text) / 100)) * decimal.Parse(txtPrecio.Text), 2);
+            lista.Rows[n].Cells[1].Value = txtProductos.Text;
+            lista.Rows[n].Cells[2].Value = txtCantidad.Text + " " + txtUM.Text;
+            lista.Rows[n].Cells[3].Value = "$" + Math.Round(decimal.Parse(txtPrecio.Text), 2);
+            lista.Rows[n].Cells[4].Value = txtDescuento.Text + "%";
+            lista.Rows[n].Cells[5].Value = "$" + int.Parse(txtCantidad.Text) * Math.Round((1 - (decimal.Parse(txtDescuento.Text) / 100)) * decimal.Parse(txtPrecio.Text), 2);
             suma = 0;
             Valor = "";
             foreach (DataGridViewRow row in lista.Rows)
             {
-                Valor = row.Cells[4].Value.ToString();
+                Valor = row.Cells[5].Value.ToString();
                 Valor= Valor.Replace("$", " ");
                 suma += decimal.Parse(Valor.ToString());
             }
-            btnPagar.Text = "$" + suma.ToString();
+            pagar.Text = "$" + suma.ToString();
         }
 
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -175,11 +177,11 @@ namespace YOKO
                 Valor = "";
                 foreach (DataGridViewRow row in lista.Rows)
                 {
-                    Valor = row.Cells[4].Value.ToString();
+                    Valor = row.Cells[5].Value.ToString();
                     Valor = Valor.Replace("$", " ");
                     suma += decimal.Parse(Valor.ToString());
                 }
-                btnPagar.Text = "$" + suma.ToString();
+                pagar.Text = "$" + suma.ToString();
             } catch { }
         }
 
@@ -225,9 +227,16 @@ namespace YOKO
 
         private void AgregarUsuario_Click(object sender, EventArgs e)
         {
-            //vendedor_a
-            AltasSecundarias altasSecundarias = new AltasSecundarias();
-            altasSecundarias.Show();
+
+            if (Application.OpenForms.OfType<AltasSecundarias>().Count() == 1)
+            {
+                Application.OpenForms.OfType<AltasSecundarias>().First().WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                AltasSecundarias altasSecundarias = new AltasSecundarias();
+                altasSecundarias.Show();
+            }
         }
 
         private void txtProductos_TextChanged_1(object sender, EventArgs e)
@@ -249,7 +258,7 @@ namespace YOKO
                     Valor = Valor.Replace("$", " ");
                     suma += decimal.Parse(Valor.ToString());
                 }
-                btnPagar.Text = "$" + suma.ToString();
+                pagar.Text = "$" + suma.ToString();
             }
             catch { }
         }
@@ -299,20 +308,20 @@ namespace YOKO
             if (txtDescuento.Text == "") { txtDescuento.Text = 0.ToString(); }
             if (txtCantidad.Text == "") { txtCantidad.Text = 1.ToString(); }
             int n = lista.Rows.Add();
-            lista.Rows[n].Cells[0].Value = txtProductos.Text;
-            lista.Rows[n].Cells[1].Value = txtCantidad.Text + " " + txtUM.Text;
-            lista.Rows[n].Cells[2].Value = "$" + Math.Round(decimal.Parse(txtPrecio.Text), 2);
-            lista.Rows[n].Cells[3].Value = txtDescuento.Text + "%";
-            lista.Rows[n].Cells[4].Value = "$" + int.Parse(txtCantidad.Text) * Math.Round((1 - (decimal.Parse(txtDescuento.Text) / 100)) * decimal.Parse(txtPrecio.Text), 2);
+            lista.Rows[n].Cells[1].Value = txtProductos.Text;
+            lista.Rows[n].Cells[2].Value = txtCantidad.Text + " " + txtUM.Text;
+            lista.Rows[n].Cells[3].Value = "$" + Math.Round(decimal.Parse(txtPrecio.Text), 2);
+            lista.Rows[n].Cells[4].Value = txtDescuento.Text + "%";
+            lista.Rows[n].Cells[5].Value = "$" + int.Parse(txtCantidad.Text) * Math.Round((1 - (decimal.Parse(txtDescuento.Text) / 100)) * decimal.Parse(txtPrecio.Text), 2);
             suma = 0;
             Valor = "";
             foreach (DataGridViewRow row in lista.Rows)
             {
-                Valor = row.Cells[4].Value.ToString();
+                Valor = row.Cells[5].Value.ToString();
                 Valor = Valor.Replace("$", " ");
                 suma += decimal.Parse(Valor.ToString());
             }
-            btnPagar.Text = "$" + suma.ToString();
+            pagar.Text = "$" + suma.ToString();
         }
 
         private void txtProductos_KeyDown_1(object sender, KeyEventArgs e)
@@ -505,6 +514,94 @@ namespace YOKO
         private void bunifuImageButton3_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
 
         private String setColorForNewRegiter() => DangerPetIndicator.Checked == true ? "Rojo" : "Blanco";
+
+        private void pagar_Click(object sender, EventArgs e)
+        {
+            handlePay();
+        }
+
+        private void handlePay()
+        {
+            if (lista.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in lista.Rows)
+                {
+                    Valor = row.Cells[4].Value.ToString();
+                    Valor = Valor.Replace("$", " ");
+                    suma += decimal.Parse(Valor.ToString());
+                }
+            } 
+        }
+
+        private void lista_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            Console.WriteLine("Change occured.");
+        }
+
+        private void txtProductos_TextChanged_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clienteCB_OnChange(object sender, EventArgs e)
+        {
+            campo = "NombreComercial";
+            clienteCB.Checked = true;
+            telefonoCB.Checked = false;
+            celularCB.Checked = false;
+        }
+
+        private void telefonoCB_OnChange(object sender, EventArgs e)
+        {
+            campo = "Tel";
+            clienteCB.Checked = false;
+            telefonoCB.Checked = true;
+            celularCB.Checked = false;
+        }
+
+        private void celularCB_OnChange(object sender, EventArgs e)
+        {
+            campo = "Cel";
+            clienteCB.Checked = false;
+            telefonoCB.Checked = false;
+            celularCB.Checked = true;
+        }
+
+        private void mascotaCB_OnChange(object sender, EventArgs e)
+        {
+
+        }
+
+        private void navigationBar1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AgregarProducto_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<Productos>().Count() == 1)
+            {
+                Application.OpenForms.OfType<Productos>().First().WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                Productos productos = new Productos();
+                productos.Show();
+            }
+        }
+
+        private void AgregarMascota_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<AltasSecundarias>().Count() == 1)
+            {
+                Application.OpenForms.OfType<AltasSecundarias>().First().WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                AltasSecundarias altasSecundarias = new AltasSecundarias();
+                altasSecundarias.Show();
+            }
+        }
 
         private void CenterStatusLabel() => statusLabel.Left = (statusPanel.Width / 2) - (statusLabel.Width / 2);
     }

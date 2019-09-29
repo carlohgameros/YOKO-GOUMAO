@@ -20,9 +20,14 @@ namespace YOKO.Notifications
             AppDomain.CurrentDomain.ProcessExit += new EventHandler(DisposeNotifyIcon);
         }
 
-        public void DisposeNotifyIcon(object sender, EventArgs e)
+        public static void DisposeNotifyIcon(object sender, EventArgs e)
         {
             notifyIcon.Dispose();
+        }
+
+        public static void ShowErrorMessageForConection()
+        {
+            notifyIcon.ShowBalloonTip(1000, "Oh oh, algo salió mal.", "Revisa tu conexión a la base de datos", ToolTipIcon.Info);
         }
     }
 }

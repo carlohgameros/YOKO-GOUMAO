@@ -26,13 +26,17 @@ namespace YOKO.Helpers
 
        public static void GoToPreviousForm(Form parentForm)
         {
-            previousForm.Show();
+            Form inicio = new Inicio();
+            inicio.Show();
             actualForm = parentForm;
             actualForm.Hide();
             ChangeForms();
         }
 
-        public static void CloseProgram(Form actualForm) => actualForm.Close();
+        public static void CloseProgram(Form actualForm)
+        {
+            actualForm.Close();
+        }
 
         public static void HideProgram(Form actualForm) => actualForm.WindowState = FormWindowState.Minimized;
 

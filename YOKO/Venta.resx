@@ -117,79 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="clienteCB.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="bunifuCheckbox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 161</value>
+  <data name="clienteCB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 165</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="bunifuCheckbox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 6, 5, 6</value>
+  <data name="clienteCB.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 6, 4, 6</value>
   </data>
-  <data name="bunifuCheckbox1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="clienteCB.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="bunifuCheckbox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="clienteCB.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;bunifuCheckbox1.Name" xml:space="preserve">
-    <value>bunifuCheckbox1</value>
+  <data name="&gt;&gt;clienteCB.Name" xml:space="preserve">
+    <value>clienteCB</value>
   </data>
-  <data name="&gt;&gt;bunifuCheckbox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;clienteCB.Type" xml:space="preserve">
     <value>Bunifu.Framework.UI.BunifuCheckbox, Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;bunifuCheckbox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;clienteCB.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;bunifuCheckbox1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;clienteCB.ZOrder" xml:space="preserve">
     <value>54</value>
   </data>
-  <data name="bunifuCheckbox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 206</value>
+  <data name="telefonoCB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 224</value>
   </data>
-  <data name="bunifuCheckbox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 6, 5, 6</value>
+  <data name="telefonoCB.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 6, 4, 6</value>
   </data>
-  <data name="bunifuCheckbox2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="telefonoCB.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
   </data>
-  <data name="bunifuCheckbox2.TabIndex" type="System.Int32, mscorlib">
+  <data name="telefonoCB.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;bunifuCheckbox2.Name" xml:space="preserve">
-    <value>bunifuCheckbox2</value>
+  <data name="&gt;&gt;telefonoCB.Name" xml:space="preserve">
+    <value>telefonoCB</value>
   </data>
-  <data name="&gt;&gt;bunifuCheckbox2.Type" xml:space="preserve">
+  <data name="&gt;&gt;telefonoCB.Type" xml:space="preserve">
     <value>Bunifu.Framework.UI.BunifuCheckbox, Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;bunifuCheckbox2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;telefonoCB.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;bunifuCheckbox2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;telefonoCB.ZOrder" xml:space="preserve">
     <value>53</value>
   </data>
-  <data name="bunifuCheckbox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 246</value>
+  <data name="celularCB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 280</value>
   </data>
-  <data name="bunifuCheckbox3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 6, 5, 6</value>
+  <data name="celularCB.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 6, 4, 6</value>
   </data>
-  <data name="bunifuCheckbox3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="celularCB.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
   </data>
-  <data name="bunifuCheckbox3.TabIndex" type="System.Int32, mscorlib">
+  <data name="celularCB.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;bunifuCheckbox3.Name" xml:space="preserve">
-    <value>bunifuCheckbox3</value>
+  <data name="&gt;&gt;celularCB.Name" xml:space="preserve">
+    <value>celularCB</value>
   </data>
-  <data name="&gt;&gt;bunifuCheckbox3.Type" xml:space="preserve">
+  <data name="&gt;&gt;celularCB.Type" xml:space="preserve">
     <value>Bunifu.Framework.UI.BunifuCheckbox, Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;bunifuCheckbox3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;celularCB.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;bunifuCheckbox3.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;celularCB.ZOrder" xml:space="preserve">
     <value>52</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
@@ -202,7 +205,7 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>67, 162</value>
+    <value>67, 160</value>
   </data>
   <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 0, 5, 0</value>
@@ -238,7 +241,7 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>67, 203</value>
+    <value>67, 219</value>
   </data>
   <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 0, 5, 0</value>
@@ -274,7 +277,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>67, 244</value>
+    <value>67, 275</value>
   </data>
   <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 0, 5, 0</value>
@@ -427,10 +430,10 @@
     <value>40</value>
   </data>
   <data name="bunifuCheckbox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 755</value>
+    <value>23, 756</value>
   </data>
   <data name="bunifuCheckbox4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 7, 5, 7</value>
+    <value>4, 7, 4, 7</value>
   </data>
   <data name="bunifuCheckbox4.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
@@ -496,7 +499,7 @@
     <value>EUROS</value>
   </data>
   <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 835</value>
+    <value>23, 834</value>
   </data>
   <data name="textBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 4, 5, 4</value>
@@ -520,7 +523,7 @@
     <value>38</value>
   </data>
   <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 794</value>
+    <value>23, 792</value>
   </data>
   <data name="textBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 4, 5, 4</value>
@@ -579,38 +582,11 @@
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
     <value>36</value>
   </data>
-  <data name="metroDateTime1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 874</value>
-  </data>
-  <data name="metroDateTime1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
-  </data>
-  <data name="metroDateTime1.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>4, 29</value>
-  </data>
-  <data name="metroDateTime1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>331, 29</value>
-  </data>
-  <data name="metroDateTime1.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
-  </data>
-  <data name="&gt;&gt;metroDateTime1.Name" xml:space="preserve">
-    <value>metroDateTime1</value>
-  </data>
-  <data name="&gt;&gt;metroDateTime1.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroDateTime, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroDateTime1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;metroDateTime1.ZOrder" xml:space="preserve">
-    <value>35</value>
-  </data>
   <data name="bunifuDatepicker1.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 927</value>
   </data>
   <data name="bunifuDatepicker1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 6, 5, 6</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="bunifuDatepicker1.Size" type="System.Drawing.Size, System.Drawing">
     <value>792, 45</value>
@@ -628,67 +604,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;bunifuDatepicker1.ZOrder" xml:space="preserve">
-    <value>34</value>
-  </data>
-  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI Light, 12pt</value>
-  </data>
-  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>67, 288</value>
-  </data>
-  <data name="label7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 0</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 31</value>
-  </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>60</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Mascota</value>
-  </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>32</value>
-  </data>
-  <data name="bunifuCheckbox5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 290</value>
-  </data>
-  <data name="bunifuCheckbox5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 7, 5, 7</value>
-  </data>
-  <data name="bunifuCheckbox5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
-  </data>
-  <data name="bunifuCheckbox5.TabIndex" type="System.Int32, mscorlib">
-    <value>59</value>
-  </data>
-  <data name="&gt;&gt;bunifuCheckbox5.Name" xml:space="preserve">
-    <value>bunifuCheckbox5</value>
-  </data>
-  <data name="&gt;&gt;bunifuCheckbox5.Type" xml:space="preserve">
-    <value>Bunifu.Framework.UI.BunifuCheckbox, Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;bunifuCheckbox5.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;bunifuCheckbox5.ZOrder" xml:space="preserve">
-    <value>33</value>
+    <value>35</value>
   </data>
   <data name="label16.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -700,7 +616,7 @@
     <value>NoControl</value>
   </data>
   <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>618, 828</value>
+    <value>198, 871</value>
   </data>
   <data name="label16.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 0, 5, 0</value>
@@ -724,7 +640,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
-    <value>30</value>
+    <value>33</value>
   </data>
   <data name="txtMoneda.AutoCompleteCustomSource" xml:space="preserve">
     <value>PESOS</value>
@@ -736,7 +652,7 @@
     <value>EUROS</value>
   </data>
   <data name="txtMoneda.Location" type="System.Drawing.Point, System.Drawing">
-    <value>442, 831</value>
+    <value>23, 874</value>
   </data>
   <data name="txtMoneda.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 4, 5, 4</value>
@@ -760,7 +676,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtMoneda.ZOrder" xml:space="preserve">
-    <value>31</value>
+    <value>34</value>
+  </data>
+  <data name="registro.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="registro.Location" type="System.Drawing.Point, System.Drawing">
     <value>932, 262</value>
@@ -784,10 +703,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;registro.ZOrder" xml:space="preserve">
-    <value>29</value>
+    <value>32</value>
   </data>
   <data name="label17.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label17.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="label17.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI Light, 12pt</value>
@@ -820,7 +742,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>30</value>
+  </data>
+  <data name="PetNote.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="PetNote.Location" type="System.Drawing.Point, System.Drawing">
     <value>932, 104</value>
@@ -844,7 +769,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PetNote.ZOrder" xml:space="preserve">
-    <value>28</value>
+    <value>31</value>
   </data>
   <data name="label15.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -880,7 +805,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>11</value>
+  </data>
+  <data name="txtVendedor.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="txtVendedor.Location" type="System.Drawing.Point, System.Drawing">
     <value>1547, 939</value>
@@ -904,7 +832,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtVendedor.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>12</value>
   </data>
   <data name="label14.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -940,7 +868,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>13</value>
   </data>
   <data name="txtFP.Location" type="System.Drawing.Point, System.Drawing">
     <value>1547, 870</value>
@@ -964,7 +892,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtFP.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>14</value>
   </data>
   <data name="label13.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1000,7 +928,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>15</value>
   </data>
   <data name="txtNota.Location" type="System.Drawing.Point, System.Drawing">
     <value>1547, 798</value>
@@ -1027,7 +955,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtNota.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>16</value>
+  </data>
+  <metadata name="ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ID.HeaderText" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="ID.Width" type="System.Int32, mscorlib">
+    <value>40</value>
   </data>
   <metadata name="Productos.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1099,7 +1036,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lista.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>17</value>
   </data>
   <data name="label12.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1135,7 +1072,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>19</value>
   </data>
   <data name="txtImporte.Location" type="System.Drawing.Point, System.Drawing">
     <value>2512, 102</value>
@@ -1159,7 +1096,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtImporte.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>20</value>
   </data>
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1195,7 +1132,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>21</value>
   </data>
   <data name="txtDescuento.Location" type="System.Drawing.Point, System.Drawing">
     <value>2358, 102</value>
@@ -1219,7 +1156,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtDescuento.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>22</value>
   </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1255,7 +1192,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>23</value>
   </data>
   <data name="txtPrecio.Location" type="System.Drawing.Point, System.Drawing">
     <value>2228, 102</value>
@@ -1279,7 +1216,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtPrecio.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>24</value>
   </data>
   <data name="txtUM.Location" type="System.Drawing.Point, System.Drawing">
     <value>2153, 102</value>
@@ -1303,7 +1240,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtUM.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>25</value>
   </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1339,7 +1276,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>26</value>
   </data>
   <data name="txtCantidad.Location" type="System.Drawing.Point, System.Drawing">
     <value>2038, 102</value>
@@ -1363,7 +1300,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtCantidad.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>27</value>
   </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1399,7 +1336,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>28</value>
   </data>
   <data name="txtProductos.Location" type="System.Drawing.Point, System.Drawing">
     <value>1547, 102</value>
@@ -1423,7 +1360,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtProductos.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>29</value>
+  </data>
+  <data name="DangerPetIndicator.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="DangerPetIndicator.Location" type="System.Drawing.Point, System.Drawing">
     <value>933, 218</value>
@@ -1447,10 +1387,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;DangerPetIndicator.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="label18.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label18.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="label18.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI Light, 12pt</value>
@@ -1483,24 +1426,25 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label18.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="petAddRegister.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
+        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
+        RU5ErkJggg==
 </value>
   </data>
   <data name="petAddRegister.Font" type="System.Drawing.Font, System.Drawing">
@@ -1528,7 +1472,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;petAddRegister.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="statusPanel.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1575,6 +1519,9 @@
   <data name="&gt;&gt;statusLabel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="statusPanel.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="statusPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>933, 874</value>
   </data>
@@ -1597,7 +1544,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;statusPanel.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>9</value>
   </data>
   <data name="bunifuGradientPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1608,14 +1555,17 @@
   <data name="bunifuGradientPanel1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
+  <data name="bunifuGradientPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
   <data name="bunifuGradientPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-3, 1005</value>
+    <value>0, 1004</value>
   </data>
   <data name="bunifuGradientPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 4, 5, 4</value>
   </data>
   <data name="bunifuGradientPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>2677, 12</value>
+    <value>2685, 12</value>
   </data>
   <data name="bunifuGradientPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>90</value>
@@ -1630,100 +1580,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;bunifuGradientPanel1.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="btnPagar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
-  </data>
-  <data name="btnPagar.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        Vu+NkQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="btnPagar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2038, 770</value>
-  </data>
-  <data name="btnPagar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 7, 5, 7</value>
-  </data>
-  <data name="btnPagar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>610, 197</value>
-  </data>
-  <data name="btnPagar.TabIndex" type="System.Int32, mscorlib">
-    <value>87</value>
-  </data>
-  <data name="btnPagar.Text" xml:space="preserve">
-    <value>Pagar</value>
-  </data>
-  <data name="&gt;&gt;btnPagar.Name" xml:space="preserve">
-    <value>btnPagar</value>
-  </data>
-  <data name="&gt;&gt;btnPagar.Type" xml:space="preserve">
-    <value>Bunifu.Framework.UI.BunifuFlatButton, Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnPagar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnPagar.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>10</value>
   </data>
   <data name="bunifuTextbox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1779,10 +1636,10 @@
     <value>23, 76</value>
   </data>
   <data name="bunifuTextbox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 6, 5, 6</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="bunifuTextbox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>795, 60</value>
+    <value>792, 60</value>
   </data>
   <data name="bunifuTextbox1.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -1980,11 +1837,126 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnAgregar.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>18</value>
   </data>
   <metadata name="tblClientesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>173, 17</value>
   </metadata>
+  <data name="pagar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="pagar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 24pt</value>
+  </data>
+  <data name="pagar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2078, 791</value>
+  </data>
+  <data name="pagar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>8, 7, 8, 7</value>
+  </data>
+  <data name="pagar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>572, 185</value>
+  </data>
+  <data name="pagar.TabIndex" type="System.Int32, mscorlib">
+    <value>97</value>
+  </data>
+  <data name="&gt;&gt;pagar.Name" xml:space="preserve">
+    <value>pagar</value>
+  </data>
+  <data name="&gt;&gt;pagar.Type" xml:space="preserve">
+    <value>Bunifu.Framework.UI.BunifuThinButton2, Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;pagar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pagar.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="textBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1972, 102</value>
+  </data>
+  <data name="textBox3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 4, 5, 4</value>
+  </data>
+  <data name="textBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 29</value>
+  </data>
+  <data name="textBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>98</value>
+  </data>
+  <data name="&gt;&gt;textBox3.Name" xml:space="preserve">
+    <value>textBox3</value>
+  </data>
+  <data name="&gt;&gt;textBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBox3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label19.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label19.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI Light, 12pt</value>
+  </data>
+  <data name="label19.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1966, 69</value>
+  </data>
+  <data name="label19.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 0, 5, 0</value>
+  </data>
+  <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 31</value>
+  </data>
+  <data name="label19.TabIndex" type="System.Int32, mscorlib">
+    <value>99</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="&gt;&gt;label19.Name" xml:space="preserve">
+    <value>label19</value>
+  </data>
+  <data name="&gt;&gt;label19.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label19.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label19.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -2007,7 +1979,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>4</value>
   </data>
   <data name="navigationBar1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -2016,7 +1988,7 @@
     <value>0, 0</value>
   </data>
   <data name="navigationBar1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>2673, 60</value>
+    <value>2685, 60</value>
   </data>
   <data name="navigationBar1.TabIndex" type="System.Int32, mscorlib">
     <value>95</value>
@@ -2031,19 +2003,56 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;navigationBar1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
+  </data>
+  <data name="bunifuThinButton21.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAANoAAAA4CAYAAACbkeZSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADbSURBVHhe7dOxDcIwAABB1s1UkRglBTOlM7ILxADxV1dc
+        8QP8677HAPYyGgSMBgGjQcBoEDAaBNZo1/UZx3EAG8y/1mgz/u8DnjP/MhpsZjQIGA0CRoOA0SBgNAgY
+        DQJGg4DRIGA0CBgNAkaDgNEgYDQIGA0CRoOA0SBgNAgYDQJGg4DRIGA0CBgNAkaDgNEgYDQIGA0CRoOA
+        0SBgNAgYDQJGg4DRIGA0CBgNAkaDgNEgYDQIGA0CRoOA0SBgNAj8RjvP9wrgefOvNRqwl9EgYDQIGA0C
+        RoPtxvgC/1b+Ih4d/AwAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="bunifuThinButton21.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt</value>
+  </data>
+  <data name="bunifuThinButton21.Location" type="System.Drawing.Point, System.Drawing">
+    <value>591, 680</value>
+  </data>
+  <data name="bunifuThinButton21.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>8, 7, 8, 7</value>
+  </data>
+  <data name="bunifuThinButton21.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 56</value>
+  </data>
+  <data name="bunifuThinButton21.TabIndex" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="&gt;&gt;bunifuThinButton21.Name" xml:space="preserve">
+    <value>bunifuThinButton21</value>
+  </data>
+  <data name="&gt;&gt;bunifuThinButton21.Type" xml:space="preserve">
+    <value>Bunifu.Framework.UI.BunifuThinButton2, Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bunifuThinButton21.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;bunifuThinButton21.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>190</value>
+    <value>25</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>10, 23</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>2673, 1016</value>
+    <value>2685, 1016</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI Light, 8.25pt</value>
@@ -2053,6 +2062,12 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Venta</value>
+  </data>
+  <data name="&gt;&gt;ID.Name" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="&gt;&gt;ID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Productos.Name" xml:space="preserve">
     <value>Productos</value>

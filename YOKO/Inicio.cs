@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using YOKO.Helpers;
+using YOKO.Notifications;
 
 namespace YOKO
 {
@@ -23,7 +24,7 @@ namespace YOKO
             ExchangePrice exchangePrice = new ExchangePrice();
             exchangePrice.GetDolarPrice();
 
-            Notifications.NotificationsCenter.notifyIcon.ShowBalloonTip(1000, "Precio del dolar", exchangePrice.GetDolarPrice().ToString(), ToolTipIcon.Info);
+            NotificationsCenter.notifyIcon.ShowBalloonTip(1000, "Precio del dolar", exchangePrice.GetDolarPrice().ToString(), ToolTipIcon.Info);
         }
 
         private void Label3_Click(object sender, EventArgs e) => Forms.GoToNextForm(actualForm: this, nextForm: new Venta(BasicData.GetSellerName()));
@@ -43,6 +44,9 @@ namespace YOKO
         private void navigationBar1_Load(object sender, EventArgs e)
         {
             navigationBar1.BackColor = Color.FromArgb(1, 55, 55, 55);
+            navigationBar1.HideBackButton();
+            navigationBar1.HideTitle();
+            navigationBar1.ChangeBackgroundColor(Color.FromName("White"));
         }
     }
 }

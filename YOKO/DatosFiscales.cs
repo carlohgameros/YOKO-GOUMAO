@@ -247,7 +247,7 @@ namespace YOKO
             }
             else
             {
-                //notifyIcon1.ShowBalloonTip(1000, "Datos actualizados", "Ahora los datos guardados serán lo que se usen en el sistema.", ToolTipIcon.Info);
+                Notifications.NotificationsCenter.notifyIcon.ShowBalloonTip(1000, "Datos actualizados", "Ahora los datos guardados serán lo que se usen en el sistema.", ToolTipIcon.Info);
                 
             }
             bunifuFlatButton1_Click(sender, e);
@@ -257,6 +257,11 @@ namespace YOKO
         {
             new Inicio().Show();
             Hide();
+        }
+
+        private void navigationBar1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

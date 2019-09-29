@@ -16,13 +16,15 @@ namespace YOKO
 {
     public partial class Login : Form
     {
-        int posY = 0;
-        int posX = 0;
+        private int posY = 0;
+        private int posX = 0;
 
         public Login()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
+            NotificationsCenter notificationsCenter = new NotificationsCenter(YOKKO);
+            
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e) => Close();
@@ -50,42 +52,12 @@ namespace YOKO
 
         private void ingresar_Click(object sender, EventArgs e)
         {
-            using (SqlConnection conn = new SqlConnection())
-            {
-                conn.ConnectionString = ConnectionString.connectionString;
-                try
-                {
-                    conn.Open();
-                }
-                catch (Exception ex)                {
-                    //notifyIcon1.ShowBalloonTip(1000, "Error en la conexión", ex.Message, ToolTipIcon.Info);
-                }
-                if (conn.State == ConnectionState.Open)
-                {
-                    try
-                    {
-                        SqlCommand command = new SqlCommand("select * from tblUsers where UsrName = '" + usuario.Text + "' and UsrPwd = '" + contra.Text + "'", conn);
-                        int a = int.Parse(s: command.ExecuteScalar().ToString());
-                        if (a > 0) {
-                            BasicData.UpdateSellerName(usuario.Text);
-                            Form inicio = new Inicio();
-                            inicio.Show();
-                            Hide();
-                        }
-                    }
-                    catch 
-                    {
-                        //notifyIcon1.ShowBalloonTip(1000, "Nombre o contraseña incorrectos", "Verifique sus datos", ToolTipIcon.Info);
-                    }
-                }
-                conn.Close();
-            }
+            LogIn();
         }
 
         private void Nuevo_Click(object sender, EventArgs e)
         {
             new NuevoUsuario().Show();
-            Hide();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -102,7 +74,77 @@ namespace YOKO
 
         private void Login_Load(object sender, EventArgs e)
         {
-            
+            usuario.Focus();
+            contra.isPassword = true;
+        }
+
+        private void contra_OnValueChanged(object sender, EventArgs e)
+        {
+            contra.isPassword = true;
+        }
+
+        private void LogIn()
+        {
+            using (SqlConnection conn = new SqlConnection())
+            {
+                conn.ConnectionString = ConnectionString.connectionString;
+                try
+                {
+                    conn.Open();
+                }
+                catch (Exception ex)
+                {
+                    NotificationsCenter.notifyIcon.ShowBalloonTip(1000, "Error en la conexión", ex.Message, ToolTipIcon.Info);
+                }
+                if (conn.State == ConnectionState.Open)
+                {
+                    try
+                    {
+                        SqlCommand command = new SqlCommand("select * from tblUsers where UsrName = '" + usuario.Text + "' and UsrPwd = '" + contra.Text + "'", conn);
+                        int a = int.Parse(s: command.ExecuteScalar().ToString());
+                        if (a > 0)
+                        {
+                            BasicData.UpdateSellerName(usuario.Text);
+                            Form inicio = new Inicio();
+                            inicio.Show();
+                            Hide();
+                        }
+                    }
+                    catch
+                    {
+                        NotificationsCenter.notifyIcon.ShowBalloonTip(1000, "Nombre o contraseña incorrectos", "Verifique sus datos", ToolTipIcon.Info);
+                    }
+                }
+                conn.Close();
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void iniciar_Click(object sender, EventArgs e)
+        {
+            LogIn();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            LogIn();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void contra_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LogIn();
+            } 
         }
     }
 }

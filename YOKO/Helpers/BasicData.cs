@@ -11,11 +11,11 @@ namespace YOKO.Helpers
 {
     public class BasicData
     {
-        public static String selller;
+        public static String seller = "Seller";
         
-        public static void UpdateSellerName(String Name) => selller = Name;
+        public static void UpdateSellerName(String Name) => seller = Name;
 
-        public static String GetSellerName() => selller;
+        public static String GetSellerName() => seller;
 
         public BasicData() { }
 

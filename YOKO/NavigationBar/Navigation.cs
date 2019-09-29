@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using YOKO.Helpers;
 
@@ -17,5 +18,7 @@ namespace YOKO.NavigationBar
         public void HideForm(Form actualForm) => Forms.HideProgram(actualForm);
 
         public void ReturnToPreviousForm(Form parentForm) => Forms.GoToPreviousForm(parentForm);
+
+        public void ChangeBackgroundColor(Color color) {} 
     }
 }

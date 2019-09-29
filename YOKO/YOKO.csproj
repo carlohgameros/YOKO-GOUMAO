@@ -92,6 +92,12 @@
       <DependentUpon>Configuraciones.cs</DependentUpon>
     </Compile>
     <Compile Include="ConnectionString.cs" />
+    <Compile Include="CreateWebMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateWebMail.Designer.cs">
+      <DependentUpon>CreateWebMail.cs</DependentUpon>
+    </Compile>
     <Compile Include="DatosFiscales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,8 @@
     <Compile Include="Helpers\BreedSearch.cs" />
     <Compile Include="Helpers\ExchangePrice.cs" />
     <Compile Include="Helpers\Forms.cs" />
+    <Compile Include="Helpers\SMTPServer.cs" />
+    <Compile Include="Helpers\SQL.cs" />
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +131,7 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\MailSubscription.cs" />
     <Compile Include="NavigationBar\iNavigation.cs" />
     <Compile Include="NavigationBar\Navigation.cs" />
     <Compile Include="NavigationBar\NavigationBar.cs">
@@ -181,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Configuraciones.resx">
       <DependentUpon>Configuraciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateWebMail.resx">
+      <DependentUpon>CreateWebMail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DatosFiscales.resx">
       <DependentUpon>DatosFiscales.cs</DependentUpon>

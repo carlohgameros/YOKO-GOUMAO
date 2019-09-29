@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace YOKO.NavigationBar
@@ -14,5 +15,7 @@ namespace YOKO.NavigationBar
         void ChangeNavigationTitle(String newTitle);
 
         void AdaptNavigationSize();
+
+        void ChangeBackgroundColor(Color color);
     }
 }
