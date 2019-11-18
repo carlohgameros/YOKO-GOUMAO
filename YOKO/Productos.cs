@@ -10,11 +10,13 @@ using System.Windows.Forms;
 using System.Data.SqlTypes;
 using System.Data.SqlClient;
 using System.Drawing.Drawing2D;
+using YOKO.Helpers;
 
 namespace YOKO
 {
     public partial class Productos : Form
     {
+        SQL sqlHelper = new SQL();
         SqlConnection conn = new SqlConnection(ConnectionString.connectionString);
         //SqlConnection con1 = new SqlConnection(
 
@@ -28,11 +30,8 @@ namespace YOKO
 
         private void Productos_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'goumaoDBDataSet4.tblUM' table. You can move, or remove it, as needed.
-            //this.tblUMTableAdapter.Fill(this.goumaoDBDataSet4.tblUM);
+            FillDataGrid();
 
-            // TODO: This line of code loads data into the 'goumaoDBDataSet4.tblCategoria' table. You can move, or remove it, as needed.
-            //this.tblCategoriaTableAdapter.Fill(this.goumaoDBDataSet4.tblCategoria);
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -42,8 +41,7 @@ namespace YOKO
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Purple;
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            // TODO: This line of code loads data into the 'goumaoDBDataSet4.tblProductos' table. You can move, or remove it, as needed.
-            //this.tblProductosTableAdapter.Fill(this.goumaoDBDataSet4.tblProductos);
+
             if (cb1tipo.Text == "PRODUCTOS")
             {
                 cb3r.Text = "No agregar Responsiva";
@@ -114,17 +112,18 @@ namespace YOKO
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("");
-            //if () { }
-            /*conn.Open();
-            int tipo, UM, Responsiva;
-            String tipoText = cb1tipo.Text, UMText = cb2um.Text, ResponsivaText = cb3r.Text;
-            switch (tipoText)
-                case "Prodcutos":
+            if (txt1Nombre.Text == "" || txt2Precio.Text == "") return;
 
-                SqlCommand sqlCommand = new SqlCommand("insert into tblProductos values(3, 'test', 1.00, 0, 3, 1, 1, 1, 0, 'Jorge Galvan', GETDATE(), 'A')", conn);
-            sqlCommand.ExecuteNonQuery();
-            conn.Close();*/
+            string query = "insert into tblProductos values("+getType()+", '"+txt1Nombre.Text+"', "+txt2Precio.Text+", '0', "+getUM()+", 1, "+txt3Stock.Text+", "+getResposive()+", "+getStockControl()+", 'Jorge Galvan', GETDATE(), 'A')";
+            
+            if (sqlHelper.ExecuteSQLCommand(query))
+            {
+                Notifications.NotificationsCenter.notifyIcon.ShowBalloonTip(1000, "¡Producto Agregado!", "El producto fue registrado con éxito.", ToolTipIcon.Info);
+            }
+            else
+            {
+                Notifications.NotificationsCenter.ShowErrorMessageForConection();
+            }
         }
 
         private void txt2Precio_Click(object sender, EventArgs e)
@@ -145,6 +144,38 @@ namespace YOKO
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt1Nombre_Click(object sender, EventArgs e)
+        {
+            if (txt1Nombre.Text == null) FillDataGrid();
+            AutoCompleter.FillDataGrid(dataGridView1, "SELECT [ProdID] ,[Producto] ,[Precio] ,[Moneda] ,[Existencia] ,[Responsiva] ,[ControlaExist] ,[UReg] ,[FReg] ,[Estatus] FROM tblProductos where Producto like '%" + txt1Nombre.Text + "%'", "Producto");
+        }
+        
+        private void FillDataGrid()
+        {
+            AutoCompleter.FillDataGrid(dataGridView1, "SELECT [ProdID] ,[Producto] ,[Precio] ,[Moneda] ,[Existencia] ,[Responsiva] ,[ControlaExist] ,[UReg] ,[FReg] ,[Estatus] FROM tblProductos", "Producto");
+        }
+
+        private string getType() => cb1tipo.Text == "SERVICIO" ? "1" : "3";
+        private string getResposive() => cb3r.Text == "Agregar Responsiva" ? "1":"0";
+        private string getStockControl() => cb3r.Text == "Agregar Responsiva" ? "0" : "1";
+
+        private string getUM()
+        {
+            switch (cb2um.Text)
+            {
+                case "PIEZA":
+                    return "1";
+
+                case "CAJA":
+                    return "3";
+
+                case "NO APLICA":
+                    return "3";
+
+                default: return "0";
+            }
         }
     }
 }

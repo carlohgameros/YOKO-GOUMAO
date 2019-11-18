@@ -51,20 +51,11 @@
             this.registro = new System.Windows.Forms.DataGridView();
             this.label17 = new System.Windows.Forms.Label();
             this.PetNote = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtVendedor = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtFP = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtNota = new System.Windows.Forms.TextBox();
             this.lista = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Productos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Preci = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descuent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Import = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label12 = new System.Windows.Forms.Label();
             this.txtImporte = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -77,10 +68,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtProductos = new System.Windows.Forms.TextBox();
             this.DangerPetIndicator = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.label18 = new System.Windows.Forms.Label();
+            this.DangerPetLabel = new System.Windows.Forms.Label();
             this.petAddRegister = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.statusPanel = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.statusLabel = new System.Windows.Forms.Label();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bunifuTextbox1 = new Bunifu.Framework.UI.BunifuTextbox();
             this.AgregarUsuario = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -89,18 +78,25 @@
             this.btnAgregar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.tblClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pagar = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.statusLabel = new System.Windows.Forms.Label();
+            this.totalLabel = new System.Windows.Forms.Label();
             this.navigationBar1 = new YOKO.NavigationBar.NavigationBar();
-            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Productos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Preci = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descuent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Import = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Inv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Servicio = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.clientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mascotas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.registro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lista)).BeginInit();
-            this.statusPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblClientesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // clienteCB
@@ -292,16 +288,6 @@
             resources.ApplyResources(this.PetNote, "PetNote");
             this.PetNote.Name = "PetNote";
             // 
-            // label15
-            // 
-            resources.ApplyResources(this.label15, "label15");
-            this.label15.Name = "label15";
-            // 
-            // txtVendedor
-            // 
-            resources.ApplyResources(this.txtVendedor, "txtVendedor");
-            this.txtVendedor.Name = "txtVendedor";
-            // 
             // label14
             // 
             resources.ApplyResources(this.label14, "label14");
@@ -332,55 +318,18 @@
             this.lista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Productos,
-            this.Cantida,
+            this.Cantidad,
             this.Preci,
             this.Descuent,
             this.Import,
+            this.Inv,
+            this.Servicio,
             this.Eliminar});
             resources.ApplyResources(this.lista, "lista");
             this.lista.Name = "lista";
             this.lista.RowHeadersVisible = false;
             this.lista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick_1);
             this.lista.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.lista_CellValueChanged);
-            // 
-            // ID
-            // 
-            resources.ApplyResources(this.ID, "ID");
-            this.ID.Name = "ID";
-            // 
-            // Productos
-            // 
-            this.Productos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.Productos, "Productos");
-            this.Productos.Name = "Productos";
-            this.Productos.ReadOnly = true;
-            // 
-            // Cantida
-            // 
-            resources.ApplyResources(this.Cantida, "Cantida");
-            this.Cantida.Name = "Cantida";
-            // 
-            // Preci
-            // 
-            resources.ApplyResources(this.Preci, "Preci");
-            this.Preci.Name = "Preci";
-            // 
-            // Descuent
-            // 
-            resources.ApplyResources(this.Descuent, "Descuent");
-            this.Descuent.Name = "Descuent";
-            // 
-            // Import
-            // 
-            resources.ApplyResources(this.Import, "Import");
-            this.Import.Name = "Import";
-            this.Import.ReadOnly = true;
-            // 
-            // Eliminar
-            // 
-            resources.ApplyResources(this.Eliminar, "Eliminar");
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
             // 
             // label12
             // 
@@ -426,6 +375,7 @@
             // 
             resources.ApplyResources(this.txtCantidad, "txtCantidad");
             this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged_1);
             // 
             // label8
             // 
@@ -450,10 +400,10 @@
             this.DangerPetIndicator.Name = "DangerPetIndicator";
             this.DangerPetIndicator.Tag = "v";
             // 
-            // label18
+            // DangerPetLabel
             // 
-            resources.ApplyResources(this.label18, "label18");
-            this.label18.Name = "label18";
+            resources.ApplyResources(this.DangerPetLabel, "DangerPetLabel");
+            this.DangerPetLabel.Name = "DangerPetLabel";
             // 
             // petAddRegister
             // 
@@ -475,24 +425,6 @@
             this.petAddRegister.Name = "petAddRegister";
             this.petAddRegister.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.petAddRegister.Click += new System.EventHandler(this.bunifuThinButton21_Click);
-            // 
-            // statusPanel
-            // 
-            resources.ApplyResources(this.statusPanel, "statusPanel");
-            this.statusPanel.Controls.Add(this.statusLabel);
-            this.statusPanel.GradientBottomLeft = System.Drawing.Color.White;
-            this.statusPanel.GradientBottomRight = System.Drawing.Color.White;
-            this.statusPanel.GradientTopLeft = System.Drawing.Color.White;
-            this.statusPanel.GradientTopRight = System.Drawing.Color.White;
-            this.statusPanel.Name = "statusPanel";
-            this.statusPanel.Quality = 10;
-            // 
-            // statusLabel
-            // 
-            resources.ApplyResources(this.statusLabel, "statusLabel");
-            this.statusLabel.BackColor = System.Drawing.Color.Transparent;
-            this.statusLabel.ForeColor = System.Drawing.Color.Green;
-            this.statusLabel.Name = "statusLabel";
             // 
             // bunifuGradientPanel1
             // 
@@ -605,7 +537,7 @@
             // pagar
             // 
             this.pagar.ActiveBorderThickness = 1;
-            this.pagar.ActiveCornerRadius = 20;
+            this.pagar.ActiveCornerRadius = 40;
             this.pagar.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.pagar.ActiveForecolor = System.Drawing.Color.White;
             this.pagar.ActiveLineColor = System.Drawing.Color.SeaGreen;
@@ -623,21 +555,29 @@
             this.pagar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.pagar.Click += new System.EventHandler(this.pagar_Click);
             // 
-            // textBox3
+            // txtID
             // 
-            resources.ApplyResources(this.textBox3, "textBox3");
-            this.textBox3.Name = "textBox3";
+            resources.ApplyResources(this.txtID, "txtID");
+            this.txtID.Name = "txtID";
             // 
             // label19
             // 
             resources.ApplyResources(this.label19, "label19");
             this.label19.Name = "label19";
             // 
-            // pictureBox1
+            // statusLabel
             // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
+            this.statusLabel.BackColor = System.Drawing.Color.GhostWhite;
+            resources.ApplyResources(this.statusLabel, "statusLabel");
+            this.statusLabel.ForeColor = System.Drawing.Color.SeaGreen;
+            this.statusLabel.Name = "statusLabel";
+            // 
+            // totalLabel
+            // 
+            this.totalLabel.BackColor = System.Drawing.Color.GhostWhite;
+            resources.ApplyResources(this.totalLabel, "totalLabel");
+            this.totalLabel.ForeColor = System.Drawing.Color.SeaGreen;
+            this.totalLabel.Name = "totalLabel";
             // 
             // navigationBar1
             // 
@@ -645,44 +585,77 @@
             this.navigationBar1.Name = "navigationBar1";
             this.navigationBar1.Load += new System.EventHandler(this.navigationBar1_Load);
             // 
-            // bunifuThinButton21
+            // ID
             // 
-            this.bunifuThinButton21.ActiveBorderThickness = 1;
-            this.bunifuThinButton21.ActiveCornerRadius = 20;
-            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.DarkGreen;
-            this.bunifuThinButton21.BackColor = System.Drawing.Color.GhostWhite;
-            resources.ApplyResources(this.bunifuThinButton21, "bunifuThinButton21");
-            this.bunifuThinButton21.ButtonText = "Verificar";
-            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton21.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.IdleBorderThickness = 1;
-            this.bunifuThinButton21.IdleCornerRadius = 1;
-            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.GhostWhite;
-            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.Gray;
-            this.bunifuThinButton21.IdleLineColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.bunifuThinButton21.Name = "bunifuThinButton21";
-            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            resources.ApplyResources(this.ID, "ID");
+            this.ID.Name = "ID";
+            // 
+            // Productos
+            // 
+            this.Productos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.Productos, "Productos");
+            this.Productos.Name = "Productos";
+            this.Productos.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            resources.ApplyResources(this.Cantidad, "Cantidad");
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Preci
+            // 
+            resources.ApplyResources(this.Preci, "Preci");
+            this.Preci.Name = "Preci";
+            // 
+            // Descuent
+            // 
+            resources.ApplyResources(this.Descuent, "Descuent");
+            this.Descuent.Name = "Descuent";
+            // 
+            // Import
+            // 
+            resources.ApplyResources(this.Import, "Import");
+            this.Import.Name = "Import";
+            this.Import.ReadOnly = true;
+            // 
+            // Inv
+            // 
+            this.Inv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            resources.ApplyResources(this.Inv, "Inv");
+            this.Inv.Name = "Inv";
+            this.Inv.ReadOnly = true;
+            // 
+            // Servicio
+            // 
+            this.Servicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            resources.ApplyResources(this.Servicio, "Servicio");
+            this.Servicio.Name = "Servicio";
+            this.Servicio.ReadOnly = true;
+            this.Servicio.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Servicio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            resources.ApplyResources(this.Eliminar, "Eliminar");
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
             // 
             // Venta
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.bunifuThinButton21);
+            this.Controls.Add(this.totalLabel);
+            this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.pagar);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.navigationBar1);
-            this.Controls.Add(this.label18);
+            this.Controls.Add(this.DangerPetLabel);
             this.Controls.Add(this.DangerPetIndicator);
             this.Controls.Add(this.petAddRegister);
-            this.Controls.Add(this.statusPanel);
             this.Controls.Add(this.bunifuGradientPanel1);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.txtVendedor);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txtFP);
             this.Controls.Add(this.label13);
@@ -734,10 +707,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mascotas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.registro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lista)).EndInit();
-            this.statusPanel.ResumeLayout(false);
-            this.statusPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblClientesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -770,8 +740,6 @@
         private System.Windows.Forms.DataGridView registro;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox PetNote;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtVendedor;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtFP;
         private System.Windows.Forms.Label label13;
@@ -790,23 +758,23 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtProductos;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
-        private Bunifu.Framework.UI.BunifuGradientPanel statusPanel;
-        private System.Windows.Forms.Label statusLabel;
         private Bunifu.Framework.UI.BunifuThinButton2 petAddRegister;
         private Bunifu.Framework.UI.BunifuCheckbox DangerPetIndicator;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label DangerPetLabel;
         private NavigationBar.NavigationBar navigationBar1;
         private Bunifu.Framework.UI.BunifuThinButton2 pagar;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label statusLabel;
+        private System.Windows.Forms.Label totalLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Productos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Preci;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descuent;
         private System.Windows.Forms.DataGridViewTextBoxColumn Import;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Inv;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Servicio;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
     }
 }

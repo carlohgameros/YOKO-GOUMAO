@@ -105,6 +105,11 @@
       <DependentUpon>DatosFiscales.cs</DependentUpon>
     </Compile>
     <Compile Include="enums\PetStatusEnum.cs" />
+    <Compile Include="GoumaoDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GoumaoDBDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\Extensions.cs" />
     <Compile Include="GoumaoDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -117,6 +122,8 @@
     <Compile Include="Helpers\BreedSearch.cs" />
     <Compile Include="Helpers\ExchangePrice.cs" />
     <Compile Include="Helpers\Forms.cs" />
+    <Compile Include="Helpers\Seller.cs" />
+    <Compile Include="Helpers\Services.cs" />
     <Compile Include="Helpers\SMTPServer.cs" />
     <Compile Include="Helpers\SQL.cs" />
     <Compile Include="Inicio.cs">
@@ -132,6 +139,8 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\MailSubscription.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Service.cs" />
     <Compile Include="NavigationBar\iNavigation.cs" />
     <Compile Include="NavigationBar\Navigation.cs" />
     <Compile Include="NavigationBar\NavigationBar.cs">
@@ -167,6 +176,12 @@
     <Compile Include="reportes.Designer.cs">
       <DependentUpon>reportes.cs</DependentUpon>
     </Compile>
+    <Compile Include="ServicesWatcher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServicesWatcher.Designer.cs">
+      <DependentUpon>ServicesWatcher.cs</DependentUpon>
+    </Compile>
     <Compile Include="splash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +200,11 @@
     <Compile Include="Venta.Designer.cs">
       <DependentUpon>Venta.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\Services\Commands\AddToList.cs" />
+    <Compile Include="ViewModels\Services\Commands\ServiceChanged.cs" />
+    <Compile Include="ViewModels\Services\DataAccess.cs" />
+    <Compile Include="ViewModels\Services\ServicesViewModel.cs" />
+    <Compile Include="ViewModels\Services\ServiceModel.cs" />
     <EmbeddedResource Include="AltasSecundarias.resx">
       <DependentUpon>AltasSecundarias.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,6 +248,9 @@
     <EmbeddedResource Include="reportes.resx">
       <DependentUpon>reportes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ServicesWatcher.resx">
+      <DependentUpon>ServicesWatcher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="splash.resx">
       <DependentUpon>splash.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +270,17 @@
     </None>
     <None Include="GoumaoDBDataSet.xss">
       <DependentUpon>GoumaoDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GoumaoDBDataSet1.xsc">
+      <DependentUpon>GoumaoDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="GoumaoDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GoumaoDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GoumaoDBDataSet1.xss">
+      <DependentUpon>GoumaoDBDataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

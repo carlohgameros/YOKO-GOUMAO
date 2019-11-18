@@ -3,15 +3,22 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using YOKO.Models;
 using YOKO.enums;
 using YOKO.Helpers;
 using YOKO.Notifications;
 using System.Linq;
+using System.Collections.Generic;
+using YOKO.ViewModels;
+
 
 namespace YOKO
 {
     public partial class Venta : Form
     {
+        private ServicesViewModel servicesViewModel;
+
+        SQL sqlHelper = new SQL();
         SqlCommand sCommand;
         SqlDataAdapter sAdapter;
         SqlCommandBuilder sBuilder;
@@ -27,20 +34,22 @@ namespace YOKO
         WebBrowser navegador2 = new WebBrowser();
         Object usuarioSelecto;
         Object mascotaSelecta;
+        ProductItem selectedProduct;
+        Seller seller = new Seller();
 
         string campo = "NombreComercial";
         string a, b;
         string clienteID;
         string UMe;
-        decimal suma;
         string Valor;
         decimal Dolar;
         decimal Euro;
         string vendedor_a;
-        string mascotaSelectaId;
+        string petID;
         int posY = 0;
         int posX = 0;
         int petStatus;
+        double total = 0.00;
 
         public Venta(String vendedor)
         {
@@ -57,7 +66,6 @@ namespace YOKO
         private void Venta_Load(object sender, EventArgs e)
         {
             statusLabel.Text = "NO ESTATUS";
-            CenterStatusLabel();
             conn.ConnectionString = ConnectionString.connectionString;
             BaseTableDesiner.SetDefaultStyle(clientes);
             BaseTableDesiner.SetDefaultStyle(mascotas);
@@ -125,7 +133,7 @@ namespace YOKO
         {
             try
             {
-                mascotaSelectaId = mascotas.Rows[mascotas.SelectedRows[0].Index].Cells["MascotaID"].Value.ToString();
+                SetPetID(mascotas.Rows[mascotas.SelectedRows[0].Index].Cells["MascotaID"].Value.ToString());
                 handlePetRegister();
             } catch(Exception ex) {
                 MessageBox.Show(ex.Message.ToString());
@@ -156,15 +164,15 @@ namespace YOKO
             lista.Rows[n].Cells[3].Value = "$" + Math.Round(decimal.Parse(txtPrecio.Text), 2);
             lista.Rows[n].Cells[4].Value = txtDescuento.Text + "%";
             lista.Rows[n].Cells[5].Value = "$" + int.Parse(txtCantidad.Text) * Math.Round((1 - (decimal.Parse(txtDescuento.Text) / 100)) * decimal.Parse(txtPrecio.Text), 2);
-            suma = 0;
+            total = 0;
             Valor = "";
             foreach (DataGridViewRow row in lista.Rows)
             {
                 Valor = row.Cells[5].Value.ToString();
                 Valor= Valor.Replace("$", " ");
-                suma += decimal.Parse(Valor.ToString());
+                total += double.Parse(Valor.ToString());
             }
-            pagar.Text = "$" + suma.ToString();
+            SetAmmount();
         }
 
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -173,15 +181,15 @@ namespace YOKO
             {
                 int columna = int.Parse(e.RowIndex.ToString());
                 lista.Rows.RemoveAt(columna);
-                suma = 0;
+                total = 0;
                 Valor = "";
                 foreach (DataGridViewRow row in lista.Rows)
                 {
                     Valor = row.Cells[5].Value.ToString();
                     Valor = Valor.Replace("$", " ");
-                    suma += decimal.Parse(Valor.ToString());
+                    total += double.Parse(Valor.ToString());
                 }
-                pagar.Text = "$" + suma.ToString();
+                SetAmmount();
             } catch { }
         }
 
@@ -250,15 +258,15 @@ namespace YOKO
             {
                 int columna = int.Parse(e.RowIndex.ToString());
                 lista.Rows.RemoveAt(columna);
-                suma = 0;
+                total = 0;
                 Valor = "";
                 foreach (DataGridViewRow row in lista.Rows)
                 {
                     Valor = row.Cells[4].Value.ToString();
                     Valor = Valor.Replace("$", " ");
-                    suma += decimal.Parse(Valor.ToString());
+                    total += double.Parse(Valor.ToString());
                 }
-                pagar.Text = "$" + suma.ToString();
+                SetAmmount();
             }
             catch { }
         }
@@ -273,9 +281,9 @@ namespace YOKO
                 SqlDataReader read = command.ExecuteReader();
                 while (read.Read())
                 {
-                    txtPrecio.Text = Math.Round(decimal.Parse((read["Precio"].ToString())), 2).ToString();
-                    int a = int.Parse(read["UM"].ToString());
-                    switch (a)
+                    txtPrecio.Text = Math.Round(decimal.Parse(read["Precio"].ToString()), 2).ToString();
+                    int um = int.Parse(read["UM"].ToString());
+                    switch (um)
                     {
                         case 1:
                             txtUM.Text = "Pieza";
@@ -296,7 +304,17 @@ namespace YOKO
                     }
                     txtCantidad.Text = 1.ToString();
                     txtDescuento.Text = 0.ToString();
-                    txtImporte.Text = "$" + int.Parse(txtCantidad.Text) * Math.Round((1 - (decimal.Parse(txtDescuento.Text) / 100)) * decimal.Parse(txtPrecio.Text), 2);
+                    decimal importe = int.Parse(txtCantidad.Text) * Math.Round((1 - (decimal.Parse(txtDescuento.Text) / 100)) * decimal.Parse(txtPrecio.Text), 2);
+                    txtImporte.Text = "$" + importe;
+
+                    var id = int.Parse(read["ProdID"].ToString());
+                    var items = int.Parse(txtCantidad.Text);
+                    var name = read["Producto"].ToString();
+                    var stock = int.Parse(read["Existencia"].ToString());
+                    var isService = read["ControlaExist"].ToString() != "0";
+                    var isResponsive = read["ControlaExist"].ToString() != "0";
+
+                    selectedProduct = new ProductItem(id, name, importe, items, stock, !isService, !isResponsive);
                 }
                 //read.Close();           
             }
@@ -308,20 +326,34 @@ namespace YOKO
             if (txtDescuento.Text == "") { txtDescuento.Text = 0.ToString(); }
             if (txtCantidad.Text == "") { txtCantidad.Text = 1.ToString(); }
             int n = lista.Rows.Add();
+            lista.Rows[n].Cells[0].Value = selectedProduct.id;
             lista.Rows[n].Cells[1].Value = txtProductos.Text;
-            lista.Rows[n].Cells[2].Value = txtCantidad.Text + " " + txtUM.Text;
+            lista.Rows[n].Cells[2].Value = txtCantidad.Text;
             lista.Rows[n].Cells[3].Value = "$" + Math.Round(decimal.Parse(txtPrecio.Text), 2);
             lista.Rows[n].Cells[4].Value = txtDescuento.Text + "%";
-            lista.Rows[n].Cells[5].Value = "$" + int.Parse(txtCantidad.Text) * Math.Round((1 - (decimal.Parse(txtDescuento.Text) / 100)) * decimal.Parse(txtPrecio.Text), 2);
-            suma = 0;
+            lista.Rows[n].Cells[5].Value = int.Parse(txtCantidad.Text) * Math.Round((1 - (decimal.Parse(txtDescuento.Text) / 100)) * decimal.Parse(txtPrecio.Text), 2);
+            lista.Rows[n].Cells[6].Value = selectedProduct.stock;
+            lista.Rows[n].Cells[7].Value = selectedProduct.isService;
+            total = 0;
             Valor = "";
+
+            if (selectedProduct.stock < 10)
+            {
+                lista.Rows[n].Cells[6].Style.BackColor = Color.Yellow;
+                if (selectedProduct.stock < 3)
+                {
+                    lista.Rows[n].Cells[6].Style.BackColor = Color.OrangeRed;
+                    lista.Rows[n].Cells[6].Style.ForeColor = Color.White;
+                }
+            }
+
             foreach (DataGridViewRow row in lista.Rows)
             {
                 Valor = row.Cells[5].Value.ToString();
                 Valor = Valor.Replace("$", " ");
-                suma += decimal.Parse(Valor.ToString());
+                total += double.Parse(Valor.ToString());
             }
-            pagar.Text = "$" + suma.ToString();
+            SetAmmount();
         }
 
         private void txtProductos_KeyDown_1(object sender, KeyEventArgs e)
@@ -354,17 +386,16 @@ namespace YOKO
             {
                 conn1.ConnectionString = ConnectionString.connectionString;
                 conn1.Open();
-                sCommand = new SqlCommand("select * from tblPetsRegistro where petId = '" + mascotaSelectaId + "'", conn1);
+                sCommand = new SqlCommand("select * from tblPetsRegistro where petId = '" + petID + "'", conn1);
                 sResult = sCommand.ExecuteScalar();
                 conn1.Close();
             }
 
-            
             if (sResult != null)
             {
                 conn.ConnectionString = ConnectionString.connectionString;
                 conn.Open();
-                sCommand = new SqlCommand("select * from tblPetsRegistro where petId = '" + mascotaSelectaId + "'", conn);
+                sCommand = new SqlCommand("select * from tblPetsRegistro where petId = '" + petID + "'", conn);
                 int result = int.Parse(sCommand.ExecuteScalar().ToString());
                 conn.Close();
                 if (result > 0)
@@ -388,7 +419,7 @@ namespace YOKO
         {
             conn.ConnectionString = ConnectionString.connectionString;
             conn.Open();
-            string sql = "select petId, label, color from tblPetsRegistro where petId = '" + mascotaSelectaId + "'";
+            string sql = "select label from tblPetsRegistro where petId = '" + petID + "'";
             sCommand2 = new SqlCommand(sql, conn);
             sAdapter2 = new SqlDataAdapter(sCommand2);
             sBuilder2 = new SqlCommandBuilder(sAdapter2);
@@ -399,28 +430,32 @@ namespace YOKO
             registro.ReadOnly = true;
             registro.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             conn.Close();
+
+            PetNote.Enabled = true;
+            DangerPetIndicator.Enabled = true;
+            registro.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            HandlePetStatus();
         }
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
-            if (mascotaSelectaId != "" )
+            if (petID != "" )
             {
                 using (SqlConnection conn = new SqlConnection())
                 {
                     statusLabel.Text = "GUARDANDO";
-                    CenterStatusLabel();
                     conn.ConnectionString = ConnectionString.connectionString;
                     conn.Open();
                     try
                     {
-                        SqlCommand command = new SqlCommand("insert into tblPetsRegistro values('" + mascotaSelectaId + "', 'Registro realizado desde YOKO.', '" + PetNote.Text.ToString() + ".', 0, '" + setColorForNewRegiter() + "', GETDATE(), GETDATE(), '" + clienteID + "')", conn);
+                        SqlCommand command = new SqlCommand("insert into tblPetsRegistro values('" + petID + "', 'Registro realizado desde YOKO.', '" + PetNote.Text.ToString() + ".', 0, '" + setColorForNewRegiter() + "', GETDATE(), GETDATE(), '" + clienteID + "')", conn);
 
                         this.statusLabel.Text = "Registro comenzado";
                         command.ExecuteNonQuery();
                         //notificationsCenter.CreateDesktopNotification(title: "Primer registro creado", message: "Esta mascota ya empezó a generar historial.");
                         statusLabel.Text = "REGISTRO COMPLETADO";
-                        CenterStatusLabel();
-                        string sql = "select * from tblPetsRegistro where petId = '" + mascotaSelectaId + "'";
+                        string sql = "select * from tblPetsRegistro where petId = '" + petID + "'";
                         sCommand2 = new SqlCommand(sql, conn);
                         getPetsWithRegister(sCommand2);
                     }
@@ -429,7 +464,6 @@ namespace YOKO
                         MessageBox.Show(ex.Message);
                         this.statusLabel.Text = "Error en el Registro";
                         statusLabel.Text = "ERROR";
-                        CenterStatusLabel();
                     }
                 }
             }
@@ -462,10 +496,9 @@ namespace YOKO
                 conn.Open();
                 try
                 {
-                    SqlCommand command = new SqlCommand("insert into tblPetsRegistro values('" + mascotaSelectaId + "', 'Primer registro creado', 'Esta mascota ya empezó a generar historial.', 0, 'blanco', GETDATE(), GETDATE(), '" + clienteID + "')", conn);
+                    SqlCommand command = new SqlCommand("insert into tblPetsRegistro values('" + petID + "', 'Primer registro creado', 'Esta mascota ya empezó a generar historial.', 0, 'blanco', GETDATE(), GETDATE(), '" + clienteID + "')", conn);
                     
                     this.statusLabel.Text = "Registro comenzado";
-                    CenterStatusLabel();
                     command.ExecuteNonQuery();
                     //notificationsCenter.CreateDesktopNotification(title: "Primer registro creado", message: "Esta mascota ya empezó a generar historial.");
                 }
@@ -473,7 +506,6 @@ namespace YOKO
                 {
                     MessageBox.Show(ex.Message);
                     this.statusLabel.Text = "Error en el Registro";
-                    CenterStatusLabel();
                 }
             }
         }
@@ -489,21 +521,25 @@ namespace YOKO
 
         private void HandlePetStatus()
         {
+            statusLabel.ForeColor = Color.SeaGreen;
+            var petStatus = sqlHelper.GetPetStatus(petID);
             switch (petStatus)
             {
-                case (int) PetStatusEnum.ErrorDeRegistro:
+                case PetStatusEnum.ErrorDeRegistro:
                     statusLabel.Text = "ERROR";
                     break;
-                case (int) PetStatusEnum.PocosRegistrosNegativos:
+                case PetStatusEnum.PocosRegistrosNegativos:
+                    statusLabel.ForeColor = Color.Red;
                     statusLabel.Text = "PELIGROSO";
                     break;
-                case (int)PetStatusEnum.RegistrosNegativos:
+                case PetStatusEnum.RegistrosNegativos:
+                    statusLabel.ForeColor = Color.Red;
                     statusLabel.Text = "PELIGROSO";
                     break;
-                case (int)PetStatusEnum.SinRegistro:
+                case PetStatusEnum.SinRegistro:
                     statusLabel.Text = "SIN REGISTRO";
                     break;
-                case (int)PetStatusEnum.SinRegistrosNegativos:
+                case PetStatusEnum.SinRegistrosNegativos:
                     statusLabel.Text = "ACEPTABLE";
                     break;
             }
@@ -522,20 +558,59 @@ namespace YOKO
 
         private void handlePay()
         {
-            if (lista.Rows.Count > 0)
+            if (lista.Rows.Count == 0)
             {
-                foreach (DataGridViewRow row in lista.Rows)
+                return;
+            }
+            pagar.Enabled = false;
+            var products = new List<ProductItem>();
+            var services = new List<Service>();
+            
+            foreach(DataGridViewRow row in lista.Rows)
+            {
+                var id = int.Parse(row.Cells["ID"].Value.ToString());
+                var product = row.Cells["Productos"].Value.ToString();
+                var cantidad = int.Parse(row.Cells["Cantidad"].Value.ToString());
+                var precio = decimal.Parse(row.Cells["Import"].Value.ToString());
+                var stock = int.Parse(row.Cells["Inv"].Value.ToString());
+                var isService = bool.Parse(row.Cells["Servicio"].Value.ToString());
+                
+                if (!isService)
                 {
-                    Valor = row.Cells[4].Value.ToString();
-                    Valor = Valor.Replace("$", " ");
-                    suma += decimal.Parse(Valor.ToString());
+                    var productItem = new ProductItem(id, product, precio, cantidad, stock, isService, isService);
+                    products.Add(productItem);
                 }
-            } 
+                else
+                {
+                    var currentPetID = this.petID != null ? this.petID : 0.ToString();
+                    var currentOwnerID = this.clienteID != "0" ? this.clienteID : 0.ToString();
+
+                    var service = new Service(id, product, int.Parse(currentPetID), int.Parse(currentOwnerID));
+                    services.Add(service);
+                }
+            }
+
+            if (seller.sellProducts(products))
+            {
+                seller.PrintRecipe(products, services);
+                Console.WriteLine("Cool");
+            } else
+            {
+                Console.WriteLine("No Cool");
+            }
+
+            if (services.Count() > 0)
+            {
+                var servicesWatcher = new ServicesWatcher(services);
+                servicesWatcher.Show();
+            }
+
+            pagar.Enabled = true;
         }
 
         private void lista_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            Console.WriteLine("Change occured.");
+
         }
 
         private void txtProductos_TextChanged_2(object sender, EventArgs e)
@@ -603,6 +678,28 @@ namespace YOKO
             }
         }
 
-        private void CenterStatusLabel() => statusLabel.Left = (statusPanel.Width / 2) - (statusLabel.Width / 2);
+        private void SetPetID(string id)
+        {
+            if (id != null)
+            {
+                petID = id;
+            }
+        }
+
+        private void txtCantidad_TextChanged_1(object sender, EventArgs e)
+        {
+        }
+
+        private void SetAmmount()
+        {
+            if (total <= 0) totalLabel.Text = "$0.00";
+
+            totalLabel.Text = "$" + total.ToString();
+        }
+
+        private void servicesUpdated()
+        {
+
+        }
     }
 }

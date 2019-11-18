@@ -121,7 +121,6 @@ namespace YOKO
 
         private void bunifuThinButton21_Click_1(object sender, EventArgs e)
         {
-            conn.ConnectionString = ConnectionString.connectionString;
             if (btn1Nombre.Text.Trim() == "")
             {
                 //notifyIcon1.ShowBalloonTip(1000, "Error en el formulario", "Se necesita al menos el nombre", ToolTipIcon.Info);
@@ -217,23 +216,26 @@ namespace YOKO
 
         private void bunifuThinButton26_Click(object sender, EventArgs e)
         {
-            conn.ConnectionString = ConnectionString.connectionString;
-
-            if (txtAsignar.Text == "" || txtClienteID.Text == "" || txt1MascotaNombre.Text == "" || txt2MascotaRaza.Text == "" || txt3MascotaSexo.Text == "" || txt4MascotaAños.Text == "" || txt5MascotaMes.Text == "")
+            if (txtAsignar.Text == "" || txtClienteID.Text == "" || txt1MascotaNombre.Text == "" || txt2MascotaRaza.Text == "" || txt3MascotaSexo.Text == "")
             {
-                //notifyIcon1.ShowBalloonTip(1000, "Error en el formulario", "Falta llenar al menos un campo", ToolTipIcon.Info);
-            } else {
-                conn.Open();
-                string sql = "insert into tblClientePets values ('" + txtClienteID.Text + "','" + txt1MascotaNombre.Text.ToUpper() + "', " + txt2MascotaRaza.Text + ", " + txt3MascotaSexo.Text + ", " + txt4MascotaAños.Text + ", '" + txt5MascotaMes.Text + "', 0 )";
-                sCommand = new SqlCommand(sql, conn);
-                try
+                Notifications.NotificationsCenter.notifyIcon.ShowBalloonTip(1000, "Error en el formulario", "Se necesita al menos el nombre", ToolTipIcon.Info);
+            }
+            else
+            { 
+                var years = txt4MascotaAños.Text == "" ? "0" : "0";
+                var month = txt5MascotaMes.Text == "" ? "0" : "0";
+                string query = "insert into tblClientePets values ('" + txtClienteID.Text + "','" + txt1MascotaNombre.Text.ToUpper() + "', " + getBreed() + ", " + getPetSex() + ", " + years + ", '" + month + "', 0, null)";
+                
+                if (sqlHelper.ExecuteSQLCommand(query))
                 {
-                    sCommand.ExecuteNonQuery();
-                    //notifyIcon1.ShowBalloonTip(1000, "¡Mascota " + txt1MascotaNombre.Text + " Agregada!", "Asigando a " + txtAsignar.Text + " con éxito.", ToolTipIcon.Info);
+                    Notifications.NotificationsCenter.notifyIcon.ShowBalloonTip(1000, "¡Mascota " + txt1MascotaNombre.Text + " Agregada!", "Asigando a " + txtAsignar.Text + " con éxito.", ToolTipIcon.Info);
                 }
-                catch (Exception ex) { MessageBox.Show(ex.Message); }
-                conn.Close();
-                Limpiar();
+                else
+                {
+                    Notifications.NotificationsCenter.ShowErrorMessageForConection();
+                }
+
+                GetClienteID();
             }
         }
 
@@ -263,7 +265,7 @@ namespace YOKO
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             string sqlID = "SELECT ClienteID FROM tblClientes where NombreComercial like '%" + txtAsignar.Text + "%'";
             sCommand = new SqlCommand(sqlID, conn);
-            txtClienteID.Text = sCommand.ExecuteScalar().ToString();
+            try { txtClienteID.Text = sCommand.ExecuteScalar().ToString(); } catch { }
             conn.Close();
         }
 
@@ -289,6 +291,36 @@ namespace YOKO
         private void btn4Email_OnValueChanged(object sender, EventArgs e)
         {
             newMail = btn4Email.Text;
+        }
+
+        private string getBreed()
+        {
+            string query = "SELECT TOP 1 RazaID FROM tblRazas where Raza like '%" + txt2MascotaRaza.Text + "%'";
+            var result = sqlHelper.getEquivalent(query);
+
+            if (result.Key)
+            {
+                return result.Value;
+            }
+            else
+            {
+                return "0";
+            }
+        }
+
+        private string getPetSex()
+        {
+            string query = "SELECT TOP 1 [SexoID] FROM tblPetSexo where SexoD like '%" + txt3MascotaSexo.Text + "%'";
+            var result = sqlHelper.getEquivalent(query);
+
+            if (result.Key)
+            {
+                return result.Value;
+            }
+            else
+            {
+                return "0";
+            }
         }
     }
 }
