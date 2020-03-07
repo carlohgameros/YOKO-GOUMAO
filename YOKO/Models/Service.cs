@@ -13,6 +13,11 @@ namespace YOKO.Models
         public string observations { get; set; }
         public int petID { get; set; }
         public int ownerID { get; set; }
+        public bool canceled { get; } 
+
+        private bool isActive = false;
+        private bool isStoped = false;
+        private bool isCanceled = false;
 
         public Service(int ID, string description, int petID, int ownerID, string observations = "")
         {
@@ -25,6 +30,7 @@ namespace YOKO.Models
             this.observations = observations;
             this.petID = petID;
             this.ownerID = ownerID;
+            canceled = false;ID
         }
 
         public void finishService()
@@ -33,8 +39,25 @@ namespace YOKO.Models
             this.finished = true;
         }
 
-        public void startService() => this.startTime = DateTime.Now;
+        public void startService()
+        {
+            this.startTime = DateTime.Now;
+            isActive = true;
+            isStoped = false;
+        }
+
         public void changeDescription(string description) => this.description = description;
         public void changeObservations(string observations) => this.observations = observations;
+
+        public void stopService()
+        {
+            isActive = false;
+            isStoped = false;
+        }
+
+        public void cancelService()
+        {
+            
+        }
     }
 }

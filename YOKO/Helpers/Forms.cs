@@ -26,8 +26,15 @@ namespace YOKO.Helpers
 
        public static void GoToPreviousForm(Form parentForm)
         {
-            Form inicio = new Inicio();
-            inicio.Show();
+            var homeInstance = Application.OpenForms["Inicio"];
+            if (homeInstance != null)
+                homeInstance.BringToFront();
+            else
+            {
+                Form home = new Inicio();
+                home.Show();
+            }
+            
             actualForm = parentForm;
             actualForm.Hide();
             ChangeForms();

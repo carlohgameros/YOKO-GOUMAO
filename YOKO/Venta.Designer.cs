@@ -56,6 +56,15 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtNota = new System.Windows.Forms.TextBox();
             this.lista = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Productos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Preci = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descuent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Import = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Inv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Servicio = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label12 = new System.Windows.Forms.Label();
             this.txtImporte = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -83,15 +92,6 @@
             this.statusLabel = new System.Windows.Forms.Label();
             this.totalLabel = new System.Windows.Forms.Label();
             this.navigationBar1 = new YOKO.NavigationBar.NavigationBar();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Productos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Preci = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descuent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Import = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Inv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Servicio = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.clientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mascotas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.registro)).BeginInit();
@@ -112,7 +112,7 @@
             // 
             // telefonoCB
             // 
-            this.telefonoCB.BackColor = System.Drawing.Color.SeaGreen;
+            this.telefonoCB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.telefonoCB.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.telefonoCB.Checked = false;
             this.telefonoCB.CheckedOnColor = System.Drawing.Color.SeaGreen;
@@ -123,7 +123,7 @@
             // 
             // celularCB
             // 
-            this.celularCB.BackColor = System.Drawing.Color.SeaGreen;
+            this.celularCB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.celularCB.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.celularCB.Checked = false;
             this.celularCB.CheckedOnColor = System.Drawing.Color.SeaGreen;
@@ -331,6 +331,61 @@
             this.lista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick_1);
             this.lista.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.lista_CellValueChanged);
             // 
+            // ID
+            // 
+            resources.ApplyResources(this.ID, "ID");
+            this.ID.Name = "ID";
+            // 
+            // Productos
+            // 
+            this.Productos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.Productos, "Productos");
+            this.Productos.Name = "Productos";
+            this.Productos.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            resources.ApplyResources(this.Cantidad, "Cantidad");
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Preci
+            // 
+            this.Preci.Name = "Preci";
+            // 
+            // Descuent
+            // 
+            resources.ApplyResources(this.Descuent, "Descuent");
+            this.Descuent.Name = "Descuent";
+            // 
+            // Import
+            // 
+            resources.ApplyResources(this.Import, "Import");
+            this.Import.Name = "Import";
+            this.Import.ReadOnly = true;
+            // 
+            // Inv
+            // 
+            this.Inv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            resources.ApplyResources(this.Inv, "Inv");
+            this.Inv.Name = "Inv";
+            this.Inv.ReadOnly = true;
+            // 
+            // Servicio
+            // 
+            this.Servicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            resources.ApplyResources(this.Servicio, "Servicio");
+            this.Servicio.Name = "Servicio";
+            this.Servicio.ReadOnly = true;
+            this.Servicio.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Servicio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            resources.ApplyResources(this.Eliminar, "Eliminar");
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            // 
             // label12
             // 
             resources.ApplyResources(this.label12, "label12");
@@ -391,7 +446,7 @@
             // 
             // DangerPetIndicator
             // 
-            this.DangerPetIndicator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.DangerPetIndicator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.DangerPetIndicator.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.DangerPetIndicator.Checked = false;
             this.DangerPetIndicator.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -584,62 +639,6 @@
             resources.ApplyResources(this.navigationBar1, "navigationBar1");
             this.navigationBar1.Name = "navigationBar1";
             this.navigationBar1.Load += new System.EventHandler(this.navigationBar1_Load);
-            // 
-            // ID
-            // 
-            resources.ApplyResources(this.ID, "ID");
-            this.ID.Name = "ID";
-            // 
-            // Productos
-            // 
-            this.Productos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.Productos, "Productos");
-            this.Productos.Name = "Productos";
-            this.Productos.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            resources.ApplyResources(this.Cantidad, "Cantidad");
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // Preci
-            // 
-            resources.ApplyResources(this.Preci, "Preci");
-            this.Preci.Name = "Preci";
-            // 
-            // Descuent
-            // 
-            resources.ApplyResources(this.Descuent, "Descuent");
-            this.Descuent.Name = "Descuent";
-            // 
-            // Import
-            // 
-            resources.ApplyResources(this.Import, "Import");
-            this.Import.Name = "Import";
-            this.Import.ReadOnly = true;
-            // 
-            // Inv
-            // 
-            this.Inv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            resources.ApplyResources(this.Inv, "Inv");
-            this.Inv.Name = "Inv";
-            this.Inv.ReadOnly = true;
-            // 
-            // Servicio
-            // 
-            this.Servicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            resources.ApplyResources(this.Servicio, "Servicio");
-            this.Servicio.Name = "Servicio";
-            this.Servicio.ReadOnly = true;
-            this.Servicio.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Servicio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            resources.ApplyResources(this.Eliminar, "Eliminar");
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
             // 
             // Venta
             // 

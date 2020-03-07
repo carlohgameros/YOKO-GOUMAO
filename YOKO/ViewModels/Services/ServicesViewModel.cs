@@ -9,17 +9,20 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using YOKO.Models;
 using YOKO.ViewModels.Commands;
+using YOKO.ViewModels.Services;
 
 namespace YOKO.ViewModels
 {
-    class ServicesViewModel : INotifyPropertyChanged
+    public class ServicesViewModel : INotifyPropertyChanged
     {
         //Properties
         public Service service { get; set; }
         
         public ServicesViewModel()
         {
-
+            var serviceModel = new ServiceModel();
+            serviceModel.PropertyChanged += this.ServicesPropertyChanged;
+            ServicesList = serviceModel.services;
         }
 
         #region Commands

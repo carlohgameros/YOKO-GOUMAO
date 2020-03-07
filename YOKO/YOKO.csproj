@@ -124,6 +124,7 @@
     <Compile Include="Helpers\Forms.cs" />
     <Compile Include="Helpers\Seller.cs" />
     <Compile Include="Helpers\Services.cs" />
+    <Compile Include="Helpers\ServicesHelper.cs" />
     <Compile Include="Helpers\SMTPServer.cs" />
     <Compile Include="Helpers\SQL.cs" />
     <Compile Include="Inicio.cs">
@@ -176,6 +177,7 @@
     <Compile Include="reportes.Designer.cs">
       <DependentUpon>reportes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Constants.cs" />
     <Compile Include="ServicesWatcher.cs">
       <SubType>Form</SubType>
     </Compile>

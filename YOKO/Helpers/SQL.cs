@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using YOKO.Models;
 using YOKO.Helpers;
 using YOKO.enums;
+using YOKO.Resources;
 
 namespace YOKO.Helpers
 {
@@ -78,6 +79,28 @@ namespace YOKO.Helpers
             return result;
         }
 
+        public bool MultipleRecords(string query)
+        {
+            var currentStatus = false;
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString.connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.FieldCount > 0)
+                        {
+                            currentStatus = true;
+                        }
+                    }
+                }
+            }
+
+            return currentStatus;
+        }
+
         #endregion General
 
         #region Pets request
@@ -111,5 +134,30 @@ namespace YOKO.Helpers
             return PetStatusEnum.SinRegistrosNegativos;
         }
         #endregion Pets request
+
+        #region Services
+        public List<Service> getCurrentServices()
+        {
+            var currentServices = new List<Service>();
+            using (SqlConnection connection = new SqlConnection(ConnectionString.connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(Constants.currentServices, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            //currentServices.Add(
+                              //  reader.GetInt32(0),
+                               //);
+                        }
+                    }
+                }
+            }
+
+            return currentServices;
+        }
+        #endregion
     }
 }

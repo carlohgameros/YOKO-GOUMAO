@@ -17,9 +17,16 @@ namespace YOKO
 {
     public partial class ServicesWatcher : Form
     {
-        private ServicesViewModel servicesViewModel;
+        private Service selectedService = null;
 
-        public ServicesWatcher(List<Service> service) => servicesViewModel = new ServicesViewModel();
+        public ServicesViewModel servicesViewModel { get; set; }
+
+        public ServicesWatcher()
+        {
+            InitializeComponent();
+            this.Load += new System.EventHandler(this.ServicesWatcher_Load);
+            InitializeEventHandlers();
+        }
 
         private void ServicesWatcher_Load(object sender, EventArgs e)
         {
@@ -39,9 +46,40 @@ namespace YOKO
             BindDataGridView();
         }
 
-        private void navigationBar1_Load(object sender, EventArgs e)
+        private void InitializeEventHandlers()
         {
+            Load += (sender, e) =>
+            {
+                var binding = new BindingSource
+                {
+                    DataSource = servicesViewModel.ServicesList
+                };
 
+                servicesDataGrid.DataSource = binding;
+                servicesViewModel.PropertyChanged += (o, eventArg) => BindDataGridView();
+            };
+        }
+
+        private void servicesDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int index = (int) servicesDataGrid.Rows[e.RowIndex].Cells[0].Value;
+                selectedService = servicesViewModel.ServicesList[index];
+            }
+            catch { }
+        }
+
+        private void bunifuThinButton22_Click(object sender, EventArgs e) => selectedService.startService();
+
+        private void btnTerminar_Click(object sender, EventArgs e)
+        {
+            selectedService.finished();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            selectedService.cancel
         }
     }
 }

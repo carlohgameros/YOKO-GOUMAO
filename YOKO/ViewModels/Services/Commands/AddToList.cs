@@ -8,9 +8,9 @@ using YOKO.Models;
 
 namespace YOKO.ViewModels.Commands
 {
-    class AddToList : ICommand
+    public class AddToList : ICommand
     {
-        public ServicesViewModel servicesViewModel;
+        public ServicesViewModel servicesViewModel { get; set; }
         public event EventHandler CanExecuteChanged;
 
         public AddToList(ServicesViewModel servicesViewModel) => this.servicesViewModel = servicesViewModel;

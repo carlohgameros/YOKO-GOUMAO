@@ -17,6 +17,7 @@ namespace YOKO
     public partial class Venta : Form
     {
         private ServicesViewModel servicesViewModel;
+        private Service currentService;
 
         SQL sqlHelper = new SQL();
         SqlCommand sCommand;
@@ -79,6 +80,8 @@ namespace YOKO
             SqlCommand command = new SqlCommand("SELECT top 1 Factura FROM tblFacturas order by Factura desc", conn);
             textBox2.Text = (int.Parse(s: command.ExecuteScalar().ToString()) + 1).ToString();
             conn.Close();
+
+            InitiateControlHandlers();
 
             //NotificationsCenter.notifyIcon.ShowBalloonTip(1000, "1", "2", ToolTipIcon.Info);
         }
@@ -601,8 +604,21 @@ namespace YOKO
 
             if (services.Count() > 0)
             {
-                var servicesWatcher = new ServicesWatcher(services);
-                servicesWatcher.Show();
+                var servicesWatcherInstance = Application.OpenForms["ServicesWatcher"];
+                if (servicesWatcherInstance != null)
+                    servicesWatcherInstance.BringToFront();
+                else
+                {
+                    ServicesWatcher servicesWatcher = new ServicesWatcher();
+                    servicesWatcher.servicesViewModel = this.servicesViewModel;
+                    servicesWatcher.Show();
+                }
+
+                foreach(Service service in services)
+                {
+                    BindData(service);
+                    AddToList();
+                }
             }
 
             pagar.Enabled = true;
@@ -701,5 +717,26 @@ namespace YOKO
         {
 
         }
+
+        private void AddToList()
+        {
+            servicesViewModel.Execute(pagar.Tag, null);
+        }
+
+        private void InitiateControlHandlers()
+        {
+            this.servicesViewModel = new ServicesViewModel();
+            ServicesWatcher servicesWatcher = new ServicesWatcher
+            {
+                servicesViewModel = this.servicesViewModel
+            };
+
+            pagar.Tag = servicesViewModel.AddToListCommand;
+
+            this.AddOwnedForm(servicesWatcher);
+            this.pagar.Tag = servicesViewModel.AddToListCommand;
+        }
+
+        private void BindData(Service service) => servicesViewModel.service = service;
     }
 }

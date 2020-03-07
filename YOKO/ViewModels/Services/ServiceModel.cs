@@ -10,9 +10,9 @@ using YOKO.Models;
 
 namespace YOKO.ViewModels.Services
 {
-    class ServiceModel : INotifyPropertyChanged
+    public class ServiceModel : INotifyPropertyChanged
     {
-        public ObservableCollection<Service> services = new ObservableCollection<Service>();
+        public ObservableCollection<Service> services { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
 
         private DataAccess dataAccess = new DataAccess();
