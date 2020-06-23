@@ -74,12 +74,12 @@ namespace YOKO
 
         private void btnTerminar_Click(object sender, EventArgs e)
         {
-            selectedService.finished();
+            selectedService.finishService();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            selectedService.cancel
+            selectedService.cancelService();
         }
     }
 }

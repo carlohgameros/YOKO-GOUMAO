@@ -30,7 +30,7 @@ namespace YOKO.Models
             this.observations = observations;
             this.petID = petID;
             this.ownerID = ownerID;
-            canceled = false;ID
+            canceled = false;
         }
 
         public void finishService()
