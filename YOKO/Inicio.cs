@@ -47,6 +47,7 @@ namespace YOKO
             navigationBar1.HideBackButton();
             navigationBar1.HideTitle();
             navigationBar1.ChangeBackgroundColor(Color.FromName("White"));
+            navigationBar1.StopAllApp();
         }
 
 

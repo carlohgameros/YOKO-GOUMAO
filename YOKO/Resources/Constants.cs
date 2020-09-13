@@ -16,5 +16,6 @@ namespace YOKO.Resources
         public static String petRegisterOnlyData = "select [description],[date] from tblPetRegister where petID = '";
         public static String clientList = "SELECT * FROM tblClientes where NombreComercial like '%";
         public static String usersList = "select* from tblUsers where UsrName like '%";
+        public static String ticketsList = "SELECT * FROM tblFacturas order by Factura desc";
     }
 }

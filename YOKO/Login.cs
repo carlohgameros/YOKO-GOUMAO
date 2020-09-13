@@ -70,6 +70,7 @@ namespace YOKO
         {
             navigationBar1.HideBackButton();
             navigationBar1.HideTitle();
+            navigationBar1.StopAllApp();
         }
 
         private void Login_Load(object sender, EventArgs e)

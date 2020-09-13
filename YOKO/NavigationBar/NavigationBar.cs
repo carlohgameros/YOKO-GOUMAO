@@ -17,6 +17,7 @@ namespace YOKO.NavigationBar
         int movument;
         int xPosition;
         int yPosition;
+        private bool mustStop = false;
 
         public NavigationBar()
         {
@@ -28,7 +29,11 @@ namespace YOKO.NavigationBar
 
         private void bunifuImageButton3_Click(object sender, EventArgs e) => navigation.HideForm(ParentForm);
 
-        private void bunifuImageButton4_Click(object sender, EventArgs e) => ParentForm.Close();
+        private void bunifuImageButton4_Click(object sender, EventArgs e)
+        {
+            ParentForm.Close();
+            closeAllForms();
+        }
 
         public void HideTitle() => navigationTitle.Visible = false;
 
@@ -55,6 +60,20 @@ namespace YOKO.NavigationBar
         private void navigationPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void closeAllForms()
+        {
+            if (mustStop)
+            {
+                Notifications.NotificationsCenter.DisposeNotifyIcon();
+                Environment.Exit(0);
+            }
+        }
+
+        public void StopAllApp()
+        {
+            mustStop = true;
         }
 
         private void navigationPanel_MouseDown(object sender, MouseEventArgs e)

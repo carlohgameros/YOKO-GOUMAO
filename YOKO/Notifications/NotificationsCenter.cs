@@ -22,7 +22,23 @@ namespace YOKO.Notifications
 
         public static void DisposeNotifyIcon(object sender, EventArgs e)
         {
-            notifyIcon.Dispose();
+            try
+            {
+                notifyIcon.Icon = null;
+                notifyIcon.Dispose();
+            }
+            catch { }
+        }
+
+        public static void DisposeNotifyIcon()
+        {
+            try
+            {
+                notifyIcon.Visible = false;
+                notifyIcon.Icon = null;
+                notifyIcon.Dispose();
+            }
+            catch { }
         }
 
         public static void ShowErrorMessageForConection()

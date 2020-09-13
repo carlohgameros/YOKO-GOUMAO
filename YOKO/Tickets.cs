@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using System.Reactive;
 using Bunifu.Framework.UI;
 using YOKO.Helpers;
+using YOKO.Resources;
 
 namespace YOKO
 {
@@ -58,7 +59,7 @@ namespace YOKO
 
         private void Tickets_Load(object sender, EventArgs e)
         {
-            this.tblFacturasTableAdapter.Fill(this.goumaoDBDataSet.tblFacturas);
+            sqlHelper.fillTicketsList(Constants.ticketsList, ticketsDataGrid);
             contadorLabel.Text = this.goumaoDBDataSet.tblFacturas.Count.ToString() + " Registros.";
 
             var editBoxes = new List<BunifuTextbox>() { nombreField, fechaField, fechafinalField, vendedorField };
