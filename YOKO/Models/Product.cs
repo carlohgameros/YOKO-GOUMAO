@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace YOKO.Models
 {
-    class ProductItem
+    public class ProductItem
     {
         public int id { get; set; }
         public string name { get; set; }

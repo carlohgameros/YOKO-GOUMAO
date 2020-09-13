@@ -18,13 +18,13 @@ namespace YOKO
     {
         private int posY = 0;
         private int posX = 0;
+        private bool handled = false;
 
         public Login()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             NotificationsCenter notificationsCenter = new NotificationsCenter(YOKKO);
-            
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e) => Close();
@@ -75,12 +75,11 @@ namespace YOKO
         private void Login_Load(object sender, EventArgs e)
         {
             usuario.Focus();
-            contra.isPassword = true;
-        }
-
-        private void contra_OnValueChanged(object sender, EventArgs e)
-        {
-            contra.isPassword = true;
+            usuario._TextBox.Font = new Font("Microsoft JhengHei UI", 15F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
+            contra._TextBox.Font = new Font("Microsoft JhengHei UI", 15F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
+            contra._TextBox.PasswordChar = '•';
+            contra._TextBox.KeyDown += onContraKeyDown;
+            contra._TextBox.KeyPress += onContraKeyPressed;
         }
 
         private void LogIn()
@@ -100,7 +99,7 @@ namespace YOKO
                 {
                     try
                     {
-                        SqlCommand command = new SqlCommand("select * from tblUsers where UsrName = '" + usuario.Text + "' and UsrPwd = '" + contra.Text + "'", conn);
+                        SqlCommand command = new SqlCommand("select * from tblUsers where UsrName = '" + usuario._TextBox.Text + "' and UsrPwd = '" + contra._TextBox.Text + "'", conn);
                         int a = int.Parse(s: command.ExecuteScalar().ToString());
                         if (a > 0)
                         {
@@ -119,11 +118,6 @@ namespace YOKO
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void iniciar_Click(object sender, EventArgs e)
         {
             LogIn();
@@ -134,17 +128,28 @@ namespace YOKO
             LogIn();
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void crear_Click(object sender, EventArgs e)
         {
-
+            new NuevoUsuario().Show();
         }
 
-        private void contra_KeyUp(object sender, KeyEventArgs e)
+        private void onContraKeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
+                handled = true;
                 LogIn();
-            } 
+            }
+        }
+
+        private void onContraKeyPressed(object sender, KeyPressEventArgs e)
+        {
+            if (handled)
+            {
+                e.Handled = true;
+            }
+
+            handled = false;
         }
     }
 }

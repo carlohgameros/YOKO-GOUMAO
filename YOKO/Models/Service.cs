@@ -14,12 +14,15 @@ namespace YOKO.Models
         public int petID { get; set; }
         public int ownerID { get; set; }
         public bool canceled { get; } 
+        public decimal price { get; }
 
         private bool isActive = false;
         private bool isStoped = false;
         private bool isCanceled = false;
+        
+        private HairCut hairCut = null;
 
-        public Service(int ID, string description, int petID, int ownerID, string observations = "")
+        public Service(int ID, string description, int petID, int ownerID, decimal price, string observations = "")
         {
             this.ID = ID;
             this.requestTime = DateTime.Now;
@@ -30,6 +33,7 @@ namespace YOKO.Models
             this.observations = observations;
             this.petID = petID;
             this.ownerID = ownerID;
+            this.price = price;
             canceled = false;
         }
 
@@ -59,5 +63,9 @@ namespace YOKO.Models
         {
             
         }
+
+        public bool IsHairCut() => hairCut != null;
+        public void SetHairCutInformation(HairCut hairCut) => this.hairCut = hairCut;
+        public HairCut GetHairCutInformation => hairCut;
     }
 }

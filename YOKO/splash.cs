@@ -37,7 +37,7 @@ namespace YOKO
         private void splash_Load(object sender, EventArgs e)
         {
             Opacity = 0;
-            t1.Interval = 10;
+            t1.Interval = 4;
             t1.Tick += new EventHandler(fadeIn);
             t1.Start();
         }
@@ -78,6 +78,11 @@ namespace YOKO
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuGradientPanel3_Paint(object sender, PaintEventArgs e)
         {
 
         }

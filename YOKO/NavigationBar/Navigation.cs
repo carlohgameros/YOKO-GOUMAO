@@ -19,6 +19,6 @@ namespace YOKO.NavigationBar
 
         public void ReturnToPreviousForm(Form parentForm) => Forms.GoToPreviousForm(parentForm);
 
-        public void ChangeBackgroundColor(Color color) {} 
+        public void ChangeBackgroundColor(Color color) {}
     }
 }

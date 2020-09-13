@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using YOKO.Helpers;
+using YOKO.Models;
+using YOKO.Service_Additional_Information;
 
 namespace YOKO
 {

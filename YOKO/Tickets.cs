@@ -10,22 +10,24 @@ using System.Windows.Forms;
 using System.Reactive.Linq;
 using System.Data.SqlClient;
 using System.Reactive;
+using Bunifu.Framework.UI;
+using YOKO.Helpers;
 
 namespace YOKO
 {
     public partial class Tickets : Form
     {
         Timer timer = new Timer();
-        SqlConnection conn = new SqlConnection();
         String str, clienteID, vendedor;
         DateTime inicio, final;
+        SQL sqlHelper;
 
         public Tickets()
         {
-            conn.ConnectionString = ConnectionString.connectionString;
             InitializeComponent();
             InitializeReactiveComponents();
             str = "";
+            sqlHelper = new SQL();
         }
 
         public void InitializeReactiveComponents()
@@ -59,86 +61,58 @@ namespace YOKO
             this.tblFacturasTableAdapter.Fill(this.goumaoDBDataSet.tblFacturas);
             contadorLabel.Text = this.goumaoDBDataSet.tblFacturas.Count.ToString() + " Registros.";
 
-            ticketsDataGrid.BorderStyle = BorderStyle.None;
-            ticketsDataGrid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
-            ticketsDataGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            ticketsDataGrid.DefaultCellStyle.SelectionBackColor = Color.WhiteSmoke;
-            ticketsDataGrid.DefaultCellStyle.SelectionForeColor = Color.Black;
-            ticketsDataGrid.EnableHeadersVisualStyles = false;
-            ticketsDataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            ticketsDataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
-            ticketsDataGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            clientesResultadosDataGrid.BorderStyle = BorderStyle.None;
-            clientesResultadosDataGrid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
-            clientesResultadosDataGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            clientesResultadosDataGrid.DefaultCellStyle.SelectionBackColor = Color.WhiteSmoke;
-            clientesResultadosDataGrid.DefaultCellStyle.SelectionForeColor = Color.Black;
-            clientesResultadosDataGrid.EnableHeadersVisualStyles = false;
-            clientesResultadosDataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            clientesResultadosDataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
-            clientesResultadosDataGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            vendedoresDataGrid.BorderStyle = BorderStyle.None;
-            vendedoresDataGrid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
-            vendedoresDataGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            vendedoresDataGrid.DefaultCellStyle.SelectionBackColor = Color.WhiteSmoke;
-            vendedoresDataGrid.DefaultCellStyle.SelectionForeColor = Color.Black;
-            vendedoresDataGrid.EnableHeadersVisualStyles = false;
-            vendedoresDataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            vendedoresDataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
-            vendedoresDataGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            var editBoxes = new List<BunifuTextbox>() { nombreField, fechaField, fechafinalField, vendedorField };
+            foreach (BunifuTextbox textBox in editBoxes)
+            {
+                textBox._TextBox.Font = new Font("Microsoft JhengHei UI", 15F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
+            }
+
+            var dataGrids = new List<DataGridView>() { ticketsDataGrid, clientesResultadosDataGrid, vendedoresDataGrid };
+            foreach (DataGridView dataGridView in dataGrids)
+            {
+                BaseTableDesiner.SetDefaultStyle(dataGridView);
+            }
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            var nombreCB = nombreCheckbox.Checked && clienteID != null ? true : false;
-            var fechaCB = fechaField.Text.Length > 0 || fechafinalField.Text.Length > 0 && fechaCheckbox.Checked ? true : false;
-            var vendedorCB = vendedorCheckbox.Checked && vendedor != null ? true : false;
+            var nombreCB = nombreCheckbox.Checked && clienteID != null;
+            var fechaCB = fechaField.Text.Length > 0 || fechafinalField.Text.Length > 0 && fechaCheckbox.Checked;
+            var vendedorCB = vendedorCheckbox.Checked && vendedor != null;
             var construir = nombreCB || fechaCB || vendedorCB;
 
             var nombreTabla = "FClienteID";
             var fechaTabla = "FEchaFactura";
             var vendedorTabla = "FUReg";
-            // Constructor SQL
-            string sql = "SELECT * FROM tblFacturas";
+
+            var sql = "SELECT * FROM tblFacturas";
             sql = construir ? sql + " WHERE " : sql;
             sql = nombreCB ? sql.SqlIgual(nombreTabla, clienteID) : sql;
-            sql = vendedorCB ? sql.SqlIgual(vendedorTabla, vendedorField.Text) + "": sql;
-            sql = fechaCB ? fechaSQLCall(sql, fechaField.Text, fechafinalField.Text) : sql;
+            sql = nombreCB && vendedorCB ? sql + " and " : sql;
+            sql = vendedorCB ? sql.SqlLike(vendedorTabla, vendedorField._TextBox.Text) + "": sql;
+            sql = (nombreCB || vendedorCB) && fechaCB ? sql + " and " : sql;
+            sql = fechaCB ? fechaSQLCall(sql, fechaField._TextBox.Text, fechafinalField._TextBox.Text) : sql;
 
-            MessageBox.Show(sql);
-{
-                conn.Open();   
-                SqlCommand sCommand = new SqlCommand(sql, conn);
-                SqlDataAdapter sAdapter = new SqlDataAdapter(sCommand);
-                SqlCommandBuilder sBuilder = new SqlCommandBuilder(sAdapter);
-                DataSet sDs = new DataSet();
-                sAdapter.Fill(sDs, "Factura");
-                DataTable sTable = sDs.Tables["Factura"];
-                ticketsDataGrid.DataSource = sTable.Rows.Count == 0 ? null : sDs.Tables["Factura"];
-                ticketsDataGrid.ReadOnly = true;
-                ticketsDataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                conn.Close();
+            ticketsDataGrid.DataSource = null;
+            clearDataGrid(ticketsDataGrid);
+            contadorLabel.Visible = true;
+
+            try
+            {
+                contadorLabel.Visible = false;
+                sqlHelper.fillTicketsList(sql, ticketsDataGrid);
             }
-
+            catch(Exception exception)
+            {
+                Notifications.NotificationsCenter.ShowErrorMessageForException(exception);
+            }
         }
 
         private string fechaSQLCall(string sql, string inicio, string final) 
         {
-            DateTime inicial = DateTime.Parse(inicio);
-            //inicial.toda;
-            DateTime finall = DateTime.Parse(final);
+            var inicial = DateTime.Parse(inicio);
+            var finall = DateTime.Parse(final);
+
             if (inicio == final || final == "")
             {
                 return sql += " FechaFactura = '" + inicio + "'";
@@ -149,62 +123,13 @@ namespace YOKO
             }
             else
             {
-                return null;
+                return sql;
             }
-        }
-
-        private void nombreCheckbox_OnChange(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void nombreField_OnValueChanged(object sender, EventArgs e)
-        {
-            if (nombreField.Text.Length > 0)
-            {
-                nombreCheckbox.Checked = true;
-                conn.Open();
-                string sql = "SELECT * FROM tblClientes where NombreComercial like '%" + nombreField.Text + "%'";
-                SqlCommand sCommand = new SqlCommand(sql, conn);
-                SqlDataAdapter sAdapter = new SqlDataAdapter(sCommand);
-                SqlCommandBuilder sBuilder = new SqlCommandBuilder(sAdapter);
-                DataSet sDs = new DataSet();
-                sAdapter.Fill(sDs, "NombreComercial");
-                DataTable sTable = sDs.Tables["NombreComercial"];
-                clientesResultadosDataGrid.DataSource = sTable.Rows.Count == 0 ? null : sDs.Tables["NombreComercial"];
-                clienteAlert.Visible = sTable.Rows.Count == 0;
-                nombreCheckbox.Checked = sTable.Rows.Count != 0;
-                clientesResultadosDataGrid.ReadOnly = true;
-                clientesResultadosDataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                conn.Close();
-                try
-                {
-                    clienteID = clientesResultadosDataGrid.Rows[clientesResultadosDataGrid.SelectedRows[0].Index].Cells["ClienteID"].Value.ToString();
-                }
-                catch { }
-                clientesResultadosDataGrid.Columns[0].Visible = false;
-            }
-            else
-            {
-                nombreCheckbox.Checked = false;
-                clientesResultadosDataGrid.DataSource = null;
-            }
-            
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            fechaField.Text = dateTimePicker1.Value.ToShortDateString();
+            fechaField._TextBox.Text = dateTimePicker1.Value.ToShortDateString();
             fechaCheckbox.Checked = true;
         }
 
@@ -228,7 +153,6 @@ namespace YOKO
                         fechafinalField.Text = time.ToShortDateString();
                     }
                 }
-                
             }
             else
             {
@@ -236,9 +160,92 @@ namespace YOKO
             }
         }
 
+        private void nombreField_OnTextChange(object sender, EventArgs e)
+        {
+            var currentText = nombreField._TextBox.Text;
+            var isValid = currentText.Trim().Length > 0;
+            clienteAlert.Visible = !isValid;
+            
+            if (isValid)
+            {
+                sqlHelper.fillContactList(currentText, clientesResultadosDataGrid);    
+            }
+            else
+            {
+                clearDataGrid(clientesResultadosDataGrid);
+            } 
+        }
+
+        private void clearDataGrid(DataGridView dataGrid)
+        {
+            DataTable DT = (DataTable)dataGrid.DataSource;
+            if (DT != null)
+            {
+                dataGrid.DataSource = null;
+                clearDataGrid(dataGrid);
+            }
+            else
+            {
+                dataGrid.Rows.Clear();
+            }
+        }
+
+        private void fechaField_OnTextChange(object sender, EventArgs e)
+        {
+            var dateTime = new DateTime();
+            fechaCheckbox.Checked = DateTime.TryParse(fechaField._TextBox.Text, out dateTime) && DateTime.TryParse(fechafinalField._TextBox.Text, out dateTime);
+        }
+
+        private void fechafinalField_OnTextChange(object sender, EventArgs e)
+        {
+            var dateTime = new DateTime();
+            fechaCheckbox.Checked = DateTime.TryParse(fechaField._TextBox.Text, out dateTime) && DateTime.TryParse(fechafinalField._TextBox.Text, out dateTime);
+        }
+
+        private void vendedorField_OnTextChange(object sender, EventArgs e)
+        {
+            var currentText = vendedorField._TextBox.Text;
+            var isValid = currentText.Trim().Length > 0;
+            clienteAlert.Visible = !isValid;
+
+            if (isValid)
+            {
+                sqlHelper.fillUsersList(currentText, vendedoresDataGrid);
+            }
+            else
+            {
+                clearDataGrid(vendedoresDataGrid);
+            }
+        }
+
+        private void fechafinalField_MouseClick(object sender, MouseEventArgs e)
+        {
+            dateTimePicker2.Show();
+        }
+
+        private void clientesResultadosDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                clienteID = clientesResultadosDataGrid.Rows[clientesResultadosDataGrid.SelectedRows[0].Index].Cells["ClienteID"].Value.ToString();
+                nombreCheckbox.Checked = clienteID != null && clienteID != "";
+            }
+            catch { }
+        }
+
+        private void vendedoresDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                vendedor = vendedoresDataGrid.Rows[vendedoresDataGrid.SelectedRows[0].Index].Cells["UsrName"].Value.ToString();
+                vendedorCheckbox.Checked = vendedor != null && vendedor != "";
+            }
+            catch { }
+        }
+
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
-            fechafinalField.Text = dateTimePicker2.Value.ToShortDateString();
+            fechafinalField._TextBox.Text = dateTimePicker2.Value.ToShortDateString();
             fechaCheckbox.Checked = true;
         }
 
@@ -261,37 +268,6 @@ namespace YOKO
             else
             {
                 fechaCheckbox.Checked = false;
-            }
-        }
-
-        private void vendedorField_OnValueChanged(object sender, EventArgs e)
-        {
-            if (vendedorField.Text.Length > 0)
-            {
-                conn.Open();
-                string sql = "SELECT UsrName, UsrType, Email FROM tblUsers where UsrName like '%" + vendedorField.Text + "%'";
-                SqlCommand sCommand = new SqlCommand(sql, conn);
-                SqlDataAdapter sAdapter = new SqlDataAdapter(sCommand);
-                SqlCommandBuilder sBuilder = new SqlCommandBuilder(sAdapter);
-                DataSet sDs = new DataSet();
-                sAdapter.Fill(sDs, "UsrName");
-                DataTable sTable = sDs.Tables["UsrName"];
-                vendedoresDataGrid.DataSource = sTable.Rows.Count == 0 ? null : sDs.Tables["UsrName"];
-                vendedorAlert.Visible = sTable.Rows.Count == 0;
-                vendedorCheckbox.Checked = sTable.Rows.Count != 0;
-                vendedoresDataGrid.ReadOnly = true;
-                vendedoresDataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                conn.Close();
-                try
-                {
-                    str = vendedoresDataGrid.Rows[vendedoresDataGrid.SelectedRows[0].Index].Cells["UsrName"].Value.ToString();
-                }
-                catch { }
-            }
-            else
-            {
-                vendedorCheckbox.Checked = false;
-                vendedoresDataGrid.DataSource = null;
             }
         }
     }

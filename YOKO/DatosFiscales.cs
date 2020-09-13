@@ -9,15 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Globalization;
+using YOKO.Models;
 
 namespace YOKO
 {
 
     public partial class DatosFiscales : Form
     {
+        LegalData legalData;
         SqlConnection conn = new SqlConnection(ConnectionString.connectionString);
         
-            
         public DatosFiscales()
         {
             InitializeComponent();
@@ -25,227 +26,70 @@ namespace YOKO
 
         private void DatosFiscales_Load(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("select top 1 * from tblDatosFiscales order by Fecha desc", conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            DateTime date = new DateTime();
-            foreach (DataRow dr in dt.Rows)
-            {
-                tblrfc.Text = dr["RFC"].ToString();
-                tblnombre.Text = dr["NombreComercial"].ToString();
-                tblrazon.Text = dr["RazonSocial"].ToString();
-                tblcalle.Text = dr["CalleNum"].ToString();
-                tblcolonia.Text = dr["Colonia"].ToString();
-                tblmunicipio.Text = dr["Municipio"].ToString();
-                tblestado.Text = dr["Estado"].ToString();
-                tblcp.Text = dr["CP"].ToString();
-                tbltel.Text = dr["Tel"].ToString();
-                tblemail.Text = dr["Email"].ToString();
-                tblweb.Text = dr["SitioWeb"].ToString();
-                tbliva.Text = dr["PIva"].ToString();
-                tbldolar.Text = dr["TCambio"].ToString();
-                tblimpresora.Text = dr["Impresora"].ToString();
-                tbll1.Text = dr["Leyenda1"].ToString();
-                tbll2.Text = dr["Leyenda2"].ToString();
-                tbll3.Text = dr["Leyenda3"].ToString();
-                tbll4.Text = dr["Leyenda4"].ToString();
-                tbll5.Text = dr["Leyenda5"].ToString();
-                txtLeyenda6.Text = dr["Leyenda6"].ToString();
-                tblregimen.Text = dr["Regimen"].ToString();
-                date = DateTime.Parse(dr["Fecha"].ToString());
-                
-            }
-            var fullMonthName = new DateTime(date.Year, date.Month, date.Day).ToString("MMMM", CultureInfo.CreateSpecificCulture("es"));
-            LabelFecha.Text = "El " + date.Day +" de " + fullMonthName + " del " + date.Month + " se modificó por última vez.";
+            legalData = LegalData.getInstance();
+
+            setData();
         }
 
-        private void label13_Click(object sender, EventArgs e)
+        private void setData()
         {
+            tblrfc.Text = legalData.rfc;
+            tblnombre.Text = legalData.name;
+            tblrazon.Text = legalData.razon;
+            tblcalle.Text = legalData.street;
+            tblcolonia.Text = legalData.colonia;
+            tblmunicipio.Text = legalData.municipio;
+            tblestado.Text = legalData.state;
+            tblcp.Text = legalData.postalCode;
+            tbltel.Text = legalData.phone;
+            tblemail.Text = legalData.email;
+            tblweb.Text = legalData.web;
+            tbliva.Text = legalData.tax;
+            tbldolar.Text = legalData.dolar;
+            tblimpresora.Text = legalData.printer;
+            tbll1.Text = legalData.leyend1;
+            tbll2.Text = legalData.leyend2;
+            tbll3.Text = legalData.leyend3;
+            tbll4.Text = legalData.leyend4;
+            tbll5.Text = legalData.leyend5;
+            txtLeyenda6.Text = legalData.leyend6;
+            tblregimen.Text = legalData.regimen;
 
-        }
-
-        private void bunifuMetroTextbox12_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuMetroTextbox10_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuGradientPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            //LabelFecha.Text = legalData.monthName;
         }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("select top 1 * from tblDatosFiscales order by Fecha desc", conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            DateTime date = new DateTime();
-            foreach (DataRow dr in dt.Rows)
-            {
-                tblrfc.Text = dr["RFC"].ToString();
-                tblnombre.Text = dr["NombreComercial"].ToString();
-                tblrazon.Text = dr["RazonSocial"].ToString();
-                tblcalle.Text = dr["CalleNum"].ToString();
-                tblcolonia.Text = dr["Colonia"].ToString();
-                tblmunicipio.Text = dr["Municipio"].ToString();
-                tblestado.Text = dr["Estado"].ToString();
-                tblcp.Text = dr["CP"].ToString();
-                tbltel.Text = dr["Tel"].ToString();
-                tblemail.Text = dr["Email"].ToString();
-                tblweb.Text = dr["SitioWeb"].ToString();
-                tbliva.Text = dr["PIva"].ToString();
-                tbldolar.Text = dr["TCambio"].ToString();
-                tblimpresora.Text = dr["Impresora"].ToString();
-                tbll1.Text = dr["Leyenda1"].ToString();
-                tbll2.Text = dr["Leyenda2"].ToString();
-                tbll3.Text = dr["Leyenda3"].ToString();
-                tbll4.Text = dr["Leyenda4"].ToString();
-                tbll5.Text = dr["Leyenda5"].ToString();
-                txtLeyenda6.Text = dr["Leyenda6"].ToString();
-                tblregimen.Text = dr["Regimen"].ToString();
-                date = DateTime.Parse(dr["Fecha"].ToString());
-
-            }
-            var fullMonthName = new DateTime(date.Year, date.Month, date.Day).ToString("MMMM", CultureInfo.CreateSpecificCulture("es"));
-            LabelFecha.Text = "El " + date.Day + " de " + fullMonthName + " del " + date.Month + " se modificó por última vez.";
+            legalData.RefreshData();
+            setData();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("select top 1 * from tblDatosFiscales order by Fecha desc", conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            bool alerta = true;
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
-            {
-                if (tblrfc.Text != dr["RFC"].ToString())
-                {
-                    alerta = false;
-                }
-                if (tblnombre.Text != dr["NombreComercial"].ToString())
-                {
-                    alerta = false;
-                }
+            LegalData newLegalData = new LegalData();
+            newLegalData.rfc = tblrfc.Text;
+            newLegalData.name = tblnombre.Text;
+            newLegalData.razon = tblrazon.Text;
+            newLegalData.street = tblcalle.Text;
+            newLegalData.colonia = tblcolonia.Text;
+            newLegalData.municipio = tblmunicipio.Text;
+            newLegalData.state = tblestado.Text;
+            newLegalData.postalCode = tblcp.Text;
+            newLegalData.phone = tbltel.Text;
+            newLegalData.email = tblemail.Text;
+            newLegalData.web = tblweb.Text;
+            newLegalData.tax = tbliva.Text;
+            newLegalData.dolar = tbldolar.Text;
+            newLegalData.printer = tblimpresora.Text;
+            newLegalData.leyend1 = tbll1.Text;
+            newLegalData.leyend2 = tbll2.Text;
+            newLegalData.leyend3 = tbll3.Text;
+            newLegalData.leyend4 = tbll4.Text;
+            newLegalData.leyend5 = tbll5.Text;
+            newLegalData.leyend6 = txtLeyenda6.Text;
+            newLegalData.regimen = tblregimen.Text;
                 
-                if (tblrazon.Text != dr["RazonSocial"].ToString())
-                {
-                    alerta = false;
-                }
-                
-                if (tblcalle.Text != dr["CalleNum"].ToString())
-                {
-                    alerta = false;
-                }
-                
-                if (tblcolonia.Text != dr["Colonia"].ToString())
-                {
-                    alerta = false;
-                }
-                
-                if (tblmunicipio.Text != dr["Municipio"].ToString())
-                {
-                    alerta = false;
-                }
-                
-                if (tblestado.Text != dr["Estado"].ToString())
-                {
-                    alerta = false;
-                }
-                
-                if (tblcp.Text != dr["CP"].ToString())
-                {
-                    alerta = false;
-                }
-                
-                if (tbltel.Text != dr["Tel"].ToString())
-                {
-                    alerta = false;
-                }
-                
-                if (tblemail.Text != dr["Email"].ToString())
-                {
-                    alerta = false;
-                }
-                
-                if (tblweb.Text != dr["SitioWeb"].ToString())
-                {
-                    alerta = false;
-                }
-                
-                if (tbliva.Text != dr["PIva"].ToString())
-                {
-                    alerta = false;
-                }
-                
-                if (tbldolar.Text != dr["TCambio"].ToString())
-                {
-                    alerta = false;
-                }
-                
-                if (tblimpresora.Text != dr["Impresora"].ToString())
-                {
-                    alerta = false;
-                }
-                
-                if (tbll1.Text != dr["Leyenda1"].ToString())
-                {
-                    alerta = false;
-                }
-                
-                if (tbll2.Text != dr["Leyenda2"].ToString())
-                {
-                    alerta = false;
-                }
-                
-                if (tbll3.Text != dr["Leyenda3"].ToString())
-                {
-                    alerta = false;
-                }
-                
-                if (tbll4.Text != dr["Leyenda4"].ToString())
-                {
-                    alerta = false;
-                }
-                
-                if (tbll5.Text != dr["Leyenda5"].ToString())
-                {
-                    alerta = false;
-                }
-                
-                if (txtLeyenda6.Text != dr["Leyenda6"].ToString())
-                {
-                    alerta = false;
-                }
-                
-                if (tblregimen.Text != dr["Regimen"].ToString())
-                {
-                    alerta = false;
-                }
-                
-            }
-            if (alerta == true)
-            {
-                MessageBox.Show("");
-            }
-            else
+            if (legalData.updateLegalData(newLegalData))
             {
                 Notifications.NotificationsCenter.notifyIcon.ShowBalloonTip(1000, "Datos actualizados", "Ahora los datos guardados serán lo que se usen en el sistema.", ToolTipIcon.Info);
                 
@@ -257,11 +101,6 @@ namespace YOKO
         {
             new Inicio().Show();
             Hide();
-        }
-
-        private void navigationBar1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

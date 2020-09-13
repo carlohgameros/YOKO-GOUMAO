@@ -34,14 +34,15 @@
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuGradientPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 100.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(222, 151);
+            this.label2.Location = new System.Drawing.Point(208, 151);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(821, 255);
             this.label2.TabIndex = 15;
@@ -50,18 +51,21 @@
             // 
             // bunifuGradientPanel3
             // 
+            this.bunifuGradientPanel3.BackColor = System.Drawing.Color.White;
             this.bunifuGradientPanel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel3.BackgroundImage")));
             this.bunifuGradientPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel3.GradientBottomLeft = System.Drawing.SystemColors.WindowFrame;
-            this.bunifuGradientPanel3.GradientBottomRight = System.Drawing.SystemColors.WindowFrame;
-            this.bunifuGradientPanel3.GradientTopLeft = System.Drawing.SystemColors.WindowFrame;
-            this.bunifuGradientPanel3.GradientTopRight = System.Drawing.SystemColors.GrayText;
+            this.bunifuGradientPanel3.Controls.Add(this.label1);
+            this.bunifuGradientPanel3.GradientBottomLeft = System.Drawing.Color.White;
+            this.bunifuGradientPanel3.GradientBottomRight = System.Drawing.Color.White;
+            this.bunifuGradientPanel3.GradientTopLeft = System.Drawing.Color.White;
+            this.bunifuGradientPanel3.GradientTopRight = System.Drawing.Color.White;
             this.bunifuGradientPanel3.Location = new System.Drawing.Point(0, 566);
             this.bunifuGradientPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bunifuGradientPanel3.Name = "bunifuGradientPanel3";
             this.bunifuGradientPanel3.Quality = 10;
             this.bunifuGradientPanel3.Size = new System.Drawing.Size(1210, 32);
             this.bunifuGradientPanel3.TabIndex = 13;
+            this.bunifuGradientPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuGradientPanel3_Paint);
             // 
             // bunifuGradientPanel1
             // 
@@ -83,10 +87,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label1.Location = new System.Drawing.Point(1027, 505);
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(1038, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(169, 28);
             this.label1.TabIndex = 16;
@@ -95,7 +99,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Magenta;
-            this.panel1.Location = new System.Drawing.Point(221, 396);
+            this.panel1.Location = new System.Drawing.Point(192, 396);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(823, 10);
             this.panel1.TabIndex = 17;
@@ -104,10 +108,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1207, 626);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.bunifuGradientPanel3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.bunifuGradientPanel1);
@@ -118,6 +121,8 @@
             this.Text = "splash";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.splash_FormClosing);
             this.Load += new System.EventHandler(this.splash_Load);
+            this.bunifuGradientPanel3.ResumeLayout(false);
+            this.bunifuGradientPanel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

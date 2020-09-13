@@ -11,7 +11,7 @@ namespace YOKO.Helpers
 {
     public class BasicData
     {
-        public static String seller = "Seller";
+        private static String seller = "Seller";
         
         public static void UpdateSellerName(String Name) => seller = Name;
 

@@ -22,10 +22,5 @@ namespace YOKO.Helpers
             }
             return !success.Find(result => result == false);
         }
-
-        public void PrintRecipe(List<ProductItem> products, List<Service> services)
-        {
-
-        }
     }
 }

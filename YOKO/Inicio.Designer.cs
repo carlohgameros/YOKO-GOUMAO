@@ -131,6 +131,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label3.Font = new System.Drawing.Font("Microsoft JhengHei Light", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
             this.label3.Location = new System.Drawing.Point(100, 107);
@@ -139,11 +140,14 @@
             this.label3.TabIndex = 18;
             this.label3.Text = "Venta";
             this.label3.Click += new System.EventHandler(this.Label3_Click);
+            this.label3.MouseLeave += new System.EventHandler(this.label3_MouseLeave);
+            this.label3.MouseHover += new System.EventHandler(this.label3_MouseHover);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label5.Font = new System.Drawing.Font("Microsoft JhengHei Light", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
             this.label5.Location = new System.Drawing.Point(100, 404);
@@ -152,11 +156,14 @@
             this.label5.TabIndex = 36;
             this.label5.Text = "Agregar Usuario";
             this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.label5.MouseLeave += new System.EventHandler(this.label5_MouseLeave);
+            this.label5.MouseHover += new System.EventHandler(this.label5_MouseHover);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label6.Font = new System.Drawing.Font("Microsoft JhengHei Light", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DimGray;
             this.label6.Location = new System.Drawing.Point(100, 305);
@@ -165,11 +172,14 @@
             this.label6.TabIndex = 35;
             this.label6.Text = "Recibos";
             this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.label6.MouseLeave += new System.EventHandler(this.label6_MouseLeave);
+            this.label6.MouseHover += new System.EventHandler(this.label6_MouseHover);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label7.Font = new System.Drawing.Font("Microsoft JhengHei Light", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DimGray;
             this.label7.Location = new System.Drawing.Point(100, 701);
@@ -178,11 +188,14 @@
             this.label7.TabIndex = 38;
             this.label7.Text = "Configuración";
             this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.label7.MouseLeave += new System.EventHandler(this.label7_MouseLeave);
+            this.label7.MouseHover += new System.EventHandler(this.label7_MouseHover);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label8.Font = new System.Drawing.Font("Microsoft JhengHei Light", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DimGray;
             this.label8.Location = new System.Drawing.Point(100, 503);
@@ -191,11 +204,14 @@
             this.label8.TabIndex = 37;
             this.label8.Text = "Altas";
             this.label8.Click += new System.EventHandler(this.label8_Click);
+            this.label8.MouseLeave += new System.EventHandler(this.label8_MouseLeave);
+            this.label8.MouseHover += new System.EventHandler(this.label7_MouseHover);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label4.Font = new System.Drawing.Font("Microsoft JhengHei Light", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
             this.label4.Location = new System.Drawing.Point(100, 206);
@@ -204,11 +220,14 @@
             this.label4.TabIndex = 39;
             this.label4.Text = "Inventario";
             this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.label4.MouseLeave += new System.EventHandler(this.label4_MouseLeave);
+            this.label4.MouseHover += new System.EventHandler(this.label4_MouseHover);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label9.Font = new System.Drawing.Font("Microsoft JhengHei Light", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DimGray;
             this.label9.Location = new System.Drawing.Point(100, 602);
@@ -217,6 +236,8 @@
             this.label9.TabIndex = 40;
             this.label9.Text = "Datos Fiscales";
             this.label9.Click += new System.EventHandler(this.label9_Click);
+            this.label9.MouseLeave += new System.EventHandler(this.label9_MouseLeave);
+            this.label9.MouseHover += new System.EventHandler(this.label8_MouseHover);
             // 
             // bunifuGradientPanel1
             // 
@@ -369,7 +390,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label9;
-        private NavigationBar.NavigationBar navigationBar1;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
@@ -378,6 +398,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private NavigationBar.NavigationBar navigationBar1;
     }
 }
 

@@ -3,13 +3,20 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Net.Mail;
 using System.Net;
+using System.Collections.Generic;
+using Bunifu.Framework.UI;
+using System.Drawing;
 
 namespace YOKO
 {
     public partial class NuevoUsuario : Form
     {
-        Random a = new Random();
-        int b;
+        private Random a = new Random();
+        private int b;
+        private string pass1;
+        private string pass2;
+        private bool isCorrectCode = false;
+
         public NuevoUsuario()
         {
             b = a.Next(100000, 999999);
@@ -20,7 +27,7 @@ namespace YOKO
         {
             if (contra1.Text != contra2.Text)
             {
-                //notifyIcon1.ShowBalloonTip(1000, "Error en la contraseña", "Verifique que sean iguales", ToolTipIcon.Info);
+                Notifications.NotificationsCenter.ShowSucessMessage("Error en la contraseña", "Verifique que sean iguales.");
             }
             else
             {
@@ -30,9 +37,9 @@ namespace YOKO
                     conn.Open();
                     try
                     {
-                        SqlCommand command = new SqlCommand("insert into tblUsers values('" + nombre.Text + "', " + contra1.Text + ", 'Trabajador', 1, GETDATE(), '" + correo.Text + "', GETDATE())", conn);
+                        SqlCommand command = new SqlCommand("insert into tblUsers values('" + nombre.Text + "', '" + contra1.Text + "', 'Trabajador', 1, GETDATE(), '" + correo.Text + "', GETDATE())", conn);
                         command.ExecuteNonQuery();
-                        //notifyIcon1.ShowBalloonTip(1000, "Intento Correcto", "Datos actualizados a la base de datos", ToolTipIcon.Info);
+                        Notifications.NotificationsCenter.ShowSucessMessage("¡Perfil creado!", "Ya puede iniciar sesión con sus nuevas credenciales.");
                     }
                     catch (Exception ex)
                     {
@@ -50,71 +57,73 @@ namespace YOKO
 
         private void NuevoUsuario_Load(object sender, EventArgs e)
         {
-            if (codigo.Text == "1")
+            List<BunifuTextbox> list = new List<BunifuTextbox>
             {
-                ingresar.ButtonText = "Test";
+                nombre,
+                contra1,
+                contra2,
+                correo,
+                codigo               
+            };
+
+            foreach (BunifuTextbox textbox in list)
+            {
+                textbox._TextBox.Font = new Font("Microsoft JhengHei UI", 13F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
             }
+
+            contra1._TextBox.PasswordChar = '•';
+            contra2._TextBox.PasswordChar = '•';
         }
 
-        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        private void bunifuFlatButton1_Click_1(object sender, EventArgs e)
         {
+            if (correo.text.Length == 0)
+            {
+                Notifications.NotificationsCenter.ShowWarningMessage("Por favor valide sus datos.");
+                return;
+            }
+
             MailMessage mail = new MailMessage();
             SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
             mail.From = new MailAddress("carlo.hernandez16@tectijuana.edu.mx");
-            mail.To.Add(correo.Text.Trim());
+            mail.To.Add(correo.text.Trim());
             mail.Subject = "Código de verificación.";
-            mail.Body = nombre.Text + ", su código es: " + b;
-
-            //System.Net.Mail.Attachment attachment;
-            //attachment = new System.Net.Mail.Attachment(@"C:\Attachment.txt");
-            //mail.Attachments.Add(attachment);
+            mail.Body = nombre.text + ", su código es: " + b;
 
             SmtpServer.Port = 587;
-            SmtpServer.UseDefaultCredentials = true;
-            SmtpServer.Credentials = new NetworkCredential("carlo.hernandez16@tectijuana.edu.mx", "realcj18");
+            SmtpServer.UseDefaultCredentials = false;
+            SmtpServer.Credentials = new NetworkCredential("carlo.hernandez16@tectijuana.edu.mx", "rxRealcj23@");
             SmtpServer.EnableSsl = true;
+
+            bool emailSended = false;
             try
             {
                 SmtpServer.Send(mail);
+                emailSended = true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Notifications.NotificationsCenter.ShowErrorMessageForException(ex);
             }
-          
+
+            if (emailSended)
+            {
+                Notifications.NotificationsCenter.ShowSucessMessage("Código enviado", "Revisa tu bandeja de correos.");
+            }
         }
 
-        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        private void bunifuFlatButton2_Click_1(object sender, EventArgs e)
         {
-            if (b.ToString() == codigo.Text)
+            if (b.ToString() == codigo.text)
             {
-                MessageBox.Show("Correcto.");
-                ingresar.ButtonText = "Crear";
+                Notifications.NotificationsCenter.ShowSucessMessage("Código correcto", "Perfil puede crear el perfil.");
+                isCorrectCode = true;
+                ingresar.Visible = true;
             }
             else
             {
-                MessageBox.Show("Incorrecto");
+                Notifications.NotificationsCenter.ShowErrorMessage("Código incorrecto, inténta de nuevo.");
             }
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

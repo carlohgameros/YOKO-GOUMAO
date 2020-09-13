@@ -337,7 +337,7 @@
             this.btn3MascotaLimpiar.IdleFillColor = System.Drawing.Color.White;
             this.btn3MascotaLimpiar.IdleForecolor = System.Drawing.Color.Red;
             this.btn3MascotaLimpiar.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn3MascotaLimpiar.Location = new System.Drawing.Point(453, 937);
+            this.btn3MascotaLimpiar.Location = new System.Drawing.Point(453, 1017);
             this.btn3MascotaLimpiar.Margin = new System.Windows.Forms.Padding(8);
             this.btn3MascotaLimpiar.Name = "btn3MascotaLimpiar";
             this.btn3MascotaLimpiar.Size = new System.Drawing.Size(170, 74);
@@ -362,7 +362,7 @@
             this.btn2MascotaElimianar.IdleFillColor = System.Drawing.Color.White;
             this.btn2MascotaElimianar.IdleForecolor = System.Drawing.Color.Red;
             this.btn2MascotaElimianar.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn2MascotaElimianar.Location = new System.Drawing.Point(267, 937);
+            this.btn2MascotaElimianar.Location = new System.Drawing.Point(267, 1017);
             this.btn2MascotaElimianar.Margin = new System.Windows.Forms.Padding(8);
             this.btn2MascotaElimianar.Name = "btn2MascotaElimianar";
             this.btn2MascotaElimianar.Size = new System.Drawing.Size(170, 74);
@@ -387,7 +387,7 @@
             this.btn1MascotaAgregar.IdleFillColor = System.Drawing.Color.White;
             this.btn1MascotaAgregar.IdleForecolor = System.Drawing.Color.Red;
             this.btn1MascotaAgregar.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn1MascotaAgregar.Location = new System.Drawing.Point(81, 937);
+            this.btn1MascotaAgregar.Location = new System.Drawing.Point(81, 1017);
             this.btn1MascotaAgregar.Margin = new System.Windows.Forms.Padding(8);
             this.btn1MascotaAgregar.Name = "btn1MascotaAgregar";
             this.btn1MascotaAgregar.Size = new System.Drawing.Size(170, 74);
@@ -399,7 +399,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(158, 608);
+            this.label6.Location = new System.Drawing.Point(158, 688);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 41);
@@ -410,7 +410,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(159, 671);
+            this.label7.Location = new System.Drawing.Point(159, 751);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(86, 41);
@@ -421,7 +421,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(18, 479);
+            this.label8.Location = new System.Drawing.Point(18, 559);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(395, 55);
@@ -432,7 +432,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(154, 734);
+            this.label9.Location = new System.Drawing.Point(154, 814);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(91, 41);
@@ -443,7 +443,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(108, 545);
+            this.label10.Location = new System.Drawing.Point(108, 625);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(137, 41);
@@ -462,7 +462,7 @@
             this.txt4MascotaAños.LineIdleColor = System.Drawing.Color.Gray;
             this.txt4MascotaAños.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.txt4MascotaAños.LineThickness = 3;
-            this.txt4MascotaAños.Location = new System.Drawing.Point(255, 726);
+            this.txt4MascotaAños.Location = new System.Drawing.Point(255, 806);
             this.txt4MascotaAños.Margin = new System.Windows.Forms.Padding(6);
             this.txt4MascotaAños.Name = "txt4MascotaAños";
             this.txt4MascotaAños.Size = new System.Drawing.Size(360, 51);
@@ -481,7 +481,7 @@
             this.txt3MascotaSexo.LineIdleColor = System.Drawing.Color.Gray;
             this.txt3MascotaSexo.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.txt3MascotaSexo.LineThickness = 3;
-            this.txt3MascotaSexo.Location = new System.Drawing.Point(255, 663);
+            this.txt3MascotaSexo.Location = new System.Drawing.Point(255, 743);
             this.txt3MascotaSexo.Margin = new System.Windows.Forms.Padding(6);
             this.txt3MascotaSexo.Name = "txt3MascotaSexo";
             this.txt3MascotaSexo.Size = new System.Drawing.Size(360, 51);
@@ -500,7 +500,7 @@
             this.txt2MascotaRaza.LineIdleColor = System.Drawing.Color.Gray;
             this.txt2MascotaRaza.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.txt2MascotaRaza.LineThickness = 3;
-            this.txt2MascotaRaza.Location = new System.Drawing.Point(255, 600);
+            this.txt2MascotaRaza.Location = new System.Drawing.Point(255, 680);
             this.txt2MascotaRaza.Margin = new System.Windows.Forms.Padding(6);
             this.txt2MascotaRaza.Name = "txt2MascotaRaza";
             this.txt2MascotaRaza.Size = new System.Drawing.Size(360, 51);
@@ -519,7 +519,7 @@
             this.txt1MascotaNombre.LineIdleColor = System.Drawing.Color.Gray;
             this.txt1MascotaNombre.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.txt1MascotaNombre.LineThickness = 3;
-            this.txt1MascotaNombre.Location = new System.Drawing.Point(255, 537);
+            this.txt1MascotaNombre.Location = new System.Drawing.Point(255, 617);
             this.txt1MascotaNombre.Margin = new System.Windows.Forms.Padding(6);
             this.txt1MascotaNombre.Name = "txt1MascotaNombre";
             this.txt1MascotaNombre.Size = new System.Drawing.Size(360, 51);
@@ -529,7 +529,7 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(635, 479);
+            this.dataGridView2.Location = new System.Drawing.Point(635, 559);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
@@ -540,7 +540,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(168, 797);
+            this.label11.Location = new System.Drawing.Point(168, 877);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(77, 41);
@@ -559,7 +559,7 @@
             this.txt5MascotaMes.LineIdleColor = System.Drawing.Color.Gray;
             this.txt5MascotaMes.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.txt5MascotaMes.LineThickness = 3;
-            this.txt5MascotaMes.Location = new System.Drawing.Point(255, 789);
+            this.txt5MascotaMes.Location = new System.Drawing.Point(255, 869);
             this.txt5MascotaMes.Margin = new System.Windows.Forms.Padding(6);
             this.txt5MascotaMes.Name = "txt5MascotaMes";
             this.txt5MascotaMes.Size = new System.Drawing.Size(360, 51);
@@ -569,7 +569,7 @@
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(1567, 479);
+            this.dataGridView3.Location = new System.Drawing.Point(1567, 559);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersVisible = false;
@@ -585,7 +585,7 @@
             this.bunifuGradientPanel2.GradientBottomRight = System.Drawing.Color.Red;
             this.bunifuGradientPanel2.GradientTopLeft = System.Drawing.Color.Red;
             this.bunifuGradientPanel2.GradientTopRight = System.Drawing.Color.Red;
-            this.bunifuGradientPanel2.Location = new System.Drawing.Point(0, 1020);
+            this.bunifuGradientPanel2.Location = new System.Drawing.Point(0, 1125);
             this.bunifuGradientPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bunifuGradientPanel2.Name = "bunifuGradientPanel2";
             this.bunifuGradientPanel2.Quality = 10;
@@ -595,7 +595,7 @@
             // txtAsignar
             // 
             this.txtAsignar.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAsignar.Location = new System.Drawing.Point(166, 879);
+            this.txtAsignar.Location = new System.Drawing.Point(166, 959);
             this.txtAsignar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAsignar.Name = "txtAsignar";
             this.txtAsignar.Size = new System.Drawing.Size(338, 39);
@@ -606,7 +606,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(-1, 879);
+            this.label12.Location = new System.Drawing.Point(-1, 959);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(160, 41);
@@ -617,7 +617,7 @@
             // 
             this.txtClienteID.Enabled = false;
             this.txtClienteID.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClienteID.Location = new System.Drawing.Point(512, 879);
+            this.txtClienteID.Location = new System.Drawing.Point(512, 959);
             this.txtClienteID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtClienteID.Name = "txtClienteID";
             this.txtClienteID.Size = new System.Drawing.Size(103, 39);
@@ -656,7 +656,7 @@
             this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.Red;
             this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.Red;
             this.bunifuMaterialTextbox1.LineThickness = 3;
-            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(0, 437);
+            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(0, 474);
             this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
             this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(1872, 29);
@@ -676,7 +676,7 @@
             this.bunifuMaterialTextbox2.LineIdleColor = System.Drawing.Color.Red;
             this.bunifuMaterialTextbox2.LineMouseHoverColor = System.Drawing.Color.Red;
             this.bunifuMaterialTextbox2.LineThickness = 3;
-            this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(166, 872);
+            this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(166, 952);
             this.bunifuMaterialTextbox2.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuMaterialTextbox2.Name = "bunifuMaterialTextbox2";
             this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(449, 51);
@@ -688,7 +688,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1872, 1035);
+            this.ClientSize = new System.Drawing.Size(1872, 1140);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.navigationBar1);
             this.Controls.Add(this.txtClienteID);

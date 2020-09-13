@@ -8,6 +8,6 @@ namespace YOKO
 {
     public sealed class ConnectionString
     {
-        public const String connectionString = "Data Source=DESKTOP-54TT33R;Initial Catalog=GoumaoDB;Integrated Security=True";
+        public const String connectionString = "Data Source=DESKTOP-CUTEK3A;Initial Catalog=GoumaoDB;Integrated Security=True";
     }
 }

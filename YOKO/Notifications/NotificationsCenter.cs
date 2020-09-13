@@ -27,7 +27,37 @@ namespace YOKO.Notifications
 
         public static void ShowErrorMessageForConection()
         {
-            notifyIcon.ShowBalloonTip(1000, "Oh oh, algo salió mal.", "Revisa tu conexión a la base de datos", ToolTipIcon.Info);
+            notifyIcon.ShowBalloonTip(1000, "Oh oh, algo salió mal.", "Revisa tu conexión a la base de datos", ToolTipIcon.Error);
+        }
+
+        public static void ShowErrorMessageForException(Exception exception)
+        {
+            notifyIcon.ShowBalloonTip(1000, "Oh oh, algo salió mal.", exception.Message, ToolTipIcon.Error);
+        }
+
+        public static void ShowWarningMessage(string title, string message)
+        {
+            notifyIcon.ShowBalloonTip(1000, "Oh oh, algo salió mal.", message, ToolTipIcon.Warning);
+        }
+
+        public static void ShowWarningMessage(string message)
+        {
+            notifyIcon.ShowBalloonTip(1000, "Oh oh, algo salió mal.", message, ToolTipIcon.Warning);
+        }
+
+        public static void ShowErrorMessage(string title, string message)
+        {
+            notifyIcon.ShowBalloonTip(1000, title, message, ToolTipIcon.Error);
+        }
+
+        public static void ShowErrorMessage(string message)
+        {
+            notifyIcon.ShowBalloonTip(1000, "Oh oh, algo salió mal.", message, ToolTipIcon.Error);
+        }
+
+        public static void ShowSucessMessage(string title, string subtitle)
+        {
+            notifyIcon.ShowBalloonTip(1000, title, subtitle, ToolTipIcon.Info);
         }
     }
 }

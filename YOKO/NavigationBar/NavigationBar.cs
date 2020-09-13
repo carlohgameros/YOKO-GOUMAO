@@ -14,7 +14,6 @@ namespace YOKO.NavigationBar
     public partial class NavigationBar : UserControl, iNavigation
     {
         private static iNavigation navigation;
-        public static String title;
         int movument;
         int xPosition;
         int yPosition;
@@ -43,7 +42,7 @@ namespace YOKO.NavigationBar
 
         public void AdaptNavigationSize() => throw new NotImplementedException();
 
-        public void ChangeNavigationTitle(String newTitle) => title = newTitle;
+        public void ChangeNavigationTitle(String newTitle) => navigationTitle.Text = newTitle;
 
         public void CloseForm(Form actualForm) => Forms.CloseProgram(actualForm);
 

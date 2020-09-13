@@ -38,16 +38,15 @@
             this.dolarDownButton = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dolarField = new MetroFramework.Controls.MetroTextBox();
-            this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.updateDolarCB = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.bunifuCheckbox2 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.useIVACB = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label6 = new System.Windows.Forms.Label();
-            this.bunifuCheckbox3 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.bunifuCheckbox4 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.showDolarCB = new Bunifu.Framework.UI.BunifuCheckbox();
             this.navigationBar1 = new YOKO.NavigationBar.NavigationBar();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.saveButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.SuspendLayout();
             // 
             // bunifuGradientPanel1
@@ -59,7 +58,7 @@
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.Black;
             this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.Black;
             this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.Black;
-            this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 604);
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 546);
             this.bunifuGradientPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
@@ -217,18 +216,18 @@
             this.dolarField.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.dolarField.WaterMarkFont = new System.Drawing.Font("Microsoft YaHei UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // bunifuCheckbox1
+            // updateDolarCB
             // 
-            this.bunifuCheckbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCheckbox1.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuCheckbox1.Checked = true;
-            this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox1.Location = new System.Drawing.Point(63, 333);
-            this.bunifuCheckbox1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.bunifuCheckbox1.Name = "bunifuCheckbox1";
-            this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox1.TabIndex = 32;
+            this.updateDolarCB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.updateDolarCB.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.updateDolarCB.Checked = true;
+            this.updateDolarCB.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.updateDolarCB.ForeColor = System.Drawing.Color.White;
+            this.updateDolarCB.Location = new System.Drawing.Point(63, 333);
+            this.updateDolarCB.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.updateDolarCB.Name = "updateDolarCB";
+            this.updateDolarCB.Size = new System.Drawing.Size(20, 20);
+            this.updateDolarCB.TabIndex = 32;
             // 
             // label1
             // 
@@ -254,43 +253,18 @@
             this.label3.TabIndex = 35;
             this.label3.Text = "Incluir I.V.A. en los precios.";
             // 
-            // bunifuCheckbox2
+            // useIVACB
             // 
-            this.bunifuCheckbox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCheckbox2.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuCheckbox2.Checked = true;
-            this.bunifuCheckbox2.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCheckbox2.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox2.Location = new System.Drawing.Point(62, 184);
-            this.bunifuCheckbox2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.bunifuCheckbox2.Name = "bunifuCheckbox2";
-            this.bunifuCheckbox2.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox2.TabIndex = 34;
-            // 
-            // bunifuThinButton22
-            // 
-            this.bunifuThinButton22.ActiveBorderThickness = 2;
-            this.bunifuThinButton22.ActiveCornerRadius = 100;
-            this.bunifuThinButton22.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton22.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton22.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton22.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.bunifuThinButton22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton22.BackgroundImage")));
-            this.bunifuThinButton22.ButtonText = "GUARDAR";
-            this.bunifuThinButton22.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton22.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.bunifuThinButton22.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.bunifuThinButton22.IdleBorderThickness = 1;
-            this.bunifuThinButton22.IdleCornerRadius = 20;
-            this.bunifuThinButton22.IdleFillColor = System.Drawing.SystemColors.ControlDark;
-            this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton22.IdleLineColor = System.Drawing.SystemColors.ControlLight;
-            this.bunifuThinButton22.Location = new System.Drawing.Point(208, 527);
-            this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(8);
-            this.bunifuThinButton22.Name = "bunifuThinButton22";
-            this.bunifuThinButton22.Size = new System.Drawing.Size(372, 68);
-            this.bunifuThinButton22.TabIndex = 90;
-            this.bunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.useIVACB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.useIVACB.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.useIVACB.Checked = true;
+            this.useIVACB.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.useIVACB.ForeColor = System.Drawing.Color.White;
+            this.useIVACB.Location = new System.Drawing.Point(62, 184);
+            this.useIVACB.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.useIVACB.Name = "useIVACB";
+            this.useIVACB.Size = new System.Drawing.Size(20, 20);
+            this.useIVACB.TabIndex = 34;
             // 
             // label6
             // 
@@ -304,43 +278,18 @@
             this.label6.TabIndex = 92;
             this.label6.Text = "Mostrar notificacion en precio del Dolar";
             // 
-            // bunifuCheckbox3
+            // showDolarCB
             // 
-            this.bunifuCheckbox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCheckbox3.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuCheckbox3.Checked = true;
-            this.bunifuCheckbox3.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCheckbox3.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox3.Location = new System.Drawing.Point(62, 377);
-            this.bunifuCheckbox3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.bunifuCheckbox3.Name = "bunifuCheckbox3";
-            this.bunifuCheckbox3.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox3.TabIndex = 91;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(92, 408);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(649, 41);
-            this.label7.TabIndex = 94;
-            this.label7.Text = "Actualizar precio del dolar automaticamente";
-            // 
-            // bunifuCheckbox4
-            // 
-            this.bunifuCheckbox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCheckbox4.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuCheckbox4.Checked = true;
-            this.bunifuCheckbox4.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCheckbox4.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox4.Location = new System.Drawing.Point(62, 420);
-            this.bunifuCheckbox4.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.bunifuCheckbox4.Name = "bunifuCheckbox4";
-            this.bunifuCheckbox4.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox4.TabIndex = 93;
+            this.showDolarCB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.showDolarCB.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.showDolarCB.Checked = true;
+            this.showDolarCB.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.showDolarCB.ForeColor = System.Drawing.Color.White;
+            this.showDolarCB.Location = new System.Drawing.Point(62, 377);
+            this.showDolarCB.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.showDolarCB.Name = "showDolarCB";
+            this.showDolarCB.Size = new System.Drawing.Size(20, 20);
+            this.showDolarCB.TabIndex = 91;
             // 
             // navigationBar1
             // 
@@ -351,22 +300,56 @@
             this.navigationBar1.TabIndex = 95;
             this.navigationBar1.Load += new System.EventHandler(this.navigationBar1_Load);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 536);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(839, 10);
+            this.panel1.TabIndex = 96;
+            // 
+            // saveButton
+            // 
+            this.saveButton.ActiveBorderThickness = 1;
+            this.saveButton.ActiveCornerRadius = 20;
+            this.saveButton.ActiveFillColor = System.Drawing.Color.White;
+            this.saveButton.ActiveForecolor = System.Drawing.Color.Black;
+            this.saveButton.ActiveLineColor = System.Drawing.Color.Black;
+            this.saveButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.saveButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("saveButton.BackgroundImage")));
+            this.saveButton.ButtonText = "Guardar";
+            this.saveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.saveButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveButton.ForeColor = System.Drawing.Color.White;
+            this.saveButton.IdleBorderThickness = 1;
+            this.saveButton.IdleCornerRadius = 20;
+            this.saveButton.IdleFillColor = System.Drawing.Color.Black;
+            this.saveButton.IdleForecolor = System.Drawing.Color.White;
+            this.saveButton.IdleLineColor = System.Drawing.Color.White;
+            this.saveButton.Location = new System.Drawing.Point(277, 439);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(5);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(284, 66);
+            this.saveButton.TabIndex = 97;
+            this.saveButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
             // Configuraciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(839, 616);
+            this.ClientSize = new System.Drawing.Size(839, 558);
+            this.Controls.Add(this.saveButton);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.navigationBar1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.bunifuCheckbox4);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.bunifuCheckbox3);
-            this.Controls.Add(this.bunifuThinButton22);
+            this.Controls.Add(this.showDolarCB);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.bunifuCheckbox2);
+            this.Controls.Add(this.useIVACB);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.bunifuCheckbox1);
+            this.Controls.Add(this.updateDolarCB);
             this.Controls.Add(this.dolarUpButton);
             this.Controls.Add(this.dolarDownButton);
             this.Controls.Add(this.label5);
@@ -382,6 +365,7 @@
             this.Name = "Configuraciones";
             this.RightToLeftLayout = true;
             this.Text = "Configuraciones";
+            this.Load += new System.EventHandler(this.Configuraciones_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,15 +381,14 @@
         private System.Windows.Forms.Label dolarDownButton;
         private System.Windows.Forms.Label label5;
         private MetroFramework.Controls.MetroTextBox dolarField;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
+        private Bunifu.Framework.UI.BunifuCheckbox updateDolarCB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox2;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
+        private Bunifu.Framework.UI.BunifuCheckbox useIVACB;
         private System.Windows.Forms.Label label6;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox3;
-        private System.Windows.Forms.Label label7;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox4;
+        private Bunifu.Framework.UI.BunifuCheckbox showDolarCB;
         private NavigationBar.NavigationBar navigationBar1;
+        private System.Windows.Forms.Panel panel1;
+        private Bunifu.Framework.UI.BunifuThinButton2 saveButton;
     }
 }

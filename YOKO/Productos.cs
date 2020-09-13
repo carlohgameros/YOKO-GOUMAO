@@ -11,6 +11,7 @@ using System.Data.SqlTypes;
 using System.Data.SqlClient;
 using System.Drawing.Drawing2D;
 using YOKO.Helpers;
+using YOKO.Models;
 
 namespace YOKO
 {
@@ -18,7 +19,7 @@ namespace YOKO
     {
         SQL sqlHelper = new SQL();
         SqlConnection conn = new SqlConnection(ConnectionString.connectionString);
-        //SqlConnection con1 = new SqlConnection(
+        private int currentIDSelected = 0;
 
         private const float V = 10.00F;
 
@@ -31,17 +32,8 @@ namespace YOKO
         private void Productos_Load(object sender, EventArgs e)
         {
             FillDataGrid();
-
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
-            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.WhiteSmoke;
-            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.Black;
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Purple;
-            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
+            BaseTableDesiner.SetDefaultStyle(dataGridView1);
+            
             if (cb1tipo.Text == "PRODUCTOS")
             {
                 cb3r.Text = "No agregar Responsiva";
@@ -54,7 +46,68 @@ namespace YOKO
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                currentIDSelected = int.Parse(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells["ProdID"].Value.ToString());
+                string responsive = dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells["Responsiva"].Value.ToString();
+                
+                if (IsService(responsive))
+                {
+                    handleServiceSelected();
+                }
+                else
+                {
+                    handleProductSelected();
+                }
+            }
+            catch(Exception exception) {
+                Notifications.NotificationsCenter.ShowErrorMessageForException(exception);
+            }
+        }
 
+        private bool IsService(string id)
+        {
+            return id == "1";
+        }
+
+        private void handleProductSelected()
+        {
+            var productSelected = new ProductItem(
+                int.Parse(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells["ProdID"].Value.ToString()),
+                dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells["Producto"].Value.ToString(),
+                decimal.Parse(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells["Precio"].Value.ToString()),
+                1,
+                int.Parse(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells["Existencia"].Value.ToString()),
+                false,
+                false
+                );
+
+            cb1tipo.Text = "PRODUCTO";
+            txt1Nombre.Text = productSelected.name;
+            txt2Precio.Text = String.Format("{0:0.00}", productSelected.price.ToString());
+            cb2um.Text = "Pieza";
+            txt3Stock.Text = productSelected.stock.ToString();
+            txt3Stock.Enabled = true;
+            cb3r.Text = "No agregar Responsiva";
+        }
+
+        private void handleServiceSelected()
+        {
+            var serviceSelected = new Service(
+                int.Parse(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells["ProdID"].Value.ToString()),
+                dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells["Producto"].Value.ToString(),
+                0,
+                0,
+                decimal.Parse(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells["Precio"].Value.ToString())
+                );
+
+            cb1tipo.Text = "PRODUCTO";
+            txt1Nombre.Text = serviceSelected.description;
+            txt2Precio.Text = serviceSelected.price.ToString();
+            cb2um.Text = "Pieza";
+            txt3Stock.Text = "No aplica";
+            txt3Stock.Enabled = false;
+            cb3r.Text = "Agregar Responsiva";
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -113,16 +166,76 @@ namespace YOKO
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (txt1Nombre.Text == "" || txt2Precio.Text == "") return;
-
-            string query = "insert into tblProductos values("+getType()+", '"+txt1Nombre.Text+"', "+txt2Precio.Text+", '0', "+getUM()+", 1, "+txt3Stock.Text+", "+getResposive()+", "+getStockControl()+", 'Jorge Galvan', GETDATE(), 'A')";
             
-            if (sqlHelper.ExecuteSQLCommand(query))
+            try
             {
-                Notifications.NotificationsCenter.notifyIcon.ShowBalloonTip(1000, "¡Producto Agregado!", "El producto fue registrado con éxito.", ToolTipIcon.Info);
+                AddOrUpdateProduct(currentIDSelected.ToString(), txt1Nombre.Text);
+                Notifications.NotificationsCenter.ShowSucessMessage("Elemento guardado", "El elemento se actualizo en la base de datos.");
+                RefreshForm();
+            }
+            catch(Exception exception)
+            {
+                Notifications.NotificationsCenter.ShowErrorMessageForException(exception);
+            }
+        }
+
+        private void AddOrUpdateProduct(string id, string name)
+        {
+            var checkQuery = "select * from tblProductos where ProdID = " + id + " and Producto = '" + name + "'";
+            if (sqlHelper.MultipleRecords(checkQuery))
+            {
+
+                var query = "UPDATE tblProductos SET " +GetName() + GetPrice() + GetStock() + GetResponsive() + "[FReg] = GETDATE() WHERE ProdID = " + id + " and Producto = '" + name + "'";
+                sqlHelper.UpdateProduct(query);
             }
             else
             {
-                Notifications.NotificationsCenter.ShowErrorMessageForConection();
+                var query = "insert into tblProductos values(" + getType() + ", '" + txt1Nombre.Text + "', " + txt2Precio.Text + ", '0', " + getUM() + ", 1, " + txt3Stock.Text + ", " + getResposive() + ", " + getStockControl() + ", 'Jorge Galvan', GETDATE(), 'A')";
+                sqlHelper.AddProduct(query);
+            }
+        }
+
+        private string GetPrice()
+        {
+            var newPrice = 0.00;
+            var isNewPriceValid = double.TryParse(txt2Precio.Text, out newPrice);
+            return isNewPriceValid ? ("[Precio] = " + newPrice + ", ") : "";
+        }
+
+        private string GetStock()
+        { 
+            var newPrice = 0;
+            var isNewPriceValid = int.TryParse(txt3Stock.Text, out newPrice);
+            return isNewPriceValid? ("[Existencia] =" + newPrice + ", ") : "";
+        }
+
+        private string GetResponsive()
+        {
+            return cb3r.Text == "AgregarResponsiva" ? "[Responsiva] = 1 ," : "[Responsiva] = 0 ,"; 
+        }
+
+        private string GetName()
+        {
+            return "[Producto] ='" + txt1Nombre.Text + "', ";
+        }
+
+        private void RefreshForm()
+        {
+            clearDataGrid();
+            FillDataGrid();
+        }
+
+        private void clearDataGrid()
+        {
+            DataTable DT = (DataTable)dataGridView1.DataSource;
+            if (DT != null)
+            {
+                dataGridView1.DataSource = null;
+                clearDataGrid();
+            }
+            else
+            {
+                dataGridView1.Rows.Clear();
             }
         }
 
@@ -148,8 +261,10 @@ namespace YOKO
 
         private void txt1Nombre_Click(object sender, EventArgs e)
         {
-            if (txt1Nombre.Text == null) FillDataGrid();
-            AutoCompleter.FillDataGrid(dataGridView1, "SELECT [ProdID] ,[Producto] ,[Precio] ,[Moneda] ,[Existencia] ,[Responsiva] ,[ControlaExist] ,[UReg] ,[FReg] ,[Estatus] FROM tblProductos where Producto like '%" + txt1Nombre.Text + "%'", "Producto");
+            if (txt1Nombre.Text != "")
+            {
+                AutoCompleter.FillDataGrid(dataGridView1, "SELECT [ProdID] ,[Producto] ,[Precio] ,[Moneda] ,[Existencia] ,[Responsiva] ,[ControlaExist] ,[UReg] ,[FReg] ,[Estatus] FROM tblProductos where Producto like '%" + txt1Nombre.Text + "%'", "Producto");
+            }
         }
         
         private void FillDataGrid()
@@ -176,6 +291,16 @@ namespace YOKO
 
                 default: return "0";
             }
+        }
+
+        private void btnRestaurar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

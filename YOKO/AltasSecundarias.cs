@@ -123,11 +123,11 @@ namespace YOKO
         {
             if (btn1Nombre.Text.Trim() == "")
             {
-                //notifyIcon1.ShowBalloonTip(1000, "Error en el formulario", "Se necesita al menos el nombre", ToolTipIcon.Info);
+                Notifications.NotificationsCenter.ShowWarningMessage("Error en el formulario", "Se necesita al menos el nombre");
             }
             else
             {
-                string query = "insert into tblClientes values ('" + newName + "', " + newCel + ", " + newTel + ", '" + newMail + "', null, getdate(), 1)";
+                string query = "insert into tblClientes values ('" + newName + "', " + newCel + ", " + newTel + ", '" + newMail + "', null, getdate())";
 
                 if (sqlHelper.ExecuteSQLCommand(query))
                 {
@@ -222,9 +222,9 @@ namespace YOKO
             }
             else
             { 
-                var years = txt4MascotaAños.Text == "" ? "0" : "0";
-                var month = txt5MascotaMes.Text == "" ? "0" : "0";
-                string query = "insert into tblClientePets values ('" + txtClienteID.Text + "','" + txt1MascotaNombre.Text.ToUpper() + "', " + getBreed() + ", " + getPetSex() + ", " + years + ", '" + month + "', 0, null)";
+                var years = txt4MascotaAños.Text == "" ? "0" : txt4MascotaAños.Text.filterOnlyNumbers()[1];
+                var month = txt5MascotaMes.Text;
+                string query = "insert into tblClientePets values ('" + txtClienteID.Text + "','" + txt1MascotaNombre.Text.ToUpper() + "', " + getBreed() + ", " + getPetSex() + ", " + years + ", '" + month + "', 0)";
                 
                 if (sqlHelper.ExecuteSQLCommand(query))
                 {

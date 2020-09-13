@@ -51,5 +51,65 @@ namespace YOKO.Properties {
                 return ((string)(this["Setting"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("16.00")]
+        public decimal iva {
+            get {
+                return ((decimal)(this["iva"]));
+            }
+            set {
+                this["iva"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CheckDolar {
+            get {
+                return ((bool)(this["CheckDolar"]));
+            }
+            set {
+                this["CheckDolar"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("21.59")]
+        public float Dolar {
+            get {
+                return ((float)(this["Dolar"]));
+            }
+            set {
+                this["Dolar"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowDolar {
+            get {
+                return ((bool)(this["ShowDolar"]));
+            }
+            set {
+                this["ShowDolar"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool includeIVA {
+            get {
+                return ((bool)(this["includeIVA"]));
+            }
+            set {
+                this["includeIVA"] = value;
+            }
+        }
     }
 }

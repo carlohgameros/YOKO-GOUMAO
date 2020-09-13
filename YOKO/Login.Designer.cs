@@ -33,16 +33,12 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.YOKKO = new System.Windows.Forms.NotifyIcon(this.components);
-            this.contra = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.usuario = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.navigationBar1 = new YOKO.NavigationBar.NavigationBar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.contra = new Bunifu.Framework.UI.BunifuTextbox();
+            this.usuario = new Bunifu.Framework.UI.BunifuTextbox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -50,8 +46,6 @@
             this.iniciar = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +58,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::YOKO.Properties.Resources.WhatsApp_Image_2019_03_09_at_13_50_01;
-            this.pictureBox1.Location = new System.Drawing.Point(63, 112);
+            this.pictureBox1.Location = new System.Drawing.Point(63, 142);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(512, 316);
@@ -81,70 +75,6 @@
             this.YOKKO.Text = "333";
             this.YOKKO.Visible = true;
             // 
-            // contra
-            // 
-            this.contra.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.contra.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contra.ForeColor = System.Drawing.Color.Navy;
-            this.contra.HintForeColor = System.Drawing.Color.Empty;
-            this.contra.HintText = "";
-            this.contra.isPassword = true;
-            this.contra.LineFocusedColor = System.Drawing.Color.Blue;
-            this.contra.LineIdleColor = System.Drawing.Color.DimGray;
-            this.contra.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.contra.LineThickness = 3;
-            this.contra.Location = new System.Drawing.Point(74, 267);
-            this.contra.Margin = new System.Windows.Forms.Padding(14, 15, 14, 15);
-            this.contra.Name = "contra";
-            this.contra.Size = new System.Drawing.Size(520, 75);
-            this.contra.TabIndex = 6;
-            this.contra.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.contra.OnValueChanged += new System.EventHandler(this.contra_OnValueChanged);
-            this.contra.KeyUp += new System.Windows.Forms.KeyEventHandler(this.contra_KeyUp);
-            // 
-            // usuario
-            // 
-            this.usuario.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.usuario.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usuario.ForeColor = System.Drawing.Color.Navy;
-            this.usuario.HintForeColor = System.Drawing.Color.Empty;
-            this.usuario.HintText = "";
-            this.usuario.isPassword = false;
-            this.usuario.LineFocusedColor = System.Drawing.Color.Blue;
-            this.usuario.LineIdleColor = System.Drawing.Color.DimGray;
-            this.usuario.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.usuario.LineThickness = 3;
-            this.usuario.Location = new System.Drawing.Point(74, 160);
-            this.usuario.Margin = new System.Windows.Forms.Padding(14, 15, 14, 15);
-            this.usuario.Name = "usuario";
-            this.usuario.Size = new System.Drawing.Size(520, 72);
-            this.usuario.TabIndex = 8;
-            this.usuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(531, 266);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(63, 68);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 10;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(531, 156);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(63, 68);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            // 
             // navigationBar1
             // 
             this.navigationBar1.Location = new System.Drawing.Point(-639, 0);
@@ -153,35 +83,11 @@
             this.navigationBar1.TabIndex = 13;
             this.navigationBar1.Load += new System.EventHandler(this.navigationBar1_Load);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(176, 483);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 38);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "¿Olvide la ";
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(311, 485);
-            this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(174, 37);
-            this.linkLabel1.TabIndex = 12;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "contraseña?";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
             this.label2.Location = new System.Drawing.Point(69, 155);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 27);
@@ -193,7 +99,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(69, 262);
+            this.label3.Location = new System.Drawing.Point(69, 286);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(115, 27);
             this.label3.TabIndex = 91;
@@ -202,6 +108,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.contra);
+            this.panel1.Controls.Add(this.usuario);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.pictureBox4);
@@ -209,20 +117,43 @@
             this.panel1.Controls.Add(this.iniciar);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.linkLabel1);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.navigationBar1);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.usuario);
-            this.panel1.Controls.Add(this.contra);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(638, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(638, 541);
+            this.panel1.Size = new System.Drawing.Size(638, 615);
             this.panel1.TabIndex = 14;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // contra
+            // 
+            this.contra.BackColor = System.Drawing.Color.White;
+            this.contra.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("contra.BackgroundImage")));
+            this.contra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.contra.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contra.ForeColor = System.Drawing.Color.Black;
+            this.contra.Icon = ((System.Drawing.Image)(resources.GetObject("contra.Icon")));
+            this.contra.Location = new System.Drawing.Point(74, 319);
+            this.contra.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.contra.Name = "contra";
+            this.contra.Size = new System.Drawing.Size(520, 81);
+            this.contra.TabIndex = 96;
+            this.contra.text = "";
+            // 
+            // usuario
+            // 
+            this.usuario.BackColor = System.Drawing.Color.White;
+            this.usuario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("usuario.BackgroundImage")));
+            this.usuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.usuario.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usuario.ForeColor = System.Drawing.Color.Black;
+            this.usuario.Icon = ((System.Drawing.Image)(resources.GetObject("usuario.Icon")));
+            this.usuario.Location = new System.Drawing.Point(74, 188);
+            this.usuario.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.usuario.Name = "usuario";
+            this.usuario.Size = new System.Drawing.Size(520, 81);
+            this.usuario.TabIndex = 15;
+            this.usuario.text = "";
             // 
             // label7
             // 
@@ -249,7 +180,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(205, 358);
+            this.pictureBox4.Location = new System.Drawing.Point(202, 434);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(41, 52);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -261,18 +192,19 @@
             this.crear.AutoSize = true;
             this.crear.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.crear.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.crear.Location = new System.Drawing.Point(258, 415);
+            this.crear.Location = new System.Drawing.Point(255, 491);
             this.crear.Name = "crear";
             this.crear.Size = new System.Drawing.Size(153, 36);
             this.crear.TabIndex = 93;
             this.crear.Text = "Crear Perfil";
+            this.crear.Click += new System.EventHandler(this.crear_Click);
             // 
             // iniciar
             // 
             this.iniciar.AutoSize = true;
             this.iniciar.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iniciar.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.iniciar.Location = new System.Drawing.Point(241, 361);
+            this.iniciar.Location = new System.Drawing.Point(238, 437);
             this.iniciar.Name = "iniciar";
             this.iniciar.Size = new System.Drawing.Size(231, 46);
             this.iniciar.TabIndex = 92;
@@ -289,14 +221,13 @@
             this.label4.Size = new System.Drawing.Size(44, 71);
             this.label4.TabIndex = 95;
             this.label4.Text = "|";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1276, 541);
+            this.ClientSize = new System.Drawing.Size(1276, 615);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -305,8 +236,6 @@
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -321,18 +250,14 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Label label1;
         private NavigationBar.NavigationBar navigationBar1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox usuario;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox contra;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label crear;
         private System.Windows.Forms.Label iniciar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
+        private Bunifu.Framework.UI.BunifuTextbox usuario;
+        private Bunifu.Framework.UI.BunifuTextbox contra;
     }
 }

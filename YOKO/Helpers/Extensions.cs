@@ -21,6 +21,17 @@ namespace YOKO
         }
 
         /// <summary>
+        /// Returns the parameter to be used in the SQL query.
+        /// </summary>
+        /// <param name="tabla"></param>
+        /// <param name="parametro"></param>
+        /// <returns></returns>
+        public static string SqlLike(this string query, string tabla, string parametro)
+        {
+            return query + tabla + " like '%" + parametro + "%'";
+        }
+
+        /// <summary>
         /// Returns an String list of numbers.
         /// </summary>
         /// <param name="unfiltered"></param>

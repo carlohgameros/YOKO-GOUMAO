@@ -9,7 +9,6 @@ namespace YOKO.Helpers
 {
     public class ExchangePrice
     {
-        //string fixerKey = "ff232ae196a18c75c4effd029b15e428";
         string url = "https://api.exchangeratesapi.io/latest?base=USD&symbols=MXN";
         string html = string.Empty;
         string exchangeRate = string.Empty;
@@ -19,9 +18,21 @@ namespace YOKO.Helpers
             
         }
 
-        public string GetDolarPrice()
+        public double GetDolarPrice()
         {
-            if (!new BasicData().CheckInternetConnection()) { return "Sin acceso a internet."; }
+            if (!SettingsHelper.getInstance().ShouldCheckDolarUpdates())
+            {
+                double dolarSaved = 20.0;
+                bool isValid = double.TryParse(SettingsHelper.getInstance().GetIVA().ToString(), out dolarSaved);
+                return isValid ? dolarSaved : 20.0;
+            }
+
+            if (!new BasicData().CheckInternetConnection())
+            {
+                double dolarSaved = 20.0;
+                bool isValid = double.TryParse(SettingsHelper.getInstance().GetIVA().ToString(), out dolarSaved);
+                return isValid ? dolarSaved : 20.0;
+            }
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.AutomaticDecompression = DecompressionMethods.GZip;
@@ -38,7 +49,7 @@ namespace YOKO.Helpers
             double dolar = double.Parse(exchangeRate.filterOnlyNumbers()[1] + "." + exchangeRate.filterOnlyNumbers()[2]);
             double dolarPrice = double.Parse(dolar.ToString("F"));
 
-            return dolarPrice.ToString();
+            return dolarPrice;
         }
     }
 }
