@@ -14,8 +14,8 @@ namespace YOKO.Service_Additional_Information
     public partial class ServiceAdditionalInformation : Form
     {
         private IServiceInformationAdded listener;
-        private List<int> knifeSizes = new List<int> { 4, 5, 7, 8 ,9 };
-        private List<string> shampoos = new List<string> { "test 1", "test 2", "test 3" };
+        private List<int> knifeSizes = new List<int> { 4, 5, 7, 10 };
+        private List<string> shampoos = new List<string> { "Avena", "Para Garrapata", "Regular" };
         private int size = 0;
         private int index = 0;
         private int id = 0;

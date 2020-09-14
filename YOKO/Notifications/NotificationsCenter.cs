@@ -34,7 +34,6 @@ namespace YOKO.Notifications
         {
             try
             {
-                notifyIcon.Visible = false;
                 notifyIcon.Icon = null;
                 notifyIcon.Dispose();
             }

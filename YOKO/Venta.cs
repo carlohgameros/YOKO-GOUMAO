@@ -556,6 +556,19 @@ namespace YOKO
                 int stock = 0;
                 int.TryParse(row.Cells["Inv"].Value.ToString(), out stock);
                 bool isService = bool.Parse(row.Cells["Servicio"].Value.ToString());
+                string observation = "";
+                if (row.Cells["Observacion"].Value != null)
+                {
+                    observation = row.Cells["Observacion"].Value.ToString();
+                }
+                string shamppo = "";
+                int knife = 0;
+                if (row.Cells["Navaja"].Value != null) {
+                    if (!int.TryParse(row.Cells["Navaja"].Value.ToString(), out knife))
+                    {
+                        shamppo = row.Cells["Navaja"].Value.ToString();
+                    }
+                }
 
                 if (!isService)
                 {
@@ -565,6 +578,20 @@ namespace YOKO
                 else
                 {
                     Service service = new Service(id, product, CurrentPet.GetID().HasValue ? CurrentPet.GetID().Value : 0, CurrentClient.GetID(), precio);
+                    if (observation.Length > 0)
+                    {
+                        if (knife > 0)
+                        {
+                            var hairCut = new HairCut(knife, observation);
+                            service.SetHairCutInformation(hairCut);
+                        }
+                        else if(shamppo.Length > 0)
+                        {
+                            var hairCut = new HairCut(0, observation);
+                            service.SetHairCutInformation(hairCut);
+                            service.setShampoo(shamppo);
+                        }
+                    }
                     services.Add(service);
                 }
             }

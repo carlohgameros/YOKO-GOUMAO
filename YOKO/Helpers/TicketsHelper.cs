@@ -11,7 +11,7 @@ namespace YOKO.Helpers
     public class TicketsHelper
     {
         # region Logo
-        private readonly int logoWidth = 300;
+        private readonly int logoWidth = 200;
         # endregion
 
         private PrintDocument printDocument;
@@ -24,8 +24,8 @@ namespace YOKO.Helpers
         private int spacingHeight = 0;
         private bool isDisclaimerNeeded = false;
 
-        private readonly int width = 800;
-        private readonly int marginLeft = 50;
+        private readonly int width = 250;
+        private readonly int marginLeft = 0;
         private readonly int remision = 0;
         private readonly double total = 0.00f;
         #endregion
@@ -58,26 +58,32 @@ namespace YOKO.Helpers
             {
                 setDataIfExist(e, "", "SERVICIOS", true);
 
-                getHeight((int)TicketElements.headerText);
+                getHeight((int)TicketElements.semiSmallSpacing);
                 e.Graphics.DrawString("NOMBRE", Fonts.sanSerifbold, Brushes.Black, marginLeft, spacingHeight, near());
                 e.Graphics.DrawString("IMPORTE", Fonts.sanSerifbold, Brushes.Black, width - marginLeft, spacingHeight + (int)TicketElements.headerText, far());
                 getHeight((int)TicketElements.product);
 
                 foreach (Service service in services)
                 {
-                    getHeight((int)TicketElements.normalSpacing);
+                    getHeight((int)TicketElements.semiSmallSpacing);
                     e.Graphics.DrawString($"{service.description}", Fonts.sanSerifRegular, Brushes.Black, marginLeft, spacingHeight, near());
-                    e.Graphics.DrawString($"${service.price}", Fonts.sanSerifRegular, Brushes.Black, width - marginLeft, spacingHeight + (int)TicketElements.headerText, far());
+                    e.Graphics.DrawString($"${service.price}", Fonts.sanSerifRegular, Brushes.Black, width - marginLeft, spacingHeight + ((int)TicketElements.largeSpacing), far());
 
-                    if (service.IsHairCut() && service.GetHairCutInformation != null)
+                    if (service.GetHairCutInformation != null)
                     {
                         HairCut hairCut = service.GetHairCutInformation;
-                        setDataIfExist(e, "Tamaño de Navaja: ", hairCut.GetKnifeSize().ToString(), false);
+                        if (hairCut.GetKnifeSize() > 0)
+                        {
+                            setDataIfExist(e, "Tamaño de Navaja: ", hairCut.GetKnifeSize().ToString(), false);
+                        }
+                        if (service.shampoo.Length > 0)
+                        {
+                            setDataIfExist(e, "Tamaño de Navaja: ", service.shampoo, false);
+                        }
                         setDataIfExist(e, "Especificaciones: ", hairCut.GetSpecifications(), false);
                     }
 
                     getHeight((int)TicketElements.normalSpacing);
-                    drawSmallLine(e);
                 }
             }
         }
@@ -88,16 +94,16 @@ namespace YOKO.Helpers
 
             ScaleImage(e, logo, logoWidth, logoWidth);
 
-            getHeight(((int)TicketElements.headerText) * 5);
+            getHeight(((int)TicketElements.headerText) * 3);
 
-            e.Graphics.DrawString(legalData.name, Fonts.sanSerifRegular, Brushes.Black, width / 2, getHeight((int)TicketElements.headerText), centered());
-            e.Graphics.DrawString($"{legalData.street} {legalData.postalCode}", Fonts.sanSerifRegular, Brushes.Black, width / 2, getHeight((int)TicketElements.headerText), centered());
-            e.Graphics.DrawString(legalData.colonia, Fonts.sanSerifRegular, Brushes.Black, width / 2, getHeight((int)TicketElements.headerText), centered());
-            e.Graphics.DrawString(legalData.state, Fonts.sanSerifRegular, Brushes.Black, width / 2, getHeight((int)TicketElements.headerText), centered());
-            e.Graphics.DrawString($"RFC: {legalData.rfc}", Fonts.sanSerifRegular, Brushes.Black, width / 2, getHeight((int)TicketElements.headerText), centered());
-            e.Graphics.DrawString(legalData.phone, Fonts.sanSerifRegular, Brushes.Black, width / 2, getHeight((int)TicketElements.headerText), centered());
+            e.Graphics.DrawString(legalData.name, Fonts.sanSerifHeader, Brushes.Black, width / 2, getHeight((int)TicketElements.logo), centered());
+            e.Graphics.DrawString($"{legalData.street} {legalData.postalCode}", Fonts.sanSerifHeader, Brushes.Black, width / 2, getHeight((int)TicketElements.logo), centered());
+            e.Graphics.DrawString(legalData.colonia, Fonts.sanSerifHeader, Brushes.Black, width / 2, getHeight((int)TicketElements.logo), centered());
+            e.Graphics.DrawString(legalData.state, Fonts.sanSerifHeader, Brushes.Black, width / 2, getHeight((int)TicketElements.logo), centered());
+            e.Graphics.DrawString($"RFC: {legalData.rfc}", Fonts.sanSerifHeader, Brushes.Black, width / 2, getHeight((int)TicketElements.logo), centered());
+            e.Graphics.DrawString(legalData.phone, Fonts.sanSerifPhone, Brushes.Black, width / 2, getHeight((int)TicketElements.logo), centered());
 
-            e.Graphics.DrawString($"REMISIÓN NÚMERO: {remision}", Fonts.sanSerifRegularLarge, Brushes.Black, width / 2, getHeight((int)TicketElements.remision), centered());
+            e.Graphics.DrawString($"REMISIÓN NÚMERO: {remision}", Fonts.sanSerifRegular, Brushes.Black, width / 2, getHeight((int)TicketElements.remision), centered());
             drawLine(e, true);
         }
 
@@ -126,10 +132,7 @@ namespace YOKO.Helpers
         {
             if (isDisclaimerNeeded)
             {
-                //e.Graphics.DrawString($"{legalData.leyend1}", Fonts.sanSerifRegular, Brushes.Black, width / 2, getHeight((int)TicketElements.headerText), centered());
-                //e.Graphics.DrawString($"{legalData.leyend6}", Fonts.sanSerifRegular, Brushes.Black, new RectangleF(marginLeft, width - marginLeft, 0, 500F));
-                //e.Graphics.DrawString($"{legalData.leyend6}", Fonts.sanSerifRegular, Brushes.Black, new RectangleF(marginLeft, width - marginLeft, 500F, 500F));
-                e.Graphics.DrawString($"{legalData.leyend6}", Fonts.sanSerifRegular, Brushes.Black, new RectangleF(marginLeft, getHeight((int)TicketElements.headerText), width - (marginLeft * 2), 500F));
+                e.Graphics.DrawString($"{legalData.leyend6}", Fonts.sanSerifticket, Brushes.Black, new RectangleF(marginLeft, getHeight((int)TicketElements.headerText), width - (marginLeft * 2), 300F));
 
                 getHeight((int)TicketElements.disclaimer);
             }
@@ -141,9 +144,9 @@ namespace YOKO.Helpers
             {
                 setDataIfExist(e, "", "PRODUCTOS", true);
 
-                getHeight((int)TicketElements.headerText);
+                getHeight((int)TicketElements.semiSmallSpacing);
                 e.Graphics.DrawString("CANT.   NOMBRE", Fonts.sanSerifbold, Brushes.Black, marginLeft, spacingHeight, near());
-                e.Graphics.DrawString("P.UNIT   IMPORTE", Fonts.sanSerifbold, Brushes.Black, width - marginLeft, spacingHeight + (int)TicketElements.headerText, far());
+                e.Graphics.DrawString("IMPORTE", Fonts.sanSerifbold, Brushes.Black, width - marginLeft, spacingHeight + (int)TicketElements.headerText, far());
                 getHeight((int)TicketElements.product);
 
                 foreach (ProductItem product in products)
@@ -153,10 +156,10 @@ namespace YOKO.Helpers
                         isDisclaimerNeeded = true;
                     }
 
-                    getHeight((int)TicketElements.normalSpacing);
+                    getHeight((int)TicketElements.smallSpacing);
                     e.Graphics.DrawString($"     {product.items}      {product.name}", Fonts.sanSerifRegular, Brushes.Black, marginLeft, spacingHeight, near());
-                    e.Graphics.DrawString($"${product.price}          ${product.price * product.items}", Fonts.sanSerifRegular, Brushes.Black, width - marginLeft, spacingHeight + (int)TicketElements.headerText, far());
-                    getHeight((int)TicketElements.normalSpacing);
+                    e.Graphics.DrawString($"{product.price * product.items}", Fonts.sanSerifRegular, Brushes.Black, width - marginLeft, spacingHeight + (int)TicketElements.headerText, far());
+                    getHeight((int)TicketElements.smallSpacing);
                     drawSmallLine(e);
                 }
             }
@@ -183,24 +186,22 @@ namespace YOKO.Helpers
 
         public void AddPet(PrintPageEventArgs e)
         {
-            getHeight((int)TicketElements.headerText);
-            drawSmallLine(e);
+            getHeight((int)TicketElements.logo);
             setDataIfExist(e, "Mascota:", CurrentPet.GetName(), false);
-            setDataIfExist(e, "Estado:", CurrentPet.GetStatus(), false);
         }
 
         private void setDataIfExist(PrintPageEventArgs e, string type, string data, bool isCentered)
         {
             if (data != null && data.Length > 0)
             {
-                e.Graphics.DrawString($"{type} {data}", Fonts.sanSerifRegular, Brushes.Black, isCentered ? width / 2 : marginLeft, getHeight((int)TicketElements.headerText), near());
+                e.Graphics.DrawString($"{type} {data}", Fonts.sanSerifRegular, Brushes.Black, isCentered ? (width - 100) / 2 : marginLeft, getHeight((int)TicketElements.logo), near());
             }
         }
 
         public void PrintTicket()
         {
             printDocument = new PrintDocument();
-            printDocument.PrinterSettings.PrinterName = "Microsoft XPS Document Writer";
+            //printDocument.PrinterSettings.PrinterName = "Microsoft XPS Document Writer";
             printDocument.PrintPage += new PrintPageEventHandler(printPage);
             printDocument.DefaultPageSettings.PaperSize = new PaperSize("Test", width, GetPosibleHeight());
             
@@ -216,18 +217,15 @@ namespace YOKO.Helpers
                 listener.ErrorPrinting(exception);
                 return;
             }
-            /*
-            try
-            {
-                saveTicketInformation();
-            }
-            catch (Exception exception)
-            {
-                Notifications.NotificationsCenter.ShowWarningMessage("Los datos del ticket no se pudieron guardar.");
-            }*/
         }
 
         private int getHeight(int spacing)
+        {
+            spacingHeight += spacing;
+            return spacingHeight;
+        }
+
+        private int getHeaderHeight(int spacing)
         {
             spacingHeight += spacing;
             return spacingHeight;

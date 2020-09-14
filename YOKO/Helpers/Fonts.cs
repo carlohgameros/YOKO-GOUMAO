@@ -9,8 +9,17 @@ namespace YOKO.Helpers
 {
     public class Fonts
     {
-        private static int fontSizeRegular = 10;
-        private static int fontSizeLarge = 14;
+        private static int fontSizeticket = 5;
+        private static int fontSizeHeader = 6;
+        private static int fontSizePhone = 8;
+        private static int fontSizeRegular = 8;
+        private static int fontSizeLarge = 10;
+
+
+        public static Font sanSerifticket = new Font(FontFamily.GenericSansSerif, fontSizeticket, FontStyle.Bold, GraphicsUnit.Point);
+        public static Font sanSerifHeader = new Font(FontFamily.GenericSansSerif, fontSizeHeader, FontStyle.Bold, GraphicsUnit.Point);
+        public static Font sanSerifPhone = new Font(FontFamily.GenericSansSerif, fontSizePhone, FontStyle.Bold, GraphicsUnit.Point);
+        //public static Font sanSerifPhone = new Font(FontFamily.GenericSansSerif, fontSizeticket, FontStyle.Bold, GraphicsUnit.Point);
 
         public static Font sanSerifbold = new Font(FontFamily.GenericSansSerif, fontSizeRegular, FontStyle.Bold, GraphicsUnit.Point);
         public static Font sanSerifRegular = new Font(FontFamily.GenericSansSerif, fontSizeRegular, FontStyle.Regular, GraphicsUnit.Point);
